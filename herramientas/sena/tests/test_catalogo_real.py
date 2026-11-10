@@ -16,7 +16,7 @@ def test_catalogo_real_consistente():
 CLAVES = {
     "reglas": {"nombre", "texto"}, "rnf": {"categoria", "requisito"},
     "historias": {"nombre", "rf", "enunciado"}, "riesgos": {"riesgo", "p", "i"},
-    "requisitos": {"nombre", "epica", "feat", "actores", "rn", "prioridad", "version"},
+    "requisitos": {"nombre", "epica", "feat", "actores", "rn", "objetivo", "prioridad", "version"},
     "indicadores": {"nombre", "objetivo", "meta"}, "actores": {"nombre", "tipo"},
     "funcionalidades": {"nombre", "epica"}, "casos_uso": {"nombre", "actor", "hu"},
     "alcance": {"nombre", "epica"}, "sprints": {"inicio", "fin", "historias", "extra"},

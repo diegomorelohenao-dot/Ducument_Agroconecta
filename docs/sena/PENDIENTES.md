@@ -29,6 +29,9 @@ en los YAML de `docs/sena/contenido/` y regenerar antes del 2026-12-04.
 - [PENDIENTE: actividades]
 - [PENDIENTE: commits]
 
+## requisitos.yaml
+- [PENDIENTE: valor según la documentación de Wompi]
+
 ## Fuera de los YAML (se completan a mano en Word)
 - Listas de verificación (columna «Cumple»), registros de aprobación y firmas.
 - Actualizar la tabla de contenido (clic derecho → Actualizar campos).

@@ -63,36 +63,36 @@ funcionalidades:
   FEAT-014: {nombre: Operación administrativa, epica: EP-007}
 
 requisitos:
-  RF-001: {nombre: Registrar usuario con rol y consentimiento de datos, epica: EP-001, feat: FEAT-001, actores: [ACT-01, ACT-02, ACT-03, ACT-05], rn: [], prioridad: Must, version: MVP}
-  RF-002: {nombre: Iniciar y renovar sesión, epica: EP-001, feat: FEAT-001, actores: [ACT-01, ACT-02, ACT-03, ACT-04], rn: [], prioridad: Must, version: MVP}
-  RF-003: {nombre: Eliminar cuenta, epica: EP-001, feat: FEAT-002, actores: [ACT-01, ACT-02, ACT-03], rn: [], prioridad: Must, version: MVP}
-  RF-004: {nombre: Gestionar perfil de productor, epica: EP-002, feat: FEAT-003, actores: [ACT-01], rn: [RN-001], prioridad: Must, version: MVP}
-  RF-005: {nombre: Configurar opciones de entrega, epica: EP-002, feat: FEAT-003, actores: [ACT-01], rn: [RN-008], prioridad: Must, version: MVP}
-  RF-006: {nombre: Verificar productor, epica: EP-002, feat: FEAT-004, actores: [ACT-04], rn: [RN-001], prioridad: Must, version: MVP}
-  RF-007: {nombre: Gestionar productos, epica: EP-003, feat: FEAT-005, actores: [ACT-01], rn: [RN-001], prioridad: Must, version: MVP}
-  RF-008: {nombre: Definir precios por volumen, epica: EP-003, feat: FEAT-005, actores: [ACT-01], rn: [RN-003], prioridad: Must, version: MVP}
-  RF-009: {nombre: "Buscar productos por texto, categoría y ubicación", epica: EP-003, feat: FEAT-006, actores: [ACT-02, ACT-03, ACT-05], rn: [], prioridad: Must, version: MVP}
-  RF-010: {nombre: Ver detalle de producto y productor, epica: EP-003, feat: FEAT-006, actores: [ACT-02, ACT-03, ACT-05], rn: [], prioridad: Must, version: MVP}
-  RF-011: {nombre: Gestionar carrito, epica: EP-004, feat: FEAT-007, actores: [ACT-02, ACT-03], rn: [], prioridad: Must, version: MVP}
-  RF-012: {nombre: Generar pedidos desde el carrito, epica: EP-004, feat: FEAT-007, actores: [ACT-02, ACT-03], rn: [RN-002, RN-003, RN-007, RN-008, RN-012], prioridad: Must, version: MVP}
-  RF-013: {nombre: Aceptar o rechazar pedido, epica: EP-004, feat: FEAT-008, actores: [ACT-01], rn: [RN-011], prioridad: Must, version: MVP}
-  RF-014: {nombre: Marcar pedido como enviado, epica: EP-004, feat: FEAT-008, actores: [ACT-01], rn: [], prioridad: Must, version: MVP}
-  RF-015: {nombre: Confirmar recepción del pedido, epica: EP-004, feat: FEAT-008, actores: [ACT-02, ACT-03], rn: [RN-005], prioridad: Must, version: MVP}
-  RF-016: {nombre: Consultar pedidos e historial, epica: EP-004, feat: FEAT-008, actores: [ACT-01, ACT-02, ACT-03, ACT-04], rn: [], prioridad: Must, version: MVP}
-  RF-017: {nombre: Aplicar plazos automáticos del pedido, epica: EP-004, feat: FEAT-008, actores: [ACT-07], rn: [RN-011], prioridad: Must, version: MVP}
-  RF-018: {nombre: Iniciar pago en línea, epica: EP-005, feat: FEAT-009, actores: [ACT-02, ACT-03, ACT-06], rn: [RN-012], prioridad: Must, version: MVP}
-  RF-019: {nombre: Procesar notificación de pago (webhook), epica: EP-005, feat: FEAT-009, actores: [ACT-06], rn: [RN-004, RN-005, RN-013], prioridad: Must, version: MVP}
-  RF-020: {nombre: Calcular comisión y acreditar saldo, epica: EP-005, feat: FEAT-010, actores: [ACT-07], rn: [RN-005, RN-006, RN-009, RN-012], prioridad: Must, version: MVP}
-  RF-021: {nombre: Consultar saldo y movimientos, epica: EP-005, feat: FEAT-010, actores: [ACT-01], rn: [RN-009], prioridad: Must, version: MVP}
-  RF-022: {nombre: Solicitar liquidación de saldo, epica: EP-005, feat: FEAT-010, actores: [ACT-01], rn: [RN-010], prioridad: Must, version: MVP}
-  RF-023: {nombre: Ejecutar reembolso, epica: EP-005, feat: FEAT-011, actores: [ACT-04, ACT-06, ACT-07], rn: [RN-004, RN-011], prioridad: Must, version: MVP}
-  RF-024: {nombre: Calificar productor, epica: EP-006, feat: FEAT-012, actores: [ACT-02, ACT-03], rn: [RN-014], prioridad: Must, version: MVP}
-  RF-025: {nombre: Abrir disputa, epica: EP-007, feat: FEAT-013, actores: [ACT-02, ACT-03], rn: [RN-015], prioridad: Must, version: MVP}
-  RF-026: {nombre: Resolver disputa, epica: EP-007, feat: FEAT-013, actores: [ACT-04], rn: [RN-011], prioridad: Must, version: MVP}
-  RF-027: {nombre: Marcar liquidación como pagada, epica: EP-007, feat: FEAT-014, actores: [ACT-04], rn: [RN-010], prioridad: Must, version: MVP}
-  RF-028: {nombre: Configurar comisión y mínimo de retiro, epica: EP-007, feat: FEAT-014, actores: [ACT-04], rn: [RN-007], prioridad: Must, version: MVP}
-  RF-029: {nombre: Consultar reportes de pedidos y comisiones, epica: EP-007, feat: FEAT-014, actores: [ACT-04], rn: [], prioridad: Should, version: MVP}
-  RF-030: {nombre: Enviar notificaciones en la app y por correo, epica: EP-001, feat: FEAT-002, actores: [ACT-07], rn: [], prioridad: Must, version: MVP}
+  RF-001: {nombre: Registrar usuario con rol y consentimiento de datos, epica: EP-001, feat: FEAT-001, actores: [ACT-01, ACT-02, ACT-03, ACT-05], rn: [], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-002: {nombre: Iniciar y renovar sesión, epica: EP-001, feat: FEAT-001, actores: [ACT-01, ACT-02, ACT-03, ACT-04], rn: [], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-003: {nombre: Eliminar cuenta, epica: EP-001, feat: FEAT-002, actores: [ACT-01, ACT-02, ACT-03], rn: [], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-004: {nombre: Gestionar perfil de productor, epica: EP-002, feat: FEAT-003, actores: [ACT-01], rn: [RN-001], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-005: {nombre: Configurar opciones de entrega, epica: EP-002, feat: FEAT-003, actores: [ACT-01], rn: [RN-008], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-006: {nombre: Verificar productor, epica: EP-002, feat: FEAT-004, actores: [ACT-04], rn: [RN-001], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-007: {nombre: Gestionar productos, epica: EP-003, feat: FEAT-005, actores: [ACT-01], rn: [RN-001], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-008: {nombre: Definir precios por volumen, epica: EP-003, feat: FEAT-005, actores: [ACT-01], rn: [RN-003], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-009: {nombre: "Buscar productos por texto, categoría y ubicación", epica: EP-003, feat: FEAT-006, actores: [ACT-02, ACT-03, ACT-05], rn: [], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-010: {nombre: Ver detalle de producto y productor, epica: EP-003, feat: FEAT-006, actores: [ACT-02, ACT-03, ACT-05], rn: [], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-011: {nombre: Gestionar carrito, epica: EP-004, feat: FEAT-007, actores: [ACT-02, ACT-03], rn: [], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-012: {nombre: Generar pedidos desde el carrito, epica: EP-004, feat: FEAT-007, actores: [ACT-02, ACT-03], rn: [RN-002, RN-003, RN-007, RN-008, RN-012], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-013: {nombre: Aceptar o rechazar pedido, epica: EP-004, feat: FEAT-008, actores: [ACT-01], rn: [RN-011], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-014: {nombre: Marcar pedido como enviado, epica: EP-004, feat: FEAT-008, actores: [ACT-01], rn: [], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-015: {nombre: Confirmar recepción del pedido, epica: EP-004, feat: FEAT-008, actores: [ACT-02, ACT-03], rn: [RN-005], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-016: {nombre: Consultar pedidos e historial, epica: EP-004, feat: FEAT-008, actores: [ACT-01, ACT-02, ACT-03, ACT-04], rn: [], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-017: {nombre: Aplicar plazos automáticos del pedido, epica: EP-004, feat: FEAT-008, actores: [ACT-07], rn: [RN-011], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-018: {nombre: Iniciar pago en línea, epica: EP-005, feat: FEAT-009, actores: [ACT-02, ACT-03, ACT-06], rn: [RN-012], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-019: {nombre: Procesar notificación de pago (webhook), epica: EP-005, feat: FEAT-009, actores: [ACT-06], rn: [RN-004, RN-005, RN-013], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-020: {nombre: Calcular comisión y acreditar saldo, epica: EP-005, feat: FEAT-010, actores: [ACT-07], rn: [RN-005, RN-006, RN-009, RN-012], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-021: {nombre: Consultar saldo y movimientos, epica: EP-005, feat: FEAT-010, actores: [ACT-01], rn: [RN-009], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-022: {nombre: Solicitar liquidación de saldo, epica: EP-005, feat: FEAT-010, actores: [ACT-01], rn: [RN-010], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-023: {nombre: Ejecutar reembolso, epica: EP-005, feat: FEAT-011, actores: [ACT-04, ACT-06, ACT-07], rn: [RN-004, RN-011], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-024: {nombre: Calificar productor, epica: EP-006, feat: FEAT-012, actores: [ACT-02, ACT-03], rn: [RN-014], objetivo: OBJ-04, prioridad: Must, version: MVP}
+  RF-025: {nombre: Abrir disputa, epica: EP-007, feat: FEAT-013, actores: [ACT-02, ACT-03], rn: [RN-015], objetivo: OBJ-04, prioridad: Must, version: MVP}
+  RF-026: {nombre: Resolver disputa, epica: EP-007, feat: FEAT-013, actores: [ACT-04], rn: [RN-011], objetivo: OBJ-04, prioridad: Must, version: MVP}
+  RF-027: {nombre: Marcar liquidación como pagada, epica: EP-007, feat: FEAT-014, actores: [ACT-04], rn: [RN-010], objetivo: OBJ-04, prioridad: Must, version: MVP}
+  RF-028: {nombre: Configurar comisión y mínimo de retiro, epica: EP-007, feat: FEAT-014, actores: [ACT-04], rn: [RN-007], objetivo: OBJ-04, prioridad: Must, version: MVP}
+  RF-029: {nombre: Consultar reportes de pedidos y comisiones, epica: EP-007, feat: FEAT-014, actores: [ACT-04], rn: [], objetivo: OBJ-04, prioridad: Should, version: MVP}
+  RF-030: {nombre: Enviar notificaciones en la app y por correo, epica: EP-001, feat: FEAT-002, actores: [ACT-07], rn: [], objetivo: OBJ-04, prioridad: Must, version: MVP}
 
 historias:
   HU-001: {nombre: Registrar usuario con rol y consentimiento de datos, rf: RF-001, enunciado: "Como visitante, quiero registrarme como productor o comprador (consumidor o negocio) aceptando el tratamiento de mis datos, para poder vender o comprar en la plataforma."}
