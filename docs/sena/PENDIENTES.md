@@ -4,10 +4,6 @@ Generado por `herramientas/sena/validar.py`. El equipo debe completar estos dato
 en los YAML de `docs/sena/contenido/` y regenerar antes del 2026-12-04.
 
 ## comun.yaml
-- [PENDIENTE: centro de formación]
-- [PENDIENTE: regional]
-- [PENDIENTE: número de ficha]
-- [PENDIENTE: nombre del instructor]
 - [PENDIENTE: nombre integrante EQ-01]
 - [PENDIENTE: nombre integrante EQ-02]
 - [PENDIENTE: nombre integrante EQ-03]
@@ -26,6 +22,12 @@ en los YAML de `docs/sena/contenido/` y regenerar antes del 2026-12-04.
 - [PENDIENTE: dato y fuente sobre la participación de intermediarios en el precio final]
 - [PENDIENTE: indicador posterior al MVP]
 - [PENDIENTE: enlace consultado]
+
+## gestion.yaml
+- [PENDIENTE: resultado del contacto con productores]
+- [PENDIENTE: asociación o cooperativa]
+- [PENDIENTE: actividades]
+- [PENDIENTE: commits]
 
 ## Fuera de los YAML (se completan a mano en Word)
 - Listas de verificación (columna «Cumple»), registros de aprobación y firmas.

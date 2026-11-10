@@ -340,7 +340,7 @@ tablas:
   - indice: 53
     encabezado: ["ID", "Información pendiente"]
     filas:
-      - ["PEN-01", "Centro de formación, regional, ficha, instructor y nombres de los integrantes", "EQ-01", "2026-11-20", "Identificación del documento", "Abierto"]
+      - ["PEN-01", "Nombres de los integrantes del equipo", "EQ-01", "2026-11-20", "Identificación del documento", "Abierto"]
       - ["PEN-02", "Evidencias EVI-01 a EVI-03 (entrevistas, precios SIPSA, canales actuales)", "EQ-04", "2026-11-27", "Validación del problema", "Abierto"]
       - ["PEN-03", "Dato y fuente sobre la participación de intermediarios en el precio final", "EQ-04", "2026-11-27", "Magnitud del problema y justificación", "Abierto"]
       - ["PEN-04", "Horas por semana de cada integrante", "EQ-01", "2026-11-20", "Estimación de esfuerzo", "Abierto"]

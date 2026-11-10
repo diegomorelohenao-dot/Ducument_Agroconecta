@@ -1,11 +1,12 @@
 # Datos de identificación compartidos por los 4 documentos.
+# Centro, regional, ficha e instructor: tomados de la plantilla de Gestión, que ya los traía diligenciados.
 # Reemplace cada [PENDIENTE: ...] y regenere con: herramientas/sena/generar.py todos
 proyecto: AgroConecta
 programa: Tecnología en Análisis y Desarrollo de Software – ADSO
-centro: "[PENDIENTE: centro de formación]"
-regional: "[PENDIENTE: regional]"
-ficha: "[PENDIENTE: número de ficha]"
-instructor: "[PENDIENTE: nombre del instructor]"
+centro: "SENA - Centro de Tecnología de la Manufactura Avanzada"
+regional: Antioquia
+ficha: "3144585"
+instructor: Juan Carlos Quintero Romero
 fecha_entrega: "2026-12-04"
 version: "1.0"
 estado: En revisión
