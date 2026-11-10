@@ -41,22 +41,49 @@ def tabla(doc: Document, indice: int, encabezado: list[str]) -> Table:
     return t
 
 
-def _run_modelo(parrafos):
-    """Primer run con propiedades (rPr); si ninguno tiene, el primer run."""
-    runs = [r for p in parrafos for r in p.findall(qn("w:r"))]
-    for r in runs:
-        if r.find(qn("w:rPr")) is not None:
-            return r
-    return runs[0] if runs else None
+def _texto_run(r) -> str:
+    return "".join(t.text or "" for t in r.findall(qn("w:t")))
+
+
+def _rpr_con_texto(elemento, excluir=None):
+    """rPr del primer run con texto visible dentro de `elemento`."""
+    for r in elemento.iter(qn("w:r")):
+        if excluir is not None and _dentro_de(r, excluir):
+            continue
+        rpr = r.find(qn("w:rPr"))
+        if rpr is not None and _texto_run(r).strip():
+            return rpr
+    return None
+
+
+def _dentro_de(el, ancestro) -> bool:
+    while el is not None:
+        if el is ancestro:
+            return True
+        el = el.getparent()
+    return False
+
+
+def _rpr_modelo(tc):
+    """Formato a conservar: run con texto en la celda; si no, en otra celda de la fila;
+    si no, en otra fila de datos (nunca el encabezado); si no, cualquier rPr de la celda."""
+    rpr = _rpr_con_texto(tc)
+    if rpr is not None:
+        return rpr
+    tr = tc.getparent()
+    filas = [tr] + [f for f in tr.getparent().findall(qn("w:tr"))[1:] if f is not tr]
+    for fila in filas:
+        rpr = _rpr_con_texto(fila, excluir=tc)
+        if rpr is not None:
+            return rpr
+    return next((r.find(qn("w:rPr")) for r in tc.iter(qn("w:r")) if r.find(qn("w:rPr")) is not None), None)
 
 
 def escribir_celda(celda: _Cell, texto: str) -> None:
     tc = celda._tc
     parrafos = tc.findall(qn("w:p"))
-    p_modelo = parrafos[0]
-    ppr = p_modelo.find(qn("w:pPr"))
-    run = _run_modelo(parrafos)
-    rpr = run.find(qn("w:rPr")) if run is not None else None
+    ppr = parrafos[0].find(qn("w:pPr"))
+    rpr = _rpr_modelo(tc)
     for p in parrafos:
         tc.remove(p)
     for linea in str(texto).split("\n"):
@@ -74,12 +101,19 @@ def escribir_celda(celda: _Cell, texto: str) -> None:
         tc.append(p)
 
 
-def llenar_campos(t: Table, campos: dict[str, str]) -> None:
+def llenar_campos(t: Table, campos: dict[str, str | list[str]]) -> None:
+    """Escribe en la última celda de la fila cuya primera celda empieza por la clave.
+    Si el valor es una lista, llena las últimas len(lista) celdas."""
     for clave, valor in campos.items():
         objetivo = normalizar(clave)
-        for fila in t.rows:
-            if normalizar(fila.cells[0].text).startswith(objetivo):
-                escribir_celda(fila.cells[-1], valor)
+        for tr in t._tbl.tr_lst:
+            celdas = _celdas(tr, t)
+            if normalizar(celdas[0].text).startswith(objetivo):
+                valores = valor if isinstance(valor, list) else [valor]
+                if len(valores) >= len(celdas):
+                    raise ValueError(f"Campo '{clave}': {len(valores)} valores para {len(celdas)} celdas")
+                for celda, texto in zip(celdas[-len(valores):], valores):
+                    escribir_celda(celda, texto)
                 break
         else:
             raise KeyError(f"Campo '{clave}' no encontrado en la tabla")

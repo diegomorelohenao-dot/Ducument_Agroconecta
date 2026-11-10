@@ -1,0 +1,347 @@
+# Formulación y Constitución del Proyecto — contenido de AgroConecta
+# Índices de tabla = plantilla ORIGINAL. Fuente: especificación de diseño 2026-11-10.
+plantilla: Formulacion_y_Constitucion_Proyecto_Software_ADSO_SENA.docx
+salida: AgroConecta_Formulacion_y_Constitucion.docx
+
+lineas:
+  - etiqueta: "Nombre del proyecto:"
+    valor: "AgroConecta"
+  - etiqueta: "Descripción en una frase:"
+    valor: "Marketplace web que conecta a pequeños productores agrícolas de Colombia con consumidores y negocios para vender sin intermediarios, con pedidos y pago en línea."
+  - etiqueta: "Objetivo general:"
+    valor: "{{catalogo.objetivo_general}}"
+  - etiqueta: "Limitaciones o excepciones a esta autoridad:"
+    valor: "Las decisiones que cambien el alcance del MVP, las fechas de entrega o el stack tecnológico requieren acuerdo del equipo y visto bueno del instructor."
+
+tablas:
+  - indice: 0
+    encabezado: ["Centro de formac"]
+    campos:
+      "Centro de formación": "{{comun.centro}}"
+      "Regional": "{{comun.regional}}"
+      "Nombre del proyecto": "{{comun.proyecto}}"
+      "Ficha": "{{comun.ficha}}"
+      "Equipo responsable": "{{comun.equipo_texto}}"
+      "Instructor(es)": "{{comun.instructor}}"
+      "Versión del documento": "{{comun.version}}"
+      "Fecha": "{{comun.fecha_entrega}}"
+
+  - indice: 1
+    encabezado: ["Campo", "Información"]
+    campos:
+      "Estado": "{{comun.estado}}"
+      "Responsable de elaboración": "Equipo AgroConecta (EQ-01 a EQ-04)"
+      "Responsable de revisión": "{{comun.instructor}}"
+      "Responsable de aprobación": "{{comun.instructor}} (patrocinador)"
+      "Repositorio oficial": "[PENDIENTE: URL del repositorio]"
+
+  - indice: 2
+    encabezado: ["Versión", "Fecha", "Descripción"]
+    filas:
+      - ["0.1", "2026-11-10", "Creación inicial a partir de la especificación de diseño", "Equipo AgroConecta", "", ""]
+      - ["1.0", "2026-12-04", "Versión para entrega", "Equipo AgroConecta", "", ""]
+
+  - indice: 6
+    encabezado: ["Campo", "Información requerida"]
+    campos:
+      "Código interno del proyecto": "AGC-ADSO-2026"
+      "Nombre oficial del proyecto": "AgroConecta: marketplace de pequeños productores agrícolas"
+      "Nombre corto o acrónimo": "AgroConecta"
+      "Centro de formación": "{{comun.centro}}"
+      "Regional": "{{comun.regional}}"
+      "Ficha": "{{comun.ficha}}"
+      "Modalidad": "Grupal (4 integrantes)"
+      "Tipo de proyecto": "Formativo, orientado a un problema real del sector agrícola"
+      "Fecha de inicio propuesta": "2026-11-10"
+      "Fecha de finalización propuesta": "2027-06-11"
+      "Versión o etapa objetivo": "MVP 1.0"
+      "Repositorio principal": "[PENDIENTE: URL del repositorio]"
+      "Ubicación de la documentación": "Carpeta docs/ del repositorio (docs/sena y docs/diseno/specs)"
+
+  - indice: 7
+    encabezado: ["Criterio", "Selección", "Observación"]
+    campos:
+      "Plataforma": ["Web (PWA instalable)", "Sitio responsive que se instala en el celular; sin app nativa (EXC-07)."]
+      "Contexto de uso": ["Académico con usuarios reales objetivo", "Proyecto formativo SENA dirigido a productores y compradores de Colombia."]
+      "Nivel de madurez esperado": ["Producto funcional (MVP)", "Desplegado y operando con la pasarela en modo sandbox."]
+      "Existencia de cliente real": ["No", "EQ-04 asume el rol de Product Owner en representación de los productores (STK-01); se buscará validar con productores reales (RSK-05)."]
+      "Tratamiento de datos personales": ["Sí", "Datos de registro de productores y compradores; aplica la Ley 1581 de 2012 (RNF-010)."]
+      "Integraciones externas": ["Sí", "Wompi (pagos, sandbox), servicio de correo SMTP y catálogo DIVIPOLA del DANE."]
+
+  - indice: 8
+    encabezado: ["Aspecto", "Descripción"]
+    campos:
+      "Organización, área o comunidad": "Pequeños productores agrícolas de Colombia y sus compradores: consumidores finales y negocios (restaurantes, tiendas, fruvers)."
+      "Proceso relacionado": "Comercialización de productos agrícolas desde la finca hasta el comprador."
+      "Usuarios o población involucrada": "Productores (STK-01), compradores consumidores (STK-02), compradores negocio (STK-03) y el administrador de la plataforma (STK-04)."
+      "Herramientas o métodos actuales": "Venta a intermediarios y acopiadores, plazas de mercado y contacto informal por redes sociales o WhatsApp. [PENDIENTE: confirmar con EVI-01 y EVI-03]"
+      "Normas, políticas o condiciones releva": "Ley 1581 de 2012 (protección de datos personales). La operación con dinero real y la facturación electrónica DIAN quedan fuera del alcance (EXC-04, EXC-08)."
+      "Antecedentes de soluciones previas": "Existen marketplaces genéricos y canales en redes sociales, sin pago protegido hasta la entrega ni búsqueda de productores por ubicación (ver ALT-02 y ALT-03)."
+      "Fuente de la información": "Especificación de diseño del proyecto (REF-01). Cifras del sector: [PENDIENTE: dato y fuente]"
+
+  - indice: 9
+    encabezado: ["ID", "Evidencia", "Tipo", "Fuente"]
+    filas:
+      - ["EVI-01", "Entrevistas a pequeños productores sobre cómo venden hoy y qué margen pierden", "Entrevista", "[PENDIENTE: productores entrevistados]", "[PENDIENTE: fecha]", "[PENDIENTE: hallazgo]", "docs/sena/evidencias/"]
+      - ["EVI-02", "Comparación de precios mayoristas (SIPSA, DANE) con precios al consumidor", "Documento", "DANE – SIPSA", "[PENDIENTE: fecha de consulta]", "[PENDIENTE: hallazgo]", "docs/sena/evidencias/"]
+      - ["EVI-03", "Revisión de los canales de venta que usan hoy productores y compradores", "Observación", "[PENDIENTE: canales revisados]", "[PENDIENTE: fecha]", "[PENDIENTE: hallazgo]", "docs/sena/evidencias/"]
+
+  - indice: 11
+    encabezado: ["Elemento", "Redacción"]
+    campos:
+      "Situación actual": "Los pequeños productores agrícolas venden principalmente a través de intermediarios, que capturan buena parte del margen entre la finca y el comprador."
+      "Población o usuarios afectados": "Pequeños productores agrícolas de Colombia y los consumidores y negocios que les compran."
+      "Proceso o contexto afectado": "La comercialización: encontrar compradores, acordar precio, cobrar de forma segura y entregar."
+      "Causas principales": "No existe un canal directo con los compradores (CAU-01); hay desconfianza en pagos entre desconocidos (CAU-02); los compradores no encuentran productores por zona (CAU-03)."
+      "Consecuencias principales": "Menor ingreso del productor (EFE-01), mayor precio para el comprador (EFE-02) y compradores sin conocer el origen de lo que compran (EFE-03)."
+      "Magnitud o evidencia": "[PENDIENTE: dato y fuente sobre la participación de intermediarios en el precio final] (EVI-01, EVI-02)."
+      "Pregunta orientadora del proyecto": "¿Cómo podría una plataforma web conectar directamente a pequeños productores con consumidores y negocios, con pago protegido hasta la entrega, para reducir su dependencia de intermediarios?"
+
+  - indice: 12
+    encabezado: ["Nivel", "ID", "Descripción"]
+    filas:
+      - ["Efecto", "EFE-01", "Menor ingreso del productor por cada venta", "EVI-01, EVI-02"]
+      - ["Efecto", "EFE-02", "Mayor precio para el comprador final", "EVI-02"]
+      - ["Efecto", "EFE-03", "Compradores sin conocer el origen de lo que compran", "EVI-03"]
+      - ["Problema central", "PRO-01", "Los pequeños productores dependen de intermediarios para vender", "EVI-01"]
+      - ["Causa directa", "CAU-01", "No hay un canal directo entre productores y compradores", "EVI-03"]
+      - ["Causa directa", "CAU-02", "Desconfianza en pagos entre personas que no se conocen", "EVI-01"]
+      - ["Causa raíz", "CAU-03", "Los compradores no tienen cómo encontrar productores por zona", "EVI-03"]
+
+  - indice: 13
+    encabezado: ["Pregunta de control", "Sí", "No"]
+    campos:
+      "¿Describe una situación verificable": ["X", "", "La dependencia de intermediarios se verifica con EVI-01 y EVI-02."]
+      "¿Identifica claramente a la población": ["X", "", "Pequeños productores, consumidores y negocios de Colombia."]
+      "¿Distingue causas y consecuencias": ["X", "", "Ver árbol del problema (CAU-01 a CAU-03, EFE-01 a EFE-03)."]
+      "¿Cuenta con al menos una evidencia": ["", "X", "Evidencias EVI-01 a EVI-03 planificadas; se recolectan antes del 2026-12-04 (ver Anexo C)."]
+      "¿Puede abordarse parcialmente mediante": ["X", "", "El software ataca CAU-01 a CAU-03 con catálogo, búsqueda por ubicación y pago retenido."]
+      "¿La formulación evita prometer resulta": ["X", "", "Los objetivos se miden con indicadores del producto (IND-01 a IND-04), no con ingresos de los productores."]
+
+  - indice: 16
+    encabezado: ["Dimensión", "Pregunta orientadora", "Argumento"]
+    campos:
+      "Necesidad": "La dependencia de intermediarios reduce el ingreso de los productores (PRO-01). Magnitud: [PENDIENTE: dato y fuente]."
+      "Valor para usuarios": "El productor publica y vende directamente; el comprador encuentra productores por zona, conoce el origen y paga con el dinero retenido hasta recibir."
+      "Valor organizacional": "La plataforma registra pedidos, pagos, comisiones y liquidaciones con trazabilidad completa (RN-009, RNF-006)."
+      "Viabilidad técnica": "Stack conocido y gratuito (React, NestJS, PostgreSQL); Wompi ofrece un entorno sandbox para pagos."
+      "Viabilidad operativa": "PWA usable desde el celular (RNF-009); el administrador verifica productores y resuelve disputas."
+      "Viabilidad económica": "Costo de infraestructura $0 con planes gratuitos (RES-02); el modelo de negocio es una comisión configurable (RN-007)."
+      "Pertinencia formativa": "Permite demostrar análisis de requisitos, diseño con Clean Architecture, desarrollo web, integración con APIs externas, pruebas automatizadas y despliegue."
+      "Aspectos legales y éticos": "Tratamiento de datos según la Ley 1581 de 2012; sin dinero real ni facturación electrónica en el MVP (EXC-04, EXC-08)."
+
+  - indice: 17
+    encabezado: ["Alternativa", "Descripción"]
+    filas:
+      - ["ALT-01: Mantener la situación actual", "Los productores siguen vendiendo a intermediarios", "No requiere inversión ni aprendizaje", "No cambia el margen del productor ni la falta de canal directo", "Descartada"]
+      - ["ALT-02: Vender por redes sociales o WhatsApp", "Cada productor publica y acuerda ventas por mensajes", "Gratis y conocido por los usuarios", "Sin pago protegido, sin búsqueda por ubicación y sin trazabilidad de pedidos", "Descartada"]
+      - ["ALT-03: Usar un marketplace genérico existente", "Publicar productos agrícolas en una plataforma de comercio general", "Plataforma ya construida y con tráfico", "No está pensada para productos perecederos por zona ni para compradores negocio; comisiones y requisitos difíciles para un campesino", "Descartada"]
+      - ["ALT-04: Desarrollar AgroConecta", "Marketplace propio con catálogo por ubicación, pedidos por productor y pago retenido hasta la entrega", "Ataca CAU-01 a CAU-03 y permite demostrar las competencias ADSO", "Requiere construir y operar el software en 7 meses (RSK-02, RSK-03)", "Seleccionada"]
+
+  - indice: 19
+    encabezado: ["ID", "Objetivo específico"]
+    filas:
+      - ["OBJ-01", "{{catalogo.objetivos.OBJ-01}}", "ENTG-01 a ENTG-04", "IND-01", "Los 4 documentos entregados y revisados por el instructor"]
+      - ["OBJ-02", "{{catalogo.objetivos.OBJ-02}}", "ENTG-05", "IND-02", "RF-001 a RF-010 aceptados"]
+      - ["OBJ-03", "{{catalogo.objetivos.OBJ-03}}", "ENTG-05", "IND-02, IND-03", "RF-011 a RF-023 aceptados y RN-001 a RN-015 con prueba"]
+      - ["OBJ-04", "{{catalogo.objetivos.OBJ-04}}", "ENTG-05", "IND-02", "RF-024 a RF-030 aceptados"]
+      - ["OBJ-05", "{{catalogo.objetivos.OBJ-05}}", "ENTG-05, ENTG-06", "IND-04", "Camino principal E2E en verde y MVP desplegado"]
+
+  - indice: 20
+    encabezado: ["Objetivo", "Específico", "Medible"]
+    filas:
+      - ["OBJ-01", "Cuatro documentos definidos", "4 de 4 entregados", "Sí, con las plantillas y la especificación", "Base para construir y evaluar", "2026-12-04", "Ninguno"]
+      - ["OBJ-02", "Registro, verificación y catálogo", "RF-001 a RF-010 aceptados", "Sí, sprints S01 a S04", "Habilita la oferta de productos", "2027-03-05", "Ninguno"]
+      - ["OBJ-03", "Pedidos, pago, comisión y liquidación", "RF-011 a RF-023 y 15 reglas con prueba", "Condicionado a la integración con Wompi (RSK-01)", "Núcleo del modelo de negocio", "2027-04-30", "Ninguno"]
+      - ["OBJ-04", "Seguimiento, disputas y calificaciones", "RF-024 a RF-030 aceptados", "Sí, sprints S07 a S10", "Da confianza a compradores y productores", "2027-05-28", "Ninguno"]
+      - ["OBJ-05", "Pruebas y despliegue del MVP", "E2E en verde en CI", "Sí, sprint S11", "Demuestra un producto funcional", "2027-06-11", "Ninguno"]
+
+  - indice: 22
+    encabezado: ["ID", "Beneficio esperado"]
+    filas:
+      - ["BEN-01", "Mayor margen para el productor al vender sin intermediarios", "Productores (STK-01)", "Directo", "[PENDIENTE: indicador posterior al MVP]", "Largo", "EQ-04"]
+      - ["BEN-02", "Precio más justo y origen conocido para el comprador", "Compradores (STK-02, STK-03)", "Directo", "[PENDIENTE: indicador posterior al MVP]", "Largo", "EQ-04"]
+      - ["BEN-03", "Compra segura: el dinero queda retenido hasta la entrega", "Compradores y productores", "Directo", "IND-03", "Corto", "EQ-02"]
+
+  - indice: 23
+    encabezado: ["Para", "Que necesita"]
+    filas:
+      - ["Pequeños productores agrícolas y sus compradores (consumidores y negocios)", "Vender y comprar directamente, con confianza en el pago", "Un marketplace web instalable con catálogo por ubicación, pedidos por productor y pago retenido hasta la entrega", "Los intermediarios y las ventas informales por redes sociales", "Más margen para el productor y compra segura y trazable para el comprador"]
+
+  - indice: 24
+    encabezado: ["ID", "Indicador"]
+    filas:
+      - ["IND-01", "Documentos SENA entregados", "OBJ-01", "0", "4", "Documentos", "Registro de entregables", "Por hito", "EQ-01"]
+      - ["IND-02", "RF del MVP implementados y aceptados", "OBJ-02, OBJ-03, OBJ-04", "0 %", "100 % (30 de 30)", "Porcentaje", "Registro de aceptación del backlog", "Por sprint", "EQ-04"]
+      - ["IND-03", "Reglas de negocio con prueba unitaria automatizada", "OBJ-03", "0", "15", "Reglas", "Reporte de pruebas en CI", "Por sprint", "EQ-02"]
+      - ["IND-04", "Camino principal E2E pasando en CI", "OBJ-05", "0 %", "100 % de las ejecuciones en la semana de entrega", "Porcentaje", "Historial de CI (GitHub Actions)", "Semanal", "EQ-02"]
+
+  - indice: 26
+    encabezado: ["ID", "Capacidad o módulo"]
+    filas:
+      - ["ALC-01", "Identidad y cuenta", "Registro con rol, inicio de sesión, eliminación de cuenta y notificaciones", "Todos los usuarios", "Alta", "MVP"]
+      - ["ALC-02", "Productores", "Perfil del productor, opciones de entrega y verificación por el administrador", "Productor, administrador", "Alta", "MVP"]
+      - ["ALC-03", "Catálogo", "Productos con precio por unidad y por volumen, imágenes y búsqueda por texto, categoría y ubicación", "Productor, compradores, visitante", "Alta", "MVP"]
+      - ["ALC-04", "Pedidos", "Carrito, un pedido por productor y ciclo de estados hasta la entrega", "Compradores, productor", "Alta", "MVP"]
+      - ["ALC-05", "Pagos", "Cobro en línea (Wompi sandbox), retención, comisión, saldo, liquidaciones y reembolsos", "Compradores, productor, administrador", "Alta", "MVP"]
+      - ["ALC-06", "Reputación", "Calificación del productor tras la entrega", "Compradores", "Alta", "MVP"]
+      - ["ALC-07", "Administración", "Verificación, disputas, liquidaciones, configuración y reportes", "Administrador", "Alta", "MVP"]
+
+  - indice: 27
+    encabezado: ["ID", "Exclusión"]
+    filas:
+      - ["EXC-01", "Notificaciones push", "Las notificaciones en la app y por correo cubren el MVP", "Posterior al MVP"]
+      - ["EXC-02", "Chat entre productor y comprador", "No es necesario para completar un pedido", "Posterior al MVP"]
+      - ["EXC-03", "Mapa y geolocalización", "La búsqueda por departamento y municipio es suficiente", "Posterior al MVP"]
+      - ["EXC-04", "Facturación electrónica DIAN", "Requisito legal y técnico fuera del alcance formativo; se entrega un comprobante del pedido", "Posterior al MVP"]
+      - ["EXC-05", "Pago contraentrega", "Rompe la retención del dinero hasta la entrega", "Posterior al MVP"]
+      - ["EXC-06", "Logística o transporte", "El productor entrega o el comprador recoge", "Posterior al MVP"]
+      - ["EXC-07", "App móvil nativa", "La PWA cubre el uso desde el celular", "Posterior al MVP"]
+      - ["EXC-08", "Operación con dinero real", "Implica obligaciones legales y tributarias; el MVP usa sandbox", "Posterior al MVP"]
+
+  - indice: 28
+    encabezado: ["Flujo crítico", "Resultado mínimo"]
+    filas:
+      - ["CU-001 Realizar pedido y pago", "El comprador paga en sandbox y sus pedidos quedan PAGADO", "Comprador", "Prueba E2E del camino principal"]
+      - ["CU-002 Gestionar ciclo del pedido", "El pedido llega a ENTREGADO y el productor recibe su saldo", "Productor, comprador", "Prueba E2E y pruebas de la máquina de estados"]
+      - ["CU-003 Resolver disputa", "El administrador resuelve y el pedido termina ENTREGADO o REEMBOLSADO", "Administrador", "Pruebas de integración"]
+      - ["CU-004 Liquidar saldo", "El productor solicita el retiro y el administrador lo marca pagado", "Productor, administrador", "Prueba E2E del camino principal"]
+
+  - indice: 30
+    encabezado: ["ID", "Entregable"]
+    filas:
+      - ["ENTG-01", "Formulación y constitución", "Este documento", "Revisado por el instructor", "EQ-04", "2026-12-04", "—"]
+      - ["ENTG-02", "Gestión de interesados y del proyecto", "Interesados, equipo, metodología, cronograma y riesgos", "Revisado por el instructor", "EQ-01", "2026-12-04", "ENTG-01"]
+      - ["ENTG-03", "Alcance y especificación de requisitos", "RF, RNF, reglas de negocio, actores y datos", "Revisado por el instructor", "EQ-04", "2026-12-04", "ENTG-01"]
+      - ["ENTG-04", "Backlog, historias y casos de uso", "Épicas, historias con criterios y casos de uso", "Revisado por el instructor", "EQ-04", "2026-12-04", "ENTG-03"]
+      - ["ENTG-05", "Software MVP desplegado", "Plataforma web PWA con RF-001 a RF-030", "IND-02 = 100 % e IND-04 en verde", "EQ-01", "2027-06-11", "ENTG-03, ENTG-04"]
+      - ["ENTG-06", "Informe de pruebas", "Resultados de pruebas unitarias, de integración y E2E", "IND-03 = 15 de 15", "EQ-02", "2027-06-11", "ENTG-05"]
+      - ["ENTG-07", "Manual de usuario", "Guía de uso para productor, comprador y administrador", "Revisado por el instructor", "EQ-03", "2027-06-11", "ENTG-05"]
+
+  - indice: 31
+    encabezado: ["ID", "Hito"]
+    filas:
+      - ["HIT-01", "Documentación SENA entregada", "ENTG-01 a ENTG-04 entregados", "2026-12-04", "{{comun.instructor}}"]
+      - ["HIT-02", "Identidad y productores", "RF-001 a RF-006 aceptados", "2027-02-05", "EQ-04"]
+      - ["HIT-03", "Catálogo y búsqueda", "RF-007 a RF-011 aceptados", "2027-03-05", "EQ-04"]
+      - ["HIT-04", "Pedidos y pagos", "Compra pagada en sandbox de punta a punta", "2027-04-16", "EQ-04"]
+      - ["HIT-05", "MVP completo", "RF-001 a RF-030 aceptados", "2027-05-28", "EQ-04"]
+      - ["HIT-06", "Entrega final", "ENTG-05 a ENTG-07 entregados", "2027-06-11", "{{comun.instructor}}"]
+
+  - indice: 32
+    encabezado: ["Rol", "Nombre / cargo"]
+    campos:
+      "Patrocinador": ["{{comun.instructor}} (instructor SENA)", "Proveer orientación, remover impedimentos y aprobar los entregables", "Aprueba entregables e hitos"]
+      "Cliente o representante funcional": ["{{comun.integrantes.EQ-04}} (EQ-04, Product Owner)", "Representar a productores y compradores, priorizar el backlog y aceptar historias", "Acepta o devuelve historias"]
+      "Líder del proyecto": ["{{comun.integrantes.EQ-01}} (EQ-01)", "Coordinar, planificar, comunicar y controlar riesgos y cambios", "Organiza el trabajo del equipo; escala cambios de alcance"]
+      "Instructor responsable": ["{{comun.instructor}}", "Orientar, revisar evidencias y evaluar", "Evalúa y valida los entregables"]
+
+  - indice: 33
+    encabezado: ["Integrante", "Rol principal"]
+    filas:
+      - ["{{comun.integrantes.EQ-01}}", "Líder y backend", "Coordinación, arquitectura e implementación del backend", "{{comun.horas_semana}}", "Commits, PR y actas"]
+      - ["{{comun.integrantes.EQ-02}}", "Backend (pagos) y QA", "Módulo de pagos, pruebas automatizadas y CI", "{{comun.horas_semana}}", "Commits, PR y reportes de pruebas"]
+      - ["{{comun.integrantes.EQ-03}}", "Frontend y UX/UI", "Diseño de interfaces e implementación del frontend PWA", "{{comun.horas_semana}}", "Commits, PR y prototipos"]
+      - ["{{comun.integrantes.EQ-04}}", "Frontend y análisis / Product Owner", "Requisitos, backlog, documentación y frontend", "{{comun.horas_semana}}", "Commits, PR y documentos"]
+
+  - indice: 34
+    encabezado: ["Categoría", "Recurso"]
+    campos:
+      "Talento humano": ["4 integrantes del equipo", "Disponible", "$0", "EQ-01", "Dedicación: {{comun.horas_semana}}"]
+      "Hardware": ["Computadores personales del equipo", "Disponible", "$0", "Cada integrante", "—"]
+      "Software / licencias": ["Herramientas libres: Node.js, NestJS, React, PostgreSQL, VS Code, Git", "Disponible", "$0", "EQ-01", "Sin licencias pagas"]
+      "Infraestructura / hosting": ["Vercel (frontend) y Railway o Render (API y base de datos), planes gratuitos", "Disponible", "$0", "EQ-01", "Límites de los planes gratuitos (RSK-06)"]
+      "Datos / acceso a información": ["Catálogo DIVIPOLA (DANE) y Wompi sandbox", "Disponible", "$0", "EQ-02", "Credenciales sandbox por gestionar (DEP-01)"]
+      "Tiempo": ["2026-11-10 a 2027-06-11", "Disponible", "—", "EQ-01", "Fechas fijas (RES-01)"]
+      "Asesoría especializada": ["Instructor SENA", "Parcial", "$0", "EQ-01", "Según la programación del centro"]
+
+  - indice: 35
+    encabezado: ["Dimensión", "Estado"]
+    campos:
+      "Técnica": ["Viable", "Stack conocido; la integración con Wompi es el punto de mayor riesgo", "Prueba temprana de integración en S05 y S06 (RSK-01)", "EQ-02", "2027-04-02"]
+      "Operativa": ["Viable", "PWA usable desde el celular", "Validar con productores reales", "EQ-04", "2027-05-28"]
+      "Económica": ["Viable", "Costo $0 con planes gratuitos", "Vigilar límites de hosting (RSK-06)", "EQ-01", "2027-06-11"]
+      "Temporal": ["Condicionada", "7 meses para 30 RF con 4 personas", "Control del alcance del MVP (RSK-02)", "EQ-01", "Cada sprint"]
+      "Legal y ética": ["Viable", "Sin dinero real; datos tratados según la Ley 1581 de 2012", "Incluir consentimiento y eliminación de cuenta (RF-001, RF-003)", "EQ-04", "2027-02-05"]
+      "Formativa": ["Viable", "Cubre las competencias del programa ADSO", "—", "{{comun.instructor}}", "—"]
+
+  - indice: 36
+    encabezado: ["Fase", "Duración estimada"]
+    campos:
+      "Formulación y análisis": ["4 semanas", "4", "16 semanas-persona × {{comun.horas_semana}}", "Hasta 2026-12-04"]
+      "Diseño": ["2 semanas", "4", "8 semanas-persona × {{comun.horas_semana}}", "Diseño UX/UI y arquitectura, diciembre de 2026 a enero de 2027"]
+      "Construcción": ["20 semanas (S01 a S10)", "4", "80 semanas-persona × {{comun.horas_semana}}", "2027-01-11 a 2027-05-28"]
+      "Pruebas y ajustes": ["2 semanas (S11)", "4", "8 semanas-persona × {{comun.horas_semana}}", "Las pruebas automatizadas se escriben en cada sprint"]
+      "Despliegue y cierre": ["1 semana", "4", "4 semanas-persona × {{comun.horas_semana}}", "Entrega el 2027-06-11"]
+
+  - indice: 38
+    encabezado: ["ID", "Tipo", "Restricción"]
+    filas:
+      - ["RES-01", "Temporal", "Documentación el 2026-12-04 y software el 2027-06-11", "No hay margen para ampliar el alcance", "EQ-01"]
+      - ["RES-02", "Económica", "Costo de infraestructura $0 (planes gratuitos)", "Límites de capacidad y disponibilidad", "EQ-01"]
+      - ["RES-03", "Técnica", "La pasarela de pagos opera solo en modo sandbox", "No se mueve dinero real", "EQ-02"]
+      - ["RES-04", "Organizacional", "Equipo de 4 personas", "Capacidad limitada por sprint", "EQ-01"]
+
+  - indice: 39
+    encabezado: ["ID", "Supuesto"]
+    filas:
+      - ["SUP-01", "La plataforma no gestiona transporte: el productor entrega o el comprador recoge", "Validación con productores (EVI-01)", "2026-12-04", "Habría que agregar logística (EXC-06)"]
+      - ["SUP-02", "Un administrador verifica productores, resuelve disputas y gestiona liquidaciones", "Revisión con el instructor", "2026-12-04", "Habría que automatizar la verificación"]
+      - ["SUP-03", "La búsqueda por departamento y municipio es suficiente, sin mapa", "Validación con compradores", "2027-03-05", "Habría que agregar geolocalización (EXC-03)"]
+      - ["SUP-04", "El comprador califica al productor después de recibir el pedido", "Validación con usuarios", "2027-05-14", "Se ajusta RN-014"]
+      - ["SUP-05", "No se requiere facturación electrónica DIAN; basta un comprobante del pedido", "Revisión con el instructor", "2026-12-04", "Habría que integrar facturación (EXC-04)"]
+      - ["SUP-06", "El productor fija precio por unidad y puede definir precios por volumen", "Validación con productores (EVI-01)", "2026-12-04", "Se ajustan RF-008 y RN-003"]
+      - ["SUP-07", "Cada integrante dedica {{comun.horas_semana}}", "Acuerdo del equipo", "2026-12-04", "Se recalcula la estimación de esfuerzo"]
+
+  - indice: 40
+    encabezado: ["ID", "Dependencia"]
+    filas:
+      - ["DEP-01", "Credenciales y entorno sandbox de Wompi", "Servicio", "Wompi", "2027-03-08", "Simular la pasarela detrás del puerto PasarelaPagos"]
+      - ["DEP-02", "Hosting gratuito (Vercel, Railway o Render)", "Infraestructura", "Proveedores de hosting", "2027-01-11", "Cambiar a otro proveedor gratuito"]
+      - ["DEP-03", "Catálogo DIVIPOLA de departamentos y municipios", "Dato", "DANE", "2027-01-25", "Cargar solo los municipios necesarios"]
+
+  - indice: 43
+    encabezado: ["ID", "Riesgo"]
+    filas:
+      - ["RSK-01", "Dificultades al integrar la pasarela Wompi (firma, webhooks, sandbox)", "Poca experiencia con pagos en línea", "Retraso de OBJ-03", "3", "4", "12", "Mitigar", "EQ-02", "2027-03-19"]
+      - ["RSK-02", "Crecimiento del alcance más allá del MVP", "Ideas nuevas durante el desarrollo", "Incumplimiento de la fecha de entrega", "3", "4", "12", "Evitar", "EQ-01", "Cada sprint"]
+      - ["RSK-03", "Curva de aprendizaje de NestJS y Clean Architecture", "Tecnologías nuevas para el equipo", "Sprints iniciales más lentos", "4", "3", "12", "Mitigar", "EQ-01", "2027-02-05"]
+      - ["RSK-04", "Baja disponibilidad de integrantes en algunos periodos", "Otras actividades académicas o personales", "Menor capacidad por sprint", "3", "3", "9", "Mitigar", "EQ-01", "Cada sprint"]
+      - ["RSK-05", "No contar con productores reales para validar el problema", "Distancia con productores de la zona", "Evidencias débiles y supuestos sin validar", "3", "3", "9", "Mitigar", "EQ-04", "2026-12-04"]
+      - ["RSK-06", "Límites de los planes gratuitos de hosting", "Cuotas de uso", "Caídas del ambiente de pruebas", "2", "3", "6", "Aceptar", "EQ-01", "2027-05-28"]
+
+  - indice: 44
+    encabezado: ["Riesgo", "Estrategia"]
+    filas:
+      - ["RSK-01", "Mitigar", "Integrar Wompi detrás del puerto PasarelaPagos y probarlo con un doble falso desde S05", "Completar el flujo con el doble falso y documentar la limitación", "Webhook sin funcionar al final de S06", "Abierto"]
+      - ["RSK-02", "Evitar", "Toda funcionalidad nueva pasa por control de cambios; el MVP es RF-001 a RF-030", "Mover lo nuevo a EXC (posterior al MVP)", "Historia fuera del catálogo propuesta en un sprint", "Abierto"]
+      - ["RSK-03", "Mitigar", "Plantilla de módulo de referencia en S01 y revisión de código en cada PR", "Pareo entre integrantes", "Velocidad de S01 menor al 50 % de lo planeado", "Abierto"]
+      - ["RSK-04", "Mitigar", "Acordar disponibilidad por sprint en la planificación", "Redistribuir historias entre integrantes", "Integrante sin avance en una semana", "Abierto"]
+      - ["RSK-05", "Mitigar", "Buscar productores a través del centro de formación o asociaciones locales", "Validar con compradores y fuentes secundarias (EVI-02)", "Sin entrevistas al 2026-11-27", "Abierto"]
+      - ["RSK-06", "Aceptar", "Usar datos de prueba ligeros", "Cambiar de proveedor gratuito", "Ambiente caído más de un día", "Abierto"]
+
+  - indice: 51
+    encabezado: ["Problema / causa", "Objetivo"]
+    filas:
+      - ["PRO-01", "OBJ-03", "IND-02", "ALC-04, ALC-05", "RSK-01"]
+      - ["CAU-01", "OBJ-02", "IND-02", "ALC-02, ALC-03", "RSK-05"]
+      - ["CAU-02", "OBJ-03", "IND-03", "ALC-05", "RSK-01"]
+      - ["CAU-03", "OBJ-02", "IND-02", "ALC-03", "RSK-03"]
+      - ["EFE-03", "OBJ-04", "IND-02", "ALC-06, ALC-07", "RSK-02"]
+
+  - indice: 52
+    encabezado: ["ID", "Fuente"]
+    filas:
+      - ["REF-01", "Especificación de diseño de AgroConecta", "Equipo AgroConecta", "2026-11-10", "docs/diseno/specs/2026-11-10-agroconecta-design.md", "Alcance, reglas de negocio y arquitectura"]
+      - ["REF-02", "Ley 1581 de 2012 (protección de datos personales)", "Congreso de la República de Colombia", "2012", "[PENDIENTE: enlace consultado]", "Tratamiento de datos personales"]
+      - ["REF-03", "Documentación de la pasarela Wompi", "Wompi", "[PENDIENTE: fecha de consulta]", "[PENDIENTE: enlace consultado]", "Integración de pagos (DEP-01)"]
+      - ["REF-04", "Codificación DIVIPOLA", "DANE", "[PENDIENTE: fecha de consulta]", "[PENDIENTE: enlace consultado]", "Departamentos y municipios (DEP-03)"]
+
+  - indice: 53
+    encabezado: ["ID", "Información pendiente"]
+    filas:
+      - ["PEN-01", "Centro de formación, regional, ficha, instructor y nombres de los integrantes", "EQ-01", "2026-11-20", "Identificación del documento", "Abierto"]
+      - ["PEN-02", "Evidencias EVI-01 a EVI-03 (entrevistas, precios SIPSA, canales actuales)", "EQ-04", "2026-11-27", "Validación del problema", "Abierto"]
+      - ["PEN-03", "Dato y fuente sobre la participación de intermediarios en el precio final", "EQ-04", "2026-11-27", "Magnitud del problema y justificación", "Abierto"]
+      - ["PEN-04", "Horas por semana de cada integrante", "EQ-01", "2026-11-20", "Estimación de esfuerzo", "Abierto"]
+      - ["PEN-05", "URL del repositorio y enlaces de las referencias", "EQ-01", "2026-11-27", "Trazabilidad", "Abierto"]

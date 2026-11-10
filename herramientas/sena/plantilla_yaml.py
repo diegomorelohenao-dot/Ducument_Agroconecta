@@ -28,8 +28,8 @@ def cargar_contexto(dir_contenido: Path) -> dict:
 def _valor_marcador(marcador: str, ctx: dict) -> str:
     prefijo, _, resto = marcador.partition(".")
     try:
-        if prefijo == "comun":
-            valor: Any = ctx["comun"]
+        if prefijo in ("comun", "catalogo"):
+            valor: Any = ctx[prefijo]
             for parte in resto.split("."):
                 valor = valor[parte]
             return str(valor)

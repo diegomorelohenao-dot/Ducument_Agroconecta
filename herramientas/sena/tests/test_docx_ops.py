@@ -1,4 +1,5 @@
 import pytest
+from docx.shared import Pt
 
 from docx_ops import (
     PlantillaCambiadaError,
@@ -31,9 +32,32 @@ def test_escribir_celda_conserva_formato(doc_prueba):
     assert len(celda.paragraphs) == 2
 
 
+def test_celda_vacia_toma_formato_de_la_fila(doc_prueba):
+    t = doc_prueba.tables[1]
+    r = t.cell(1, 0).paragraphs[0].runs[0]
+    r.font.size = Pt(8)
+    escribir_celda(t.cell(1, 1), "nuevo")  # celda sin formato propio
+    assert t.cell(1, 1).paragraphs[0].runs[0].font.size.pt == 8
+
+
+def test_run_vacio_no_impone_formato(doc_prueba):
+    t = doc_prueba.tables[1]
+    t.cell(1, 0).paragraphs[0].runs[0].font.size = Pt(8)
+    vacio = t.cell(1, 1).paragraphs[0].add_run("")
+    vacio.font.size = Pt(14)
+    escribir_celda(t.cell(1, 1), "nuevo")
+    assert t.cell(1, 1).paragraphs[0].runs[0].font.size.pt == 8
+
+
 def test_llenar_campos(doc_prueba):
     llenar_campos(doc_prueba.tables[0], {"Ficha": "3045678"})
     assert doc_prueba.tables[0].cell(1, 1).text == "3045678"
+
+
+def test_llenar_campos_lista_llena_ultimas_columnas(doc_prueba):
+    t = doc_prueba.tables[1]
+    llenar_campos(t, {"RF-002": ["Iniciar sesión", "Aprobado"]})
+    assert [c.text for c in t.rows[2].cells] == ["RF-002", "Iniciar sesión", "Aprobado"]
 
 
 def test_llenar_campos_clave_inexistente(doc_prueba):

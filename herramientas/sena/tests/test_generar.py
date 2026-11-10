@@ -63,6 +63,10 @@ def test_resolver_marcadores(ctx_prueba):
     assert resolver({"a": ["{{comun.integrantes.EQ-01}}"]}, ctx_prueba) == {"a": ["Ana"]}
 
 
+def test_resolver_ruta_del_catalogo(ctx_prueba):
+    assert resolver("{{catalogo.reglas.RN-001.texto}}", ctx_prueba) == "Solo verificados"
+
+
 def test_marcador_desconocido_falla(ctx_prueba):
     with pytest.raises(KeyError, match="comun.nada"):
         resolver("{{comun.nada}}", ctx_prueba)

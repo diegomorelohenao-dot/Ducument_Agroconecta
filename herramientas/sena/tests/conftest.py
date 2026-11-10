@@ -17,6 +17,36 @@ def _tabla(doc, filas):
     return t
 
 
+def generar_y_abrir(nombre: str):
+    """Genera el documento real en un directorio temporal y lo abre."""
+    import tempfile
+
+    from generar import CONTENIDO, PLANTILLAS, generar_documento
+    from plantilla_yaml import cargar_contexto
+
+    salida = generar_documento(
+        CONTENIDO / f"{nombre}.yaml", PLANTILLAS, Path(tempfile.mkdtemp()), cargar_contexto(CONTENIDO)
+    )
+    return Document(salida)
+
+
+def textos_parrafos(doc) -> list[str]:
+    return [p.text for p in doc.paragraphs]
+
+
+def tabla_texto(t) -> str:
+    return "\n".join(c.text for fila in t.rows for c in fila.cells)
+
+
+def tabla_por_encabezado(doc, prefijos: list[str]):
+    from docx_ops import _encabezado_coincide
+
+    for t in doc.tables:
+        if _encabezado_coincide(t, prefijos):
+            return t
+    raise LookupError(f"Ninguna tabla con encabezado {prefijos}")
+
+
 @pytest.fixture
 def doc_prueba():
     doc = Document()
