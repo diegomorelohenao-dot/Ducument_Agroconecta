@@ -1,0 +1,18 @@
+# Datos de identificación compartidos por los 4 documentos.
+# Reemplace cada [PENDIENTE: ...] y regenere con: herramientas/sena/generar.py todos
+proyecto: AgroConecta
+programa: Tecnología en Análisis y Desarrollo de Software – ADSO
+centro: "[PENDIENTE: centro de formación]"
+regional: "[PENDIENTE: regional]"
+ficha: "[PENDIENTE: número de ficha]"
+instructor: "[PENDIENTE: nombre del instructor]"
+fecha_entrega: "2026-12-04"
+version: "1.0"
+estado: En revisión
+equipo_texto: "Equipo AgroConecta (4 integrantes)"
+integrantes:
+  EQ-01: "[PENDIENTE: nombre integrante EQ-01]"
+  EQ-02: "[PENDIENTE: nombre integrante EQ-02]"
+  EQ-03: "[PENDIENTE: nombre integrante EQ-03]"
+  EQ-04: "[PENDIENTE: nombre integrante EQ-04]"
+horas_semana: "[PENDIENTE: horas por semana por integrante]"

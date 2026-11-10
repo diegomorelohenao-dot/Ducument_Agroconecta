@@ -34,6 +34,15 @@ def _aplicar(t, op: dict, ctx: dict) -> None:
 
 def generar_documento(yaml_doc: Path, dir_plantillas: Path, dir_salida: Path, ctx: dict) -> Path:
     datos = cargar_yaml(yaml_doc)
+    doc, _ = construir(datos, dir_plantillas, ctx)
+    dir_salida.mkdir(parents=True, exist_ok=True)
+    salida = dir_salida / datos["salida"]
+    doc.save(salida)
+    return salida
+
+
+def construir(datos: dict, dir_plantillas: Path, ctx: dict):
+    """Devuelve (documento lleno, tablas que se llenaron)."""
     doc = Document(dir_plantillas / datos["plantilla"])
 
     # 1) Resolver TODAS las tablas por índice original antes de modificar nada.
@@ -63,11 +72,7 @@ def generar_documento(yaml_doc: Path, dir_plantillas: Path, dir_salida: Path, ct
         _aplicar(t, op, ctx)
     for linea in datos.get("lineas", []):
         docx_ops.rellenar_linea(doc, linea["etiqueta"], resolver(linea["valor"], ctx))
-
-    dir_salida.mkdir(parents=True, exist_ok=True)
-    salida = dir_salida / datos["salida"]
-    doc.save(salida)
-    return salida
+    return doc, [t for t, _ in entradas + planes]
 
 
 def main(argv: list[str]) -> int:
