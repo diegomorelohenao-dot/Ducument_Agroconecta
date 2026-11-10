@@ -3,6 +3,10 @@
 Generado por `herramientas/sena/validar.py`. El equipo debe completar estos datos
 en los YAML de `docs/sena/contenido/` y regenerar antes del 2026-12-04.
 
+## backlog.yaml
+- [PENDIENTE: acuerdo del equipo]
+- [PENDIENTE: valor del mínimo de retiro]
+
 ## comun.yaml
 - [PENDIENTE: nombre integrante EQ-01]
 - [PENDIENTE: nombre integrante EQ-02]

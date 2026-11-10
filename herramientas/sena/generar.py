@@ -72,6 +72,8 @@ def construir(datos: dict, dir_plantillas: Path, ctx: dict):
         _aplicar(t, op, ctx)
     for linea in datos.get("lineas", []):
         docx_ops.rellenar_linea(doc, linea["etiqueta"], resolver(linea["valor"], ctx))
+    for img in datos.get("imagenes", []):
+        docx_ops.insertar_imagen_despues_de(doc, img["despues_de"], RAIZ / img["ruta"], img["ancho_cm"])
     return doc, [t for t, _ in entradas + planes]
 
 

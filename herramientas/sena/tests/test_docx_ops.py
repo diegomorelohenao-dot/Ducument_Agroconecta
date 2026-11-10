@@ -103,6 +103,46 @@ def test_clonar_bloque(doc_prueba):
     assert doc_prueba.tables[5]._tbl is nuevas[1]._tbl
 
 
+def _png_minimo(ruta):
+    import struct
+    import zlib
+
+    def bloque(tipo, datos):
+        return struct.pack(">I", len(datos)) + tipo + datos + struct.pack(">I", zlib.crc32(tipo + datos))
+
+    ihdr = struct.pack(">IIBBBBB", 1, 1, 8, 2, 0, 0, 0)
+    ruta.write_bytes(b"\x89PNG\r\n\x1a\n" + bloque(b"IHDR", ihdr)
+                     + bloque(b"IDAT", zlib.compress(b"\x00\xff\xff\xff")) + bloque(b"IEND", b""))
+    return ruta
+
+
+def test_insertar_imagen_despues_de(doc_prueba, tmp_path):
+    from docx_ops import insertar_imagen_despues_de
+
+    png = _png_minimo(tmp_path / "x.png")
+    insertar_imagen_despues_de(doc_prueba, "Limitaciones:", png, 10)
+    textos = [p.text for p in doc_prueba.paragraphs]
+    i = textos.index("Limitaciones:")
+    assert doc_prueba.paragraphs[i + 1]._p.xpath(".//pic:pic")
+    assert len(doc_prueba.inline_shapes) == 1
+
+
+def test_insertar_imagen_parrafo_inexistente(doc_prueba, tmp_path):
+    from docx_ops import insertar_imagen_despues_de
+
+    with pytest.raises(KeyError):
+        insertar_imagen_despues_de(doc_prueba, "No existe", _png_minimo(tmp_path / "x.png"), 10)
+
+
+def test_clonar_bloque_omite_titulos(doc_prueba):
+    t2, t3 = doc_prueba.tables[2], doc_prueba.tables[3]
+    titulo = doc_prueba.add_heading("9.4 Flujo", level=2)
+    t2._tbl.addnext(titulo._p)  # título entre las dos tablas del bloque
+    clonar_bloque(t2, t3)
+    assert [p.text for p in doc_prueba.paragraphs].count("9.4 Flujo") == 1
+    assert [p.text for p in doc_prueba.paragraphs].count("entre tablas") == 2
+
+
 def test_clonar_bloque_separa_con_parrafo(doc_prueba):
     # Word fusiona tablas contiguas: el clon debe quedar separado por un párrafo
     t3 = doc_prueba.tables[3]

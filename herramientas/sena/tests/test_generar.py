@@ -86,6 +86,18 @@ def test_campos_calculados(ctx_prueba):
     assert hu == [["HU-001", "RF-001", "CU-001"]]
 
 
+def test_imagenes_del_yaml(tmp_path, plantilla_prueba, ctx_prueba):
+    from test_docx_ops import _png_minimo
+
+    png = _png_minimo(tmp_path / "d.png")
+    y = _yaml(tmp_path, {
+        "plantilla": "prueba.docx", "salida": "salida.docx",
+        "imagenes": [{"despues_de": "Limitaciones:", "ruta": str(png), "ancho_cm": 8}],
+    })
+    d = Document(generar_documento(y, plantilla_prueba.parent, tmp_path / "out", ctx_prueba))
+    assert len(d.inline_shapes) == 1
+
+
 def test_clonado_no_corre_indices(tmp_path, plantilla_prueba, ctx_prueba):
     y = _yaml(tmp_path, {
         "plantilla": "prueba.docx",

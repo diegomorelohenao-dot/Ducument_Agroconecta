@@ -192,6 +192,15 @@ def rellenar_linea(doc: Document, etiqueta: str, valor: str) -> None:
     raise KeyError(f"Línea '{etiqueta}' no encontrada")
 
 
+def _es_titulo(el) -> bool:
+    """Párrafo con estilo de título (Heading N / Título N; Word guarda 'Ttulo' como id)."""
+    if el.tag != qn("w:p"):
+        return False
+    estilo = el.find(f"{qn('w:pPr')}/{qn('w:pStyle')}")
+    valor = (estilo.get(qn("w:val")) or "").lower() if estilo is not None else ""
+    return "heading" in valor or "tulo" in valor
+
+
 def clonar_bloque(primera: Table, ultima: Table) -> list[Table]:
     elementos = []
     el = primera._tbl
@@ -207,9 +216,30 @@ def clonar_bloque(primera: Table, ultima: Table) -> list[Table]:
     ancla = separador
     nuevas = []
     for original in elementos:
+        if _es_titulo(original):
+            continue  # los títulos no se repiten en cada ficha clonada
         copia = deepcopy(original)
         ancla.addnext(copia)
         ancla = copia
         if copia.tag == qn("w:tbl"):
             nuevas.append(Table(copia, primera._parent))
     return nuevas
+
+
+def insertar_imagen_despues_de(doc: Document, prefijo_parrafo: str, ruta, ancho_cm: float) -> None:
+    """Inserta la imagen en un párrafo nuevo, centrado, justo después del primer párrafo
+    cuyo texto empieza por `prefijo_parrafo`."""
+    from docx.enum.text import WD_ALIGN_PARAGRAPH
+    from docx.shared import Cm
+    from docx.text.paragraph import Paragraph
+
+    objetivo = normalizar(prefijo_parrafo)
+    for p in doc.paragraphs:
+        if normalizar(p.text).startswith(objetivo):
+            nuevo = p._p.makeelement(qn("w:p"), {})
+            p._p.addnext(nuevo)
+            parrafo = Paragraph(nuevo, p._parent)
+            parrafo.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            parrafo.add_run().add_picture(str(ruta), width=Cm(ancho_cm))
+            return
+    raise KeyError(f"Párrafo '{prefijo_parrafo}' no encontrado")
