@@ -23,7 +23,7 @@ tablas:
       "Estado": "{{comun.estado}}"
       "Propietario": "{{comun.integrantes.EQ-04}} (EQ-04, análisis)"
       "Revisor funcional": "{{comun.integrantes.EQ-04}} (EQ-04, Product Owner)"
-      "Revisor técnico": "{{comun.integrantes.EQ-01}} (EQ-01, líder técnico)"
+      "Revisor técnico": "{{comun.integrantes.EQ-02}} (EQ-02, líder técnico)"
       "Revisor académico": "{{comun.instructor}}"
       "Ubicación oficial": "Repositorio del proyecto, docs/sena"
 
@@ -105,15 +105,15 @@ tablas:
       - ["RSD-03", "Supuesto", "La plataforma no gestiona transporte: el productor entrega o el comprador recoge", "Si es falso, se agrega logística (EXC-06)", "EQ-04", "Por validar"]
       - ["RSD-04", "Supuesto", "El administrador verifica productores, resuelve disputas y gestiona liquidaciones", "Si es falso, se automatiza la verificación", "EQ-04", "Por validar"]
       - ["RSD-05", "Supuesto", "Basta un comprobante del pedido, sin facturación electrónica DIAN", "Si es falso, se integra facturación (EXC-04)", "EQ-04", "Por validar"]
-      - ["RSD-06", "Dependencia", "Credenciales del entorno sandbox de Wompi", "Bloquea RF-018, RF-019 y RF-023", "EQ-02", "Abierta"]
+      - ["RSD-06", "Dependencia", "Credenciales del entorno sandbox de Wompi", "Bloquea RF-018, RF-019 y RF-023", "EQ-01", "Abierta"]
       - ["RSD-07", "Dependencia", "Catálogo DIVIPOLA del DANE", "Necesario para RF-004 y RF-009", "EQ-02", "Abierta"]
 
   - indice: 18
     encabezado: ["ID", "Criterio"]
     filas:
       - ["CA-ALC-01", "Los 4 documentos están entregados y son consistentes entre sí", "Inspección (validador de documentación)", "EQ-04", "Salida de validar.py sin errores"]
-      - ["CA-ALC-02", "Se recorre el flujo completo: registro y verificación del productor, publicación, compra pagada en sandbox, entrega confirmada, comisión y saldo registrados, liquidación solicitada y marcada como pagada", "Demostración y prueba E2E", "EQ-02", "Ejecución de CI y video de la demostración"]
-      - ["CA-ALC-03", "Todas las reglas RN-001 a RN-015 tienen prueba unitaria automatizada", "Prueba", "EQ-02", "Reporte de pruebas (IND-03)"]
+      - ["CA-ALC-02", "Se recorre el flujo completo: registro y verificación del productor, publicación, compra pagada en sandbox, entrega confirmada, comisión y saldo registrados, liquidación solicitada y marcada como pagada", "Demostración y prueba E2E", "EQ-01", "Ejecución de CI y video de la demostración"]
+      - ["CA-ALC-03", "Todas las reglas RN-001 a RN-015 tienen prueba unitaria automatizada", "Prueba", "EQ-01", "Reporte de pruebas (IND-03)"]
 
   - indice: 19
     encabezado: ["ID", "Nombre", "Módulo"]
@@ -193,8 +193,8 @@ tablas:
   - indice: 35
     encabezado: ["ID", "Sistema / interfaz"]
     filas:
-      - ["INT-01", "Wompi (sandbox)", "API REST y webhook", "Cobrar pedidos y recibir el resultado del pago", "Referencia, monto, estado de la transacción", "Según el proveedor", "EQ-02"]
-      - ["INT-02", "Servicio de correo SMTP", "Correo", "Enviar notificaciones por correo (RF-030)", "Destinatario, asunto y mensaje", "Según el proveedor", "EQ-01"]
+      - ["INT-01", "Wompi (sandbox)", "API REST y webhook", "Cobrar pedidos y recibir el resultado del pago", "Referencia, monto, estado de la transacción", "Según el proveedor", "EQ-01"]
+      - ["INT-02", "Servicio de correo SMTP", "Correo", "Enviar notificaciones por correo (RF-030)", "Destinatario, asunto y mensaje", "Según el proveedor", "EQ-02"]
       - ["INT-03", "DIVIPOLA (DANE)", "Archivo (carga inicial)", "Poblar departamentos y municipios", "Código DANE y nombre", "Carga única", "EQ-02"]
 
   - indice: 36
@@ -305,7 +305,7 @@ grupos:
             "Versión objetivo": "MVP"
             "Criterios de aceptación": "Ver escenarios de RF-019 en la sección 5.4."
             "Método de verificación": "Prueba de integración del webhook (aprobado, duplicado, firma inválida, sin stock)."
-            "Responsable de validación": "EQ-02"
+            "Responsable de validación": "EQ-01"
             "Estado": "Aprobado"
       - 20:
           campos:
@@ -327,7 +327,7 @@ grupos:
             "Versión objetivo": "MVP"
             "Criterios de aceptación": "Ver escenario de RF-020 en la sección 5.4."
             "Método de verificación": "Prueba unitaria del cálculo y prueba de integración de la transacción."
-            "Responsable de validación": "EQ-02"
+            "Responsable de validación": "EQ-01"
             "Estado": "Aprobado"
 
   - tablas: [24]
@@ -344,7 +344,7 @@ grupos:
             "Condiciones de medición": "Envío repetido del mismo evento y de un evento con firma alterada en el ambiente de pruebas."
             "Método de verificación": "Prueba de integración automatizada."
             "Evidencia esperada": "Reporte de pruebas en CI."
-            "Responsable": "EQ-02"
+            "Responsable": "EQ-01"
             "Prioridad": "Alta"
             "Versión objetivo": "MVP"
             "Estado": "Aprobado"
@@ -359,7 +359,7 @@ grupos:
             "Condiciones de medición": "1.000 productos activos, ambiente desplegado de pruebas."
             "Método de verificación": "Prueba de carga con una herramienta de medición."
             "Evidencia esperada": "Reporte de la prueba de carga."
-            "Responsable": "EQ-01"
+            "Responsable": "EQ-02"
             "Prioridad": "Media"
             "Versión objetivo": "MVP"
             "Estado": "Aprobado"

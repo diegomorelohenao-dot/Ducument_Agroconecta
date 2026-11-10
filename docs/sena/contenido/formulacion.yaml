@@ -33,7 +33,7 @@ tablas:
       "Responsable de elaboración": "Equipo AgroConecta (EQ-01 a EQ-04)"
       "Responsable de revisión": "{{comun.instructor}}"
       "Responsable de aprobación": "{{comun.instructor}} (patrocinador)"
-      "Repositorio oficial": "[PENDIENTE: URL del repositorio]"
+      "Repositorio oficial": "https://github.com/diegomorelohenao-dot/Ducument_Agroconecta"
 
   - indice: 2
     encabezado: ["Versión", "Fecha", "Descripción"]
@@ -55,7 +55,7 @@ tablas:
       "Fecha de inicio propuesta": "2026-11-10"
       "Fecha de finalización propuesta": "2027-06-11"
       "Versión o etapa objetivo": "MVP 1.0"
-      "Repositorio principal": "[PENDIENTE: URL del repositorio]"
+      "Repositorio principal": "https://github.com/diegomorelohenao-dot/Ducument_Agroconecta"
       "Ubicación de la documentación": "Carpeta docs/ del repositorio (docs/sena y docs/diseno/specs)"
 
   - indice: 7
@@ -161,7 +161,7 @@ tablas:
     filas:
       - ["BEN-01", "Mayor margen para el productor al vender sin intermediarios", "Productores (STK-01)", "Directo", "[PENDIENTE: indicador posterior al MVP]", "Largo", "EQ-04"]
       - ["BEN-02", "Precio más justo y origen conocido para el comprador", "Compradores (STK-02, STK-03)", "Directo", "[PENDIENTE: indicador posterior al MVP]", "Largo", "EQ-04"]
-      - ["BEN-03", "Compra segura: el dinero queda retenido hasta la entrega", "Compradores y productores", "Directo", "IND-03", "Corto", "EQ-02"]
+      - ["BEN-03", "Compra segura: el dinero queda retenido hasta la entrega", "Compradores y productores", "Directo", "IND-03", "Corto", "EQ-01"]
 
   - indice: 23
     encabezado: ["Para", "Que necesita"]
@@ -173,8 +173,8 @@ tablas:
     filas:
       - ["IND-01", "Documentos SENA entregados", "OBJ-01", "0", "4", "Documentos", "Registro de entregables", "Por hito", "EQ-01"]
       - ["IND-02", "RF del MVP implementados y aceptados", "OBJ-02, OBJ-03, OBJ-04", "0 %", "100 % (30 de 30)", "Porcentaje", "Registro de aceptación del backlog", "Por sprint", "EQ-04"]
-      - ["IND-03", "Reglas de negocio con prueba unitaria automatizada", "OBJ-03", "0", "15", "Reglas", "Reporte de pruebas en CI", "Por sprint", "EQ-02"]
-      - ["IND-04", "Camino principal E2E pasando en CI", "OBJ-05", "0 %", "100 % de las ejecuciones en la semana de entrega", "Porcentaje", "Historial de CI (GitHub Actions)", "Semanal", "EQ-02"]
+      - ["IND-03", "Reglas de negocio con prueba unitaria automatizada", "OBJ-03", "0", "15", "Reglas", "Reporte de pruebas en CI", "Por sprint", "EQ-01"]
+      - ["IND-04", "Camino principal E2E pasando en CI", "OBJ-05", "0 %", "100 % de las ejecuciones en la semana de entrega", "Porcentaje", "Historial de CI (GitHub Actions)", "Semanal", "EQ-01"]
 
   - indice: 26
     encabezado: ["ID", "Capacidad o módulo"]
@@ -214,8 +214,8 @@ tablas:
       - ["ENTG-02", "Gestión de interesados y del proyecto", "Interesados, equipo, metodología, cronograma y riesgos", "Revisado por el instructor", "EQ-01", "2026-12-04", "ENTG-01"]
       - ["ENTG-03", "Alcance y especificación de requisitos", "RF, RNF, reglas de negocio, actores y datos", "Revisado por el instructor", "EQ-04", "2026-12-04", "ENTG-01"]
       - ["ENTG-04", "Backlog, historias y casos de uso", "Épicas, historias con criterios y casos de uso", "Revisado por el instructor", "EQ-04", "2026-12-04", "ENTG-03"]
-      - ["ENTG-05", "Software MVP desplegado", "Plataforma web PWA con RF-001 a RF-030", "IND-02 = 100 % e IND-04 en verde", "EQ-01", "2027-06-11", "ENTG-03, ENTG-04"]
-      - ["ENTG-06", "Informe de pruebas", "Resultados de pruebas unitarias, de integración y E2E", "IND-03 = 15 de 15", "EQ-02", "2027-06-11", "ENTG-05"]
+      - ["ENTG-05", "Software MVP desplegado", "Plataforma web PWA con RF-001 a RF-030", "IND-02 = 100 % e IND-04 en verde", "EQ-02", "2027-06-11", "ENTG-03, ENTG-04"]
+      - ["ENTG-06", "Informe de pruebas", "Resultados de pruebas unitarias, de integración y E2E", "IND-03 = 15 de 15", "EQ-01", "2027-06-11", "ENTG-05"]
       - ["ENTG-07", "Manual de usuario", "Guía de uso para productor, comprador y administrador", "Revisado por el instructor", "EQ-03", "2027-06-11", "ENTG-05"]
 
   - indice: 31
@@ -233,32 +233,32 @@ tablas:
     campos:
       "Patrocinador": ["{{comun.instructor}} (instructor SENA)", "Proveer orientación, remover impedimentos y aprobar los entregables", "Aprueba entregables e hitos"]
       "Cliente o representante funcional": ["{{comun.integrantes.EQ-04}} (EQ-04, Product Owner)", "Representar a productores y compradores, priorizar el backlog y aceptar historias", "Acepta o devuelve historias"]
-      "Líder del proyecto": ["{{comun.integrantes.EQ-01}} (EQ-01)", "Coordinar, planificar, comunicar y controlar riesgos y cambios", "Organiza el trabajo del equipo; escala cambios de alcance"]
+      "Líder del proyecto": ["{{comun.integrantes.EQ-01}} (EQ-01, Scrum Master)", "Coordinar, planificar, comunicar y controlar riesgos y cambios", "Organiza el trabajo del equipo; escala cambios de alcance"]
       "Instructor responsable": ["{{comun.instructor}}", "Orientar, revisar evidencias y evaluar", "Evalúa y valida los entregables"]
 
   - indice: 33
     encabezado: ["Integrante", "Rol principal"]
     filas:
-      - ["{{comun.integrantes.EQ-01}}", "Líder y backend", "Coordinación, arquitectura e implementación del backend", "{{comun.horas_semana}}", "Commits, PR y actas"]
-      - ["{{comun.integrantes.EQ-02}}", "Backend (pagos) y QA", "Módulo de pagos, pruebas automatizadas y CI", "{{comun.horas_semana}}", "Commits, PR y reportes de pruebas"]
+      - ["{{comun.integrantes.EQ-01}}", "Scrum Master y líder del proyecto; backend (pagos) y QA", "Facilitar Scrum y coordinar el equipo; módulo de pagos, pruebas automatizadas y CI", "{{comun.horas_semana}}", "Commits, PR, actas y reportes de pruebas"]
+      - ["{{comun.integrantes.EQ-02}}", "Technical Leader; backend y arquitectura", "Arquitectura, revisión de código y backend (identidad, productores, catálogo)", "{{comun.horas_semana}}", "Commits, PR y revisiones de código"]
       - ["{{comun.integrantes.EQ-03}}", "Frontend y UX/UI", "Diseño de interfaces e implementación del frontend PWA", "{{comun.horas_semana}}", "Commits, PR y prototipos"]
-      - ["{{comun.integrantes.EQ-04}}", "Frontend y análisis / Product Owner", "Requisitos, backlog, documentación y frontend", "{{comun.horas_semana}}", "Commits, PR y documentos"]
+      - ["{{comun.integrantes.EQ-04}}", "Product Owner; frontend y análisis", "Requisitos, backlog, documentación y frontend", "{{comun.horas_semana}}", "Commits, PR y documentos"]
 
   - indice: 34
     encabezado: ["Categoría", "Recurso"]
     campos:
       "Talento humano": ["4 integrantes del equipo", "Disponible", "$0", "EQ-01", "Dedicación: {{comun.horas_semana}}"]
       "Hardware": ["Computadores personales del equipo", "Disponible", "$0", "Cada integrante", "—"]
-      "Software / licencias": ["Herramientas libres: Node.js, NestJS, React, PostgreSQL, VS Code, Git", "Disponible", "$0", "EQ-01", "Sin licencias pagas"]
-      "Infraestructura / hosting": ["Vercel (frontend) y Railway o Render (API y base de datos), planes gratuitos", "Disponible", "$0", "EQ-01", "Límites de los planes gratuitos (RSK-06)"]
-      "Datos / acceso a información": ["Catálogo DIVIPOLA (DANE) y Wompi sandbox", "Disponible", "$0", "EQ-02", "Credenciales sandbox por gestionar (DEP-01)"]
+      "Software / licencias": ["Herramientas libres: Node.js, NestJS, React, PostgreSQL, VS Code, Git", "Disponible", "$0", "EQ-02", "Sin licencias pagas"]
+      "Infraestructura / hosting": ["Vercel (frontend) y Railway o Render (API y base de datos), planes gratuitos", "Disponible", "$0", "EQ-02", "Límites de los planes gratuitos (RSK-06)"]
+      "Datos / acceso a información": ["Catálogo DIVIPOLA (DANE) y Wompi sandbox", "Disponible", "$0", "EQ-01", "Credenciales sandbox por gestionar (DEP-01)"]
       "Tiempo": ["2026-11-10 a 2027-06-11", "Disponible", "—", "EQ-01", "Fechas fijas (RES-01)"]
       "Asesoría especializada": ["Instructor SENA", "Parcial", "$0", "EQ-01", "Según la programación del centro"]
 
   - indice: 35
     encabezado: ["Dimensión", "Estado"]
     campos:
-      "Técnica": ["Viable", "Stack gratuito y documentado, con curva de aprendizaje (RSK-03); la integración con Wompi es el punto de mayor riesgo", "Prueba temprana de integración en S05 y S06 (RSK-01)", "EQ-02", "2027-04-02"]
+      "Técnica": ["Viable", "Stack gratuito y documentado, con curva de aprendizaje (RSK-03); la integración con Wompi es el punto de mayor riesgo", "Prueba temprana de integración en S05 y S06 (RSK-01)", "EQ-01", "2027-04-02"]
       "Operativa": ["Viable", "PWA usable desde el celular", "Validar con productores reales", "EQ-04", "2027-05-28"]
       "Económica": ["Viable", "Costo $0 con planes gratuitos", "Vigilar límites de hosting (RSK-06)", "EQ-01", "2027-06-11"]
       "Temporal": ["Condicionada", "7 meses para 30 RF con 4 personas", "Control del alcance del MVP (RSK-02)", "EQ-01", "Cada sprint"]
@@ -279,7 +279,7 @@ tablas:
     filas:
       - ["RES-01", "Temporal", "Documentación el 2026-12-04 y software el 2027-06-11", "No hay margen para ampliar el alcance", "EQ-01"]
       - ["RES-02", "Económica", "Costo de infraestructura $0 (planes gratuitos)", "Límites de capacidad y disponibilidad", "EQ-01"]
-      - ["RES-03", "Técnica", "La pasarela de pagos opera solo en modo sandbox", "No se mueve dinero real", "EQ-02"]
+      - ["RES-03", "Técnica", "La pasarela de pagos opera solo en modo sandbox", "No se mueve dinero real", "EQ-01"]
       - ["RES-04", "Organizacional", "Equipo de 4 personas", "Capacidad limitada por sprint", "EQ-01"]
 
   - indice: 39
@@ -303,12 +303,12 @@ tablas:
   - indice: 43
     encabezado: ["ID", "Riesgo"]
     filas:
-      - ["RSK-01", "Dificultades al integrar la pasarela Wompi (firma, webhooks, sandbox)", "Poca experiencia con pagos en línea", "Retraso de OBJ-03", "3", "4", "12", "Mitigar", "EQ-02", "2027-03-19"]
+      - ["RSK-01", "Dificultades al integrar la pasarela Wompi (firma, webhooks, sandbox)", "Poca experiencia con pagos en línea", "Retraso de OBJ-03", "3", "4", "12", "Mitigar", "EQ-01", "2027-03-19"]
       - ["RSK-02", "Crecimiento del alcance más allá del MVP", "Ideas nuevas durante el desarrollo", "Incumplimiento de la fecha de entrega", "3", "4", "12", "Evitar", "EQ-01", "Cada sprint"]
-      - ["RSK-03", "Curva de aprendizaje de NestJS y Clean Architecture", "Tecnologías nuevas para el equipo", "Sprints iniciales más lentos", "4", "3", "12", "Mitigar", "EQ-01", "2027-02-05"]
+      - ["RSK-03", "Curva de aprendizaje de NestJS y Clean Architecture", "Tecnologías nuevas para el equipo", "Sprints iniciales más lentos", "4", "3", "12", "Mitigar", "EQ-02", "2027-02-05"]
       - ["RSK-04", "Baja disponibilidad de integrantes en algunos periodos", "Otras actividades académicas o personales", "Menor capacidad por sprint", "3", "3", "9", "Mitigar", "EQ-01", "Cada sprint"]
       - ["RSK-05", "No contar con productores reales para validar el problema", "Distancia con productores de la zona", "Evidencias débiles y supuestos sin validar", "3", "3", "9", "Mitigar", "EQ-04", "2026-12-04"]
-      - ["RSK-06", "Límites de los planes gratuitos de hosting", "Cuotas de uso", "Caídas del ambiente de pruebas", "2", "3", "6", "Aceptar", "EQ-01", "2027-05-28"]
+      - ["RSK-06", "Límites de los planes gratuitos de hosting", "Cuotas de uso", "Caídas del ambiente de pruebas", "2", "3", "6", "Aceptar", "EQ-02", "2027-05-28"]
 
   - indice: 44
     encabezado: ["Riesgo", "Estrategia"]
@@ -340,8 +340,8 @@ tablas:
   - indice: 53
     encabezado: ["ID", "Información pendiente"]
     filas:
-      - ["PEN-01", "Nombres de los integrantes del equipo", "EQ-01", "2026-11-20", "Identificación del documento", "Abierto"]
+      - ["PEN-01", "Nombres de los integrantes del equipo", "EQ-01", "2026-11-20", "Identificación del documento", "Cerrado"]
       - ["PEN-02", "Evidencias EVI-01 a EVI-03 (entrevistas, precios SIPSA, canales actuales)", "EQ-04", "2026-11-27", "Validación del problema", "Abierto"]
       - ["PEN-03", "Dato y fuente sobre la participación de intermediarios en el precio final", "EQ-04", "2026-11-27", "Magnitud del problema y justificación", "Abierto"]
       - ["PEN-04", "Horas por semana de cada integrante", "EQ-01", "2026-11-20", "Estimación de esfuerzo", "Abierto"]
-      - ["PEN-05", "URL del repositorio y enlaces de las referencias", "EQ-01", "2026-11-27", "Trazabilidad", "Abierto"]
+      - ["PEN-05", "Enlaces de las referencias (el repositorio ya está definido)", "EQ-01", "2026-11-27", "Trazabilidad", "Abierto"]

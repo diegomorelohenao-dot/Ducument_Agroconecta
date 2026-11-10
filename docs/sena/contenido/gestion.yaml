@@ -52,7 +52,7 @@ tablas:
       - ["STK-04", "Controlar la operación", "Paneles de verificación, disputas y liquidaciones", "Reglas de operación", "RSK-02", "Neutral", "Apoya", "EQ-01"]
       - ["STK-05", "Evaluar las competencias ADSO", "Entregables coherentes y trazables", "Orientación y revisión", "RSK-02", "Apoya", "Apoya", "EQ-01"]
       - ["STK-06", "Trabajo organizado y alcanzable", "Backlog priorizado y sprints claros", "Construcción del producto", "RSK-03, RSK-04", "Apoya", "Lidera", "EQ-01"]
-      - ["STK-07", "Integraciones correctas", "Uso del sandbox según su documentación", "Entorno de pruebas de pagos", "RSK-01", "Neutral", "Neutral", "EQ-02"]
+      - ["STK-07", "Integraciones correctas", "Uso del sandbox según su documentación", "Entorno de pruebas de pagos", "RSK-01", "Neutral", "Neutral", "EQ-01"]
 
   - indice: 13
     encabezado: ["ID", "Interesado"]
@@ -70,19 +70,19 @@ tablas:
   - indice: 15
     encabezado: ["Entregable", "Validador funcional"]
     campos:
-      "Problema y objetivos": ["EQ-04 (Product Owner)", "EQ-01", "Inicio", "Formulación revisada por el instructor", "ENTG-01"]
-      "Alcance y requisitos": ["EQ-04 (Product Owner)", "EQ-01", "Antes del diseño", "Requisitos revisados por el instructor y validador sin errores", "ENTG-03, ENTG-04"]
+      "Problema y objetivos": ["EQ-04 (Product Owner)", "EQ-02", "Inicio", "Formulación revisada por el instructor", "ENTG-01"]
+      "Alcance y requisitos": ["EQ-04 (Product Owner)", "EQ-02", "Antes del diseño", "Requisitos revisados por el instructor y validador sin errores", "ENTG-03, ENTG-04"]
       "Prototipo UX/UI": ["EQ-04 (Product Owner)", "EQ-03", "Antes de construcción final", "Prototipo recorrido con el Product Owner", "Enlace al prototipo"]
-      "Incremento funcional": ["EQ-04 (Product Owner)", "EQ-02", "Cada iteración", "Historias con Definition of Done cumplida", "Demo del sprint y CI en verde"]
-      "Versión final": ["{{comun.instructor}}", "EQ-01", "Cierre", "IND-02 = 100 % e IND-04 en verde", "ENTG-05 a ENTG-07"]
+      "Incremento funcional": ["EQ-04 (Product Owner)", "EQ-01", "Cada iteración", "Historias con Definition of Done cumplida", "Demo del sprint y CI en verde"]
+      "Versión final": ["{{comun.instructor}}", "EQ-02", "Cierre", "IND-02 = 100 % e IND-04 en verde", "ENTG-05 a ENTG-07"]
 
   - indice: 16
     encabezado: ["ID", "Integrante", "Rol principal"]
     filas:
-      - ["EQ-01", "{{comun.integrantes.EQ-01}}", "Líder y backend", "Coordinar el equipo, arquitectura y backend (identidad, productores, catálogo)", "Decide la organización interna; escala cambios de alcance", "{{comun.horas_semana}}", "EQ-02"]
-      - ["EQ-02", "{{comun.integrantes.EQ-02}}", "Backend (pagos) y QA", "Módulo de pagos, pruebas automatizadas y CI", "Propone y ejecuta", "{{comun.horas_semana}}", "EQ-01"]
+      - ["EQ-01", "{{comun.integrantes.EQ-01}}", "Scrum Master y líder del proyecto; backend (pagos) y QA", "Facilitar las ceremonias Scrum, coordinar el equipo y controlar riesgos; módulo de pagos, pruebas automatizadas y CI", "Decide la organización interna; escala cambios de alcance", "{{comun.horas_semana}}", "EQ-02"]
+      - ["EQ-02", "{{comun.integrantes.EQ-02}}", "Technical Leader; backend y arquitectura", "Arquitectura, revisión de código y backend (identidad, productores, catálogo)", "Decide las cuestiones técnicas", "{{comun.horas_semana}}", "EQ-01"]
       - ["EQ-03", "{{comun.integrantes.EQ-03}}", "Frontend y UX/UI", "Prototipos e interfaz PWA", "Propone y ejecuta", "{{comun.horas_semana}}", "EQ-04"]
-      - ["EQ-04", "{{comun.integrantes.EQ-04}}", "Frontend y análisis / Product Owner", "Requisitos, backlog, documentación, aceptación de historias y frontend", "Decide la prioridad del backlog", "{{comun.horas_semana}}", "EQ-03"]
+      - ["EQ-04", "{{comun.integrantes.EQ-04}}", "Product Owner; frontend y análisis", "Requisitos, backlog, documentación, aceptación de historias y frontend", "Decide la prioridad del backlog", "{{comun.horas_semana}}", "EQ-03"]
 
   - indice: 21
     encabezado: ["Campo", "Diligenciamiento"]
@@ -90,10 +90,10 @@ tablas:
       "Metodología seleccionada": "Scrum"
       "Razones de selección": "Equipo de 4 personas, entregas incrementales verificables cada 2 semanas y un backlog priorizado que permite controlar el alcance del MVP (RSK-02)."
       "Duración de iteración o cadencia": "Sprints de 2 semanas: 11 sprints entre 2027-01-11 y 2027-06-11."
-      "Herramienta de seguimiento": "Tablero del repositorio (GitHub Projects) e issues enlazados a las historias."
+      "Herramienta de seguimiento": "Tablero del repositorio https://github.com/diegomorelohenao-dot/Ducument_Agroconecta (GitHub Projects) e issues enlazados a las historias."
       "Políticas de entrada y salida del trab": "Una historia entra al sprint si cumple la Definition of Ready y sale cuando cumple la Definition of Done."
       "Criterio para considerar una tarea ter": "Código revisado en PR, pruebas en verde en CI, criterios de aceptación cumplidos y aceptación del Product Owner."
-      "Adaptaciones realizadas": "El Product Owner es un integrante del equipo (EQ-04) que representa a los productores, porque no hay cliente real; la validación con usuarios se hace por hito (COM-03)."
+      "Adaptaciones realizadas": "Roles Scrum: Product Owner {{comun.integrantes.EQ-04}} (EQ-04), Scrum Master {{comun.integrantes.EQ-01}} (EQ-01) y Technical Leader {{comun.integrantes.EQ-02}} (EQ-02); los cuatro integrantes son desarrolladores y analistas. El Product Owner es un integrante del equipo que representa a los productores, porque no hay cliente real; la validación con usuarios se hace por hito (COM-03)."
 
   - indice: 22
     encabezado: ["Estado", "Condición de entrada"]
@@ -103,15 +103,15 @@ tablas:
       "En progreso": ["Escribir pruebas e implementar", "Código y pruebas preparados", "Integrante asignado"]
       "En revisión": ["Revisar el PR y ejecutar CI", "Aprobada o devuelta", "Otro integrante"]
       "Validación": ["Demostrar al Product Owner", "Aceptada por responsable funcional", "EQ-04"]
-      "Terminada": ["Integrar a la rama principal y desplegar", "Incluida en versión o incremento", "EQ-01"]
+      "Terminada": ["Integrar a la rama principal y desplegar", "Incluida en versión o incremento", "EQ-02"]
 
   - indice: 23
     encabezado: ["Hito", "Objetivo"]
     filas:
       - ["H-01", "Documentación SENA entregada", "ENTG-01 a ENTG-04", "2026-11-10", "2026-12-04", "—", "EQ-04", "En curso"]
-      - ["H-02", "Identidad y productores", "RF-001 a RF-006", "2027-01-11", "2027-02-05", "H-01", "EQ-01", "Pendiente"]
-      - ["H-03", "Catálogo y búsqueda", "RF-007 a RF-011", "2027-02-08", "2027-03-05", "H-02", "EQ-01", "Pendiente"]
-      - ["H-04", "Pedidos y pagos", "RF-012 a RF-016, RF-018 a RF-021, RF-023", "2027-03-08", "2027-04-16", "H-03, DEP-01", "EQ-02", "Pendiente"]
+      - ["H-02", "Identidad y productores", "RF-001 a RF-006", "2027-01-11", "2027-02-05", "H-01", "EQ-02", "Pendiente"]
+      - ["H-03", "Catálogo y búsqueda", "RF-007 a RF-011", "2027-02-08", "2027-03-05", "H-02", "EQ-02", "Pendiente"]
+      - ["H-04", "Pedidos y pagos", "RF-012 a RF-016, RF-018 a RF-021, RF-023", "2027-03-08", "2027-04-16", "H-03, DEP-01", "EQ-01", "Pendiente"]
       - ["H-05", "MVP completo", "RF-017, RF-022, RF-024 a RF-030", "2027-04-19", "2027-05-28", "H-04", "EQ-01", "Pendiente"]
       - ["H-06", "Entrega final", "ENTG-05 a ENTG-07", "2027-05-31", "2027-06-11", "H-05", "EQ-01", "Pendiente"]
 
@@ -154,12 +154,12 @@ tablas:
   - indice: 33
     encabezado: ["ID", "Categoría", "Riesgo"]
     filas:
-      - ["RSK-01", "Técnico", "Dificultades al integrar la pasarela Wompi (firma, webhooks, sandbox)", "Poca experiencia con pagos en línea", "Retraso de OBJ-03", "3", "4", "12", "Mitigar: puerto PasarelaPagos con doble falso desde S05", "EQ-02", "Webhook sin funcionar al final de S06", "Abierto"]
+      - ["RSK-01", "Técnico", "Dificultades al integrar la pasarela Wompi (firma, webhooks, sandbox)", "Poca experiencia con pagos en línea", "Retraso de OBJ-03", "3", "4", "12", "Mitigar: puerto PasarelaPagos con doble falso desde S05", "EQ-01", "Webhook sin funcionar al final de S06", "Abierto"]
       - ["RSK-02", "Gestión", "Crecimiento del alcance más allá del MVP", "Ideas nuevas durante el desarrollo", "Incumplimiento de la fecha de entrega", "3", "4", "12", "Evitar: control de cambios; el MVP es RF-001 a RF-030", "EQ-01", "Historia fuera del catálogo propuesta en un sprint", "Abierto"]
-      - ["RSK-03", "Técnico", "Curva de aprendizaje de NestJS y Clean Architecture", "Tecnologías nuevas para el equipo", "Sprints iniciales más lentos", "4", "3", "12", "Mitigar: módulo de referencia en S01 y revisión en cada PR", "EQ-01", "Velocidad de S01 menor al 50 % de lo planeado", "Abierto"]
+      - ["RSK-03", "Técnico", "Curva de aprendizaje de NestJS y Clean Architecture", "Tecnologías nuevas para el equipo", "Sprints iniciales más lentos", "4", "3", "12", "Mitigar: módulo de referencia en S01 y revisión en cada PR", "EQ-02", "Velocidad de S01 menor al 50 % de lo planeado", "Abierto"]
       - ["RSK-04", "Gestión", "Baja disponibilidad de integrantes en algunos periodos", "Otras actividades académicas o personales", "Menor capacidad por sprint", "3", "3", "9", "Mitigar: acordar disponibilidad en cada planificación", "EQ-01", "Integrante sin avance en una semana", "Abierto"]
       - ["RSK-05", "Usuario", "No contar con productores reales para validar el problema", "Distancia con productores de la zona", "Evidencias débiles y supuestos sin validar", "3", "3", "9", "Mitigar: contactar productores mediante el centro o asociaciones", "EQ-04", "Sin entrevistas al 2026-11-27", "Abierto"]
-      - ["RSK-06", "Técnico", "Límites de los planes gratuitos de hosting", "Cuotas de uso", "Caídas del ambiente de pruebas", "2", "3", "6", "Aceptar: datos de prueba ligeros", "EQ-01", "Ambiente caído más de un día", "Abierto"]
+      - ["RSK-06", "Técnico", "Límites de los planes gratuitos de hosting", "Cuotas de uso", "Caídas del ambiente de pruebas", "2", "3", "6", "Aceptar: datos de prueba ligeros", "EQ-02", "Ambiente caído más de un día", "Abierto"]
 
   - indice: 34
     encabezado: ["ID", "Fecha de revisión"]
@@ -183,8 +183,8 @@ tablas:
       - ["ENTG-02", "Gestión de interesados y del proyecto", "Revisado por el instructor", "EQ-01", "{{comun.instructor}}", "2026-12-04", "En progreso", "docs/sena/entregables"]
       - ["ENTG-03", "Alcance y especificación de requisitos", "Revisado por el instructor", "EQ-04", "{{comun.instructor}}", "2026-12-04", "En progreso", "docs/sena/entregables"]
       - ["ENTG-04", "Backlog, historias y casos de uso", "Revisado por el instructor", "EQ-04", "{{comun.instructor}}", "2026-12-04", "En progreso", "docs/sena/entregables"]
-      - ["ENTG-05", "Software MVP desplegado", "IND-02 = 100 % e IND-04 en verde", "EQ-01", "EQ-04 y {{comun.instructor}}", "2027-06-11", "Pendiente", "—"]
-      - ["ENTG-06", "Informe de pruebas", "IND-03 = 15 de 15", "EQ-02", "{{comun.instructor}}", "2027-06-11", "Pendiente", "—"]
+      - ["ENTG-05", "Software MVP desplegado", "IND-02 = 100 % e IND-04 en verde", "EQ-02", "EQ-04 y {{comun.instructor}}", "2027-06-11", "Pendiente", "—"]
+      - ["ENTG-06", "Informe de pruebas", "IND-03 = 15 de 15", "EQ-01", "{{comun.instructor}}", "2027-06-11", "Pendiente", "—"]
       - ["ENTG-07", "Manual de usuario", "Revisado por el instructor", "EQ-03", "{{comun.instructor}}", "2027-06-11", "Pendiente", "—"]
 
   - indice: 40

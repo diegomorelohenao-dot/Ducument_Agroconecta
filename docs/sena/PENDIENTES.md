@@ -8,14 +8,9 @@ en los YAML de `docs/sena/contenido/` y regenerar antes del 2026-12-04.
 - [PENDIENTE: valor del mínimo de retiro]
 
 ## comun.yaml
-- [PENDIENTE: nombre integrante EQ-01]
-- [PENDIENTE: nombre integrante EQ-02]
-- [PENDIENTE: nombre integrante EQ-03]
-- [PENDIENTE: nombre integrante EQ-04]
 - [PENDIENTE: horas por semana por integrante]
 
 ## formulacion.yaml
-- [PENDIENTE: URL del repositorio]
 - [PENDIENTE: confirmar con EVI-01 y EVI-03]
 - [PENDIENTE: dato y fuente]
 - [PENDIENTE: productores entrevistados]
