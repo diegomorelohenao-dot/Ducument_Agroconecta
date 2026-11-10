@@ -10,10 +10,10 @@ instructor: Juan Carlos Quintero Romero
 fecha_entrega: "2026-12-04"
 version: "1.0"
 estado: En revisión
-equipo_texto: "Equipo AgroConecta (4 integrantes)"
+equipo_texto: "Diego Morelo, Jhonatan García, Mateo Giraldo y Manuel Cetre"
 integrantes:
-  EQ-01: "[PENDIENTE: nombre integrante EQ-01]"
-  EQ-02: "[PENDIENTE: nombre integrante EQ-02]"
-  EQ-03: "[PENDIENTE: nombre integrante EQ-03]"
-  EQ-04: "[PENDIENTE: nombre integrante EQ-04]"
+  EQ-01: Diego Morelo
+  EQ-02: Jhonatan García
+  EQ-03: Mateo Giraldo
+  EQ-04: Manuel Cetre
 horas_semana: "[PENDIENTE: horas por semana por integrante]"

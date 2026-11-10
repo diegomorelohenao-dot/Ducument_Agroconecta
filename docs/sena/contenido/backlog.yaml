@@ -28,7 +28,7 @@ tablas:
       "Estado": "{{comun.estado}}"
       "Propietario": "{{comun.integrantes.EQ-04}} (EQ-04, Product Owner)"
       "Revisor funcional": "{{comun.integrantes.EQ-04}} (EQ-04, Product Owner)"
-      "Revisor técnico": "{{comun.integrantes.EQ-01}} (EQ-01, líder técnico)"
+      "Revisor técnico": "{{comun.integrantes.EQ-02}} (EQ-02, líder técnico)"
       "Revisor académico": "{{comun.instructor}}"
       "Ubicación oficial": "Repositorio del proyecto, docs/sena, y tablero del proyecto"
 
@@ -225,7 +225,7 @@ tablas:
       - ["General", "¿Cuántas horas por semana dedica cada integrante?", "[PENDIENTE: acuerdo del equipo]", "EQ-01", "2026-11-20"]
       - ["HU-028", "¿Cuál es el porcentaje de comisión definitivo?", "Se usa 8 % por defecto (RN-007); configurable por el administrador", "EQ-04", "2026-11-10"]
       - ["HU-022", "¿Cuál es el monto mínimo de retiro?", "[PENDIENTE: valor del mínimo de retiro]", "EQ-04", "2027-04-19"]
-      - ["HU-018", "¿Cuándo estarán las credenciales sandbox de Wompi?", "Solicitarlas en S03 (BLQ-001)", "EQ-02", "2027-02-19"]
+      - ["HU-018", "¿Cuándo estarán las credenciales sandbox de Wompi?", "Solicitarlas en S03 (BLQ-001)", "EQ-01", "2027-02-19"]
       - ["HU-009", "¿Basta la búsqueda por departamento y municipio sin mapa?", "Sí para el MVP (EXC-03); validar con compradores", "EQ-04", "2027-03-05"]
 
   - indice: 34
@@ -240,14 +240,14 @@ tablas:
   - indice: 35
     encabezado: ["ID", "Historia / tarea"]
     filas:
-      - ["TT-001", "Base del proyecto, CI y despliegue inicial", "5", "{{comun.integrantes.EQ-01}}", "—", "Pendiente", "—"]
-      - ["HU-001", "{{catalogo.historias.HU-001.nombre}}", "5", "{{comun.integrantes.EQ-01}} y {{comun.integrantes.EQ-03}}", "TT-001", "Pendiente", "—"]
-      - ["HU-002", "{{catalogo.historias.HU-002.nombre}}", "5", "{{comun.integrantes.EQ-02}} y {{comun.integrantes.EQ-04}}", "HU-001", "Pendiente", "—"]
+      - ["TT-001", "Base del proyecto, CI y despliegue inicial", "5", "{{comun.integrantes.EQ-02}}", "—", "Pendiente", "—"]
+      - ["HU-001", "{{catalogo.historias.HU-001.nombre}}", "5", "{{comun.integrantes.EQ-02}} y {{comun.integrantes.EQ-03}}", "TT-001", "Pendiente", "—"]
+      - ["HU-002", "{{catalogo.historias.HU-002.nombre}}", "5", "{{comun.integrantes.EQ-01}} y {{comun.integrantes.EQ-04}}", "HU-001", "Pendiente", "—"]
 
   - indice: 36
     encabezado: ["ID", "Elemento afectado"]
     filas:
-      - ["BLQ-001", "HU-018, HU-019, HU-023", "Faltan las credenciales del entorno sandbox de Wompi", "No se puede probar el pago contra la pasarela", "EQ-02", "2027-03-08", "Abierto"]
+      - ["BLQ-001", "HU-018, HU-019, HU-023", "Faltan las credenciales del entorno sandbox de Wompi", "No se puede probar el pago contra la pasarela", "EQ-01", "2027-03-08", "Abierto"]
 
   - indice: 38
     encabezado: ["HU / CU", "RF / RNF"]
@@ -316,7 +316,7 @@ grupos:
             "Criterios de aceptación": "CA-HU-019-01, CA-HU-019-02"
             "Casos de prueba": "CP-HU-019-01, CP-HU-019-02"
             "Versión / iteración objetivo": "MVP / S06"
-            "Responsable de validación": "EQ-02"
+            "Responsable de validación": "EQ-01"
             "Estado": "Propuesta"
             "Evidencia de aceptación": "Pendiente (pruebas de integración en CI)"
 

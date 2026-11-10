@@ -34,3 +34,20 @@ def test_sin_contradicciones_de_contenido():
     backlog = _texto("backlog")
     assert "intentar de nuevo" not in backlog  # CANCELADO es estado final
     assert "EN_DISPUTA" in backlog.split("{{cu.CU-002}}")[1].split("{{cu.CU-003}}")[0]
+
+
+def test_equipo_y_responsables():
+    comun = cargar_yaml(CONTENIDO / "comun.yaml")
+    assert comun["integrantes"] == {"EQ-01": "Diego Morelo", "EQ-02": "Jhonatan García",
+                                    "EQ-03": "Mateo Giraldo", "EQ-04": "Manuel Cetre"}
+    equipo = cargar_yaml(CONTENIDO / "catalogo.yaml")["equipo"]
+    assert "Scrum Master" in equipo["EQ-01"] and "pagos" in equipo["EQ-01"]
+    assert "Technical Leader" in equipo["EQ-02"] and "Product Owner" in equipo["EQ-04"]
+    form, gest, req = _texto("formulacion"), _texto("gestion"), _texto("requisitos")
+    # pagos y QA → EQ-01 (Diego); técnico/arquitectura → EQ-02 (Jhonatan)
+    assert '"IND-03 = 15 de 15", "EQ-01"' in form          # ENTG-06 informe de pruebas
+    assert '"Aceptar", "EQ-02"' in form                     # RSK-06 hosting
+    assert '"EQ-01", "Abierta"]' in req                     # RSD-06 credenciales Wompi
+    assert '(EQ-02, líder técnico)' in req
+    assert '"Líder del proyecto": ["{{comun.integrantes.EQ-01}}' in form
+    assert "Scrum Master" in gest

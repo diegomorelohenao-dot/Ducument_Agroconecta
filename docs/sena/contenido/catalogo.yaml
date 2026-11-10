@@ -193,10 +193,10 @@ riesgos:
   RSK-06: {riesgo: Límites de los planes gratuitos de hosting, p: 2, i: 3}
 
 equipo:
-  EQ-01: Líder y backend
-  EQ-02: Backend (pagos) y QA
-  EQ-03: Frontend y UX/UI
-  EQ-04: Frontend y análisis / Product Owner
+  EQ-01: Scrum Master y líder del proyecto; backend (pagos) y QA
+  EQ-02: Technical Leader; backend y arquitectura
+  EQ-03: Desarrollador; frontend y UX/UI
+  EQ-04: Product Owner; frontend y análisis
 
 sprints:
   S01: {inicio: "2027-01-11", fin: "2027-01-22", historias: [HU-001, HU-002], extra: Base del proyecto y CI}
