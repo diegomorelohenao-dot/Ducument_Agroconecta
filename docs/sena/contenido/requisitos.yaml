@@ -1,0 +1,395 @@
+# Alcance y Especificación de Requisitos — contenido de AgroConecta
+# Índices de tabla = plantilla ORIGINAL. Fuente: especificación de diseño 2026-11-10 y catálogo.
+plantilla: Alcance_y_Especificacion_de_Requisitos_ADSO_SENA.docx
+salida: AgroConecta_Alcance_y_Especificacion_de_Requisitos.docx
+
+tablas:
+  - indice: 0
+    encabezado: ["Campo", "Información"]
+    campos:
+      "Nombre del proyecto": "{{comun.proyecto}}"
+      "Centro de formación": "{{comun.centro}}"
+      "Regional": "{{comun.regional}}"
+      "Ficha": "{{comun.ficha}}"
+      "Equipo responsable": "{{comun.equipo_texto}}"
+      "Instructor(es)": "{{comun.instructor}}"
+      "Cliente / patrocinador": "SENA"
+      "Versión": "{{comun.version}}"
+      "Fecha": "{{comun.fecha_entrega}}"
+
+  - indice: 2
+    encabezado: ["Elemento", "Detalle"]
+    campos:
+      "Estado": "{{comun.estado}}"
+      "Propietario": "{{comun.integrantes.EQ-04}} (EQ-04, análisis)"
+      "Revisor funcional": "{{comun.integrantes.EQ-04}} (EQ-04, Product Owner)"
+      "Revisor técnico": "{{comun.integrantes.EQ-01}} (EQ-01, líder técnico)"
+      "Revisor académico": "{{comun.instructor}}"
+      "Ubicación oficial": "Repositorio del proyecto, docs/sena"
+
+  - indice: 3
+    encabezado: ["Versión", "Fecha", "Descripción"]
+    filas:
+      - ["0.1", "2026-11-10", "Creación inicial a partir de la especificación de diseño", "Equipo AgroConecta", ""]
+      - ["1.0", "2026-12-04", "Versión para entrega", "Equipo AgroConecta", ""]
+
+  - indice: 8
+    encabezado: ["Término", "Definición"]
+    agregar:
+      - ["Productor verificado", "Productor cuyo perfil aprobó el administrador; solo él puede publicar productos (RN-001)."]
+      - ["Pedido", "Compra a un único productor generada desde el carrito, con su propia máquina de estados (RN-002)."]
+      - ["Saldo retenido", "Dinero de un pedido pagado que aún no se entrega; no pertenece todavía al productor (RN-005)."]
+      - ["Saldo disponible", "Suma de los movimientos de saldo del productor; es lo que puede retirar (RN-009)."]
+      - ["Liquidación", "Retiro de saldo disponible solicitado por el productor y marcado como pagado por el administrador (RN-010)."]
+      - ["Comisión", "Porcentaje del subtotal que retiene la plataforma al entregarse un pedido (RN-006, RN-007)."]
+      - ["Disputa", "Reclamo del comprador sobre un pedido enviado que resuelve el administrador (RN-015)."]
+      - ["Webhook", "Notificación que envía la pasarela de pagos a la API cuando cambia el estado de una transacción (RN-013)."]
+      - ["Sandbox", "Entorno de pruebas de la pasarela en el que no se mueve dinero real."]
+      - ["PWA", "Aplicación web progresiva: sitio web que se puede instalar en el celular."]
+
+  - indice: 11
+    encabezado: ["Campo", "Descripción"]
+    campos:
+      "Problema u oportunidad": "Los pequeños productores agrícolas venden principalmente a través de intermediarios, que capturan buena parte del margen entre la finca y el comprador."
+      "Usuarios o población afectada": "Pequeños productores agrícolas de Colombia (STK-01), compradores consumidores (STK-02) y compradores negocio (STK-03)."
+      "Objetivo general relacionado": "{{catalogo.objetivo_general}}"
+      "Valor esperado": "Venta directa con más margen para el productor y compra segura, trazable y con origen conocido para el comprador."
+      "Versión objetivo": "MVP 1.0, entrega 2027-06-11"
+
+  - indice: 13
+    encabezado: ["ID", "Módulo / capacidad"]
+    filas:
+      - ["ALC-01", "Identidad y cuenta", "Registro con rol y consentimiento, inicio de sesión, eliminación de cuenta y notificaciones", "ACT-01 a ACT-05", "MVP", "Necesario para cualquier transacción"]
+      - ["ALC-02", "Productores", "Perfil del productor, opciones de entrega y verificación", "ACT-01, ACT-04", "MVP", "Garantiza que solo vendan productores reales (RN-001)"]
+      - ["ALC-03", "Catálogo", "Productos, precios por volumen, imágenes y búsqueda por ubicación", "ACT-01, ACT-02, ACT-03, ACT-05", "MVP", "Ataca CAU-01 y CAU-03"]
+      - ["ALC-04", "Pedidos", "Carrito, un pedido por productor y máquina de estados", "ACT-01, ACT-02, ACT-03, ACT-07", "MVP", "Flujo central de la compra"]
+      - ["ALC-05", "Pagos", "Cobro Wompi sandbox, retención, comisión, saldo, liquidación y reembolso", "ACT-01 a ACT-04, ACT-06, ACT-07", "MVP", "Ataca CAU-02 (desconfianza en el pago)"]
+      - ["ALC-06", "Reputación", "Calificación del productor tras la entrega", "ACT-02, ACT-03", "MVP", "Genera confianza entre desconocidos"]
+      - ["ALC-07", "Administración", "Verificación, disputas, liquidaciones, configuración y reportes", "ACT-04", "MVP", "Necesario para operar la plataforma"]
+
+  - indice: 14
+    encabezado: ["Categoría", "Incluye"]
+    campos:
+      "Análisis": "Los 4 documentos SENA (ENTG-01 a ENTG-04) y la especificación de diseño."
+      "Diseño": "Prototipo UX/UI y arquitectura Clean Architecture por módulo."
+      "Construcción": "MVP con RF-001 a RF-030 (frontend React PWA, API NestJS, PostgreSQL)."
+      "Pruebas": "Pruebas unitarias del dominio, de integración (repositorios y webhook) y E2E del camino principal."
+      "Despliegue": "Frontend en Vercel; API y base de datos en Railway o Render (planes gratuitos)."
+      "Documentación": "Documentos SENA, README técnico, informe de pruebas (ENTG-06) y manual de usuario (ENTG-07)."
+      "Transferencia o capacitación": "Demostración final al instructor (hito H-06, 2027-06-11)."
+
+  - indice: 15
+    encabezado: ["ID", "Exclusión"]
+    filas:
+      - ["EXC-01", "Notificaciones push", "Las notificaciones en la app y por correo cubren el MVP", "RF-030 (app y correo)"]
+      - ["EXC-02", "Chat entre productor y comprador", "No es necesario para completar un pedido", "Datos de contacto en el detalle del pedido"]
+      - ["EXC-03", "Mapa y geolocalización", "Basta la búsqueda por departamento y municipio", "Filtro por ubicación (RF-009)"]
+      - ["EXC-04", "Facturación electrónica DIAN", "Requisito legal y técnico fuera del alcance formativo", "Comprobante del pedido"]
+      - ["EXC-05", "Pago contraentrega", "Rompe la retención del dinero hasta la entrega (RN-005)", "Solo pago en línea"]
+      - ["EXC-06", "Logística o transporte", "La plataforma no gestiona envíos", "El productor entrega o el comprador recoge (RF-005)"]
+      - ["EXC-07", "App móvil nativa", "La PWA cubre el uso desde el celular", "PWA instalable (RNF-009)"]
+      - ["EXC-08", "Operación con dinero real", "Implica obligaciones legales y tributarias", "Pasarela en modo sandbox"]
+
+  - indice: 16
+    encabezado: ["Capacidad", "MVP"]
+    filas:
+      - ["Identidad, productores, catálogo, pedidos, pagos, reputación y administración (ALC-01 a ALC-07)", "X", "", "", "Necesarias para el flujo completo de compra"]
+      - ["Notificaciones push, chat, mapa (EXC-01 a EXC-03)", "", "X", "", "Mejoran la experiencia pero no son indispensables"]
+      - ["Facturación DIAN, contraentrega, logística, app nativa, dinero real (EXC-04 a EXC-08)", "", "X", "", "Requieren decisiones legales o de negocio posteriores al MVP"]
+
+  - indice: 17
+    encabezado: ["ID", "Tipo", "Descripción"]
+    filas:
+      - ["RSD-01", "Restricción", "Documentación el 2026-12-04 y software el 2027-06-11", "Sin margen para ampliar el alcance", "EQ-01", "Vigente"]
+      - ["RSD-02", "Restricción", "Costo de infraestructura $0 y pasarela solo en sandbox", "Límites de hosting; no se mueve dinero real", "EQ-01", "Vigente"]
+      - ["RSD-03", "Supuesto", "La plataforma no gestiona transporte: el productor entrega o el comprador recoge", "Si es falso, se agrega logística (EXC-06)", "EQ-04", "Por validar"]
+      - ["RSD-04", "Supuesto", "El administrador verifica productores, resuelve disputas y gestiona liquidaciones", "Si es falso, se automatiza la verificación", "EQ-04", "Por validar"]
+      - ["RSD-05", "Supuesto", "Basta un comprobante del pedido, sin facturación electrónica DIAN", "Si es falso, se integra facturación (EXC-04)", "EQ-04", "Por validar"]
+      - ["RSD-06", "Dependencia", "Credenciales del entorno sandbox de Wompi", "Bloquea RF-018, RF-019 y RF-023", "EQ-02", "Abierta"]
+      - ["RSD-07", "Dependencia", "Catálogo DIVIPOLA del DANE", "Necesario para RF-004 y RF-009", "EQ-02", "Abierta"]
+
+  - indice: 18
+    encabezado: ["ID", "Criterio"]
+    filas:
+      - ["CA-ALC-01", "Los 4 documentos están entregados y son consistentes entre sí", "Inspección (validador de documentación)", "EQ-04", "Salida de validar.py sin errores"]
+      - ["CA-ALC-02", "Se recorre el flujo completo: registro y verificación del productor, publicación, compra pagada en sandbox, entrega confirmada, comisión y saldo registrados, liquidación solicitada y marcada como pagada", "Demostración y prueba E2E", "EQ-02", "Ejecución de CI y video de la demostración"]
+      - ["CA-ALC-03", "Todas las reglas RN-001 a RN-015 tienen prueba unitaria automatizada", "Prueba", "EQ-02", "Reporte de pruebas (IND-03)"]
+
+  - indice: 19
+    encabezado: ["ID", "Nombre", "Módulo"]
+    filas: ["{{todas: requisitos}}"]
+    columnas: ["{id}", "{nombre}", "{epica}", "{actores}", "{prioridad}", "Aprobado", "{version}"]
+
+  - indice: 22
+    encabezado: ["ID requisito", "Escenario"]
+    filas:
+      - ["RF-012", "Flujo exitoso", "Un comprador con un carrito que tiene productos de 2 productores y una modalidad de entrega elegida", "Confirma el carrito", "Se crean 2 pedidos en PENDIENTE_PAGO, uno por productor, con los precios congelados y un único cobro"]
+      - ["RF-012", "Precio por volumen", "Un producto a $5.000/kg con precio por volumen de $4.000/kg desde 20 kg", "El comprador pide 25 kg", "El ítem queda con precio unitario $4.000 y subtotal $100.000"]
+      - ["RF-012", "Productor no verificado", "Un carrito con un producto de un productor que perdió la verificación", "El comprador confirma el carrito", "El sistema rechaza la operación (422) y no crea pedidos"]
+      - ["RF-019", "Pago aprobado", "Un cobro con 2 pedidos en PENDIENTE_PAGO y stock suficiente", "Llega el webhook APROBADA con firma válida", "Los 2 pedidos pasan a PAGADO y se descuenta el stock en una sola transacción"]
+      - ["RF-019", "Evento duplicado", "Un evento de webhook ya procesado", "La pasarela envía el mismo evento otra vez", "No cambia ningún estado ni stock"]
+      - ["RF-019", "Firma inválida", "Una notificación con firma incorrecta", "Llega al endpoint del webhook", "Se rechaza y no se procesa"]
+      - ["RF-019", "Sin stock al pagar", "Un pedido cuyo producto se agotó antes del pago", "Llega el webhook APROBADA", "Ese pedido pasa a REEMBOLSADO sin descontar stock; los demás pedidos del cobro pasan a PAGADO"]
+      - ["RF-020", "Crédito al productor", "Un pedido ENVIADO con subtotal $50.000, envío $5.000 y comisión del 8 %", "El comprador confirma la recepción", "Comisión $4.000; se acredita al productor $46.000 + $5.000 = $51.000"]
+      - ["RF-022", "Monto mayor al saldo", "Un productor con saldo disponible de $30.000", "Solicita una liquidación de $40.000", "El sistema rechaza la solicitud (422) y el saldo no cambia"]
+      - ["RF-022", "Monto menor al mínimo", "Un mínimo de retiro configurado de $20.000", "El productor solicita $10.000", "El sistema rechaza la solicitud (422)"]
+
+  - indice: 23
+    encabezado: ["ID", "Categoría"]
+    filas: ["{{todas: rnf}}"]
+    columnas: ["{id}", "{categoria}", "{requisito}", "Alta", "Prueba automatizada / inspección", "Aprobado"]
+
+  - indice: 27
+    encabezado: ["ID", "Nombre", "Regla"]
+    filas: ["{{todas: reglas}}"]
+    columnas: ["{id}", "{nombre}", "{texto}", "Especificación de diseño §4.3", "—", "{rf_que_citan}", "Aprobada"]
+
+  - indice: 30
+    encabezado: ["ID", "Actor", "Tipo"]
+    filas: ["{{todas: actores}}"]
+    columnas: ["{id}", "{nombre}", "{tipo}", "{objetivo}", "{rf_del_actor}"]
+
+  - indice: 31
+    encabezado: ["Recurso / acción"]
+    nuevo_encabezado: ["Recurso / acción", "Productor", "Comprador", "Administrador", "Regla o restricción"]
+    filas:
+      - ["Publicar y editar sus productos", "Sí", "—", "—", "Solo si está verificado (RN-001)"]
+      - ["Buscar productos y ver detalle", "Sí", "Sí", "Sí", "También el visitante sin sesión"]
+      - ["Comprar (carrito, pedido y pago)", "—", "Sí", "—", "Requiere iniciar sesión"]
+      - ["Aceptar, rechazar y despachar pedidos", "Solo los suyos", "—", "—", "RNF-004"]
+      - ["Confirmar recepción, abrir disputa y calificar", "—", "Solo los suyos", "—", "RN-014, RN-015"]
+      - ["Ver saldo y solicitar liquidación", "Solo el suyo", "—", "—", "RN-010"]
+      - ["Verificar productores, resolver disputas, marcar liquidaciones pagadas y configurar comisión", "—", "—", "Sí", "RN-007, RN-010"]
+
+  - indice: 32
+    encabezado: ["ID", "Dato / entidad"]
+    filas:
+      - ["DAT-01", "Usuario", "Autenticación y rol", "Registro", "Personal", "Hasta eliminar la cuenta", "RF-001 a RF-003"]
+      - ["DAT-02", "Perfil de productor", "Identificar al productor y su finca", "Productor", "Personal", "Hasta eliminar la cuenta", "RF-004 a RF-006"]
+      - ["DAT-03", "Perfil de comprador", "Datos de entrega y razón social / NIT de negocios", "Comprador", "Personal", "Hasta eliminar la cuenta", "RF-001, RF-012"]
+      - ["DAT-04", "Producto y precio por volumen", "Catálogo", "Productor", "Público", "Mientras esté activo", "RF-007 a RF-010"]
+      - ["DAT-05", "Pedido e ítems", "Registro de la compra con precios congelados", "Sistema", "Interno", "Duración del proyecto", "RF-011 a RF-017"]
+      - ["DAT-06", "Pago y eventos de webhook", "Conciliación con la pasarela e idempotencia", "Wompi", "Confidencial", "Duración del proyecto", "RF-018, RF-019"]
+      - ["DAT-07", "Movimientos de saldo y liquidaciones", "Saldo del productor y retiros", "Sistema", "Confidencial", "Duración del proyecto", "RF-020 a RF-022, RF-027"]
+      - ["DAT-08", "Disputa y calificación", "Resolver reclamos y reputación", "Comprador y administrador", "Interno", "Duración del proyecto", "RF-024 a RF-026"]
+      - ["DAT-09", "Departamentos y municipios", "Ubicación del productor y búsqueda", "DANE (DIVIPOLA)", "Público", "Permanente", "RF-004, RF-009"]
+
+  - indice: 33
+    encabezado: ["Dimensión", "Regla o métrica"]
+    campos:
+      "Completitud": ["Un productor no puede solicitar verificación sin finca, documento y municipio", "Validación de entrada en la API (RNF-005)"]
+      "Exactitud": ["Los montos son enteros en COP; nunca flotantes (RN-012)", "Pruebas unitarias del dominio"]
+      "Unicidad": ["Correo único por usuario; id de evento de webhook único; una calificación por pedido", "Restricciones únicas en la base de datos"]
+      "Consistencia": ["El saldo es siempre la suma de los movimientos (RN-009)", "Pruebas de integración"]
+      "Validez": ["Municipio existente en DIVIPOLA; estrellas de 1 a 5; transiciones de estado válidas", "Validación en la API y en la entidad Pedido"]
+      "Actualidad": ["Stock y estado del pedido se actualizan en la misma transacción que el pago (RNF-006)", "Pruebas de integración"]
+
+  - indice: 34
+    encabezado: ["Dato", "Finalidad"]
+    filas:
+      - ["Datos personales de usuarios (DAT-01 a DAT-03)", "Prestar el servicio de compra y venta", "Consentimiento explícito al registrarse (Ley 1581 de 2012)", "El titular y el administrador", "Mientras la cuenta esté activa", "Eliminación de la cuenta a solicitud (RF-003)"]
+      - ["Datos de pagos (DAT-06)", "Conciliar cobros y reembolsos", "Ejecución de la compra", "Administrador", "Duración del proyecto", "No se almacenan datos de tarjetas; los gestiona la pasarela"]
+
+  - indice: 35
+    encabezado: ["ID", "Sistema / interfaz"]
+    filas:
+      - ["INT-01", "Wompi (sandbox)", "API REST y webhook", "Cobrar pedidos y recibir el resultado del pago", "Referencia, monto, estado de la transacción", "Según el proveedor", "EQ-02"]
+      - ["INT-02", "Servicio de correo SMTP", "Correo", "Enviar notificaciones por correo (RF-030)", "Destinatario, asunto y mensaje", "Según el proveedor", "EQ-01"]
+      - ["INT-03", "DIVIPOLA (DANE)", "Archivo (carga inicial)", "Poblar departamentos y municipios", "Código DANE y nombre", "Carga única", "EQ-02"]
+
+  - indice: 36
+    encabezado: ["Campo", "Contenido"]
+    campos:
+      "ID y nombre": "INT-01 – Pasarela de pagos Wompi (sandbox)"
+      "Proveedor / propietario": "Wompi"
+      "Objetivo": "Cobrar en línea los pedidos (tarjeta, PSE, Nequi) y conocer el resultado del pago."
+      "Protocolo o mecanismo": "API REST para crear la transacción; webhook HTTPS para recibir el resultado."
+      "Autenticación": "Llaves del comercio de sandbox; firma de integridad en cada evento del webhook."
+      "Datos de entrada y salida": "Entrada: referencia del pago, monto en COP (entero) y datos del comprador. Salida: id y estado de la transacción."
+      "Frecuencia / volumen": "Un cobro por confirmación de carrito; volumen de pruebas."
+      "Tiempo de espera": "[PENDIENTE: valor según la documentación de Wompi]"
+      "Manejo de indisponibilidad": "Si la pasarela no responde, el pedido sigue en PENDIENTE_PAGO y se cancela a los 30 min (RF-017)."
+      "Reintentos e idempotencia": "Cada evento se procesa una sola vez: se registra su id (RN-013)."
+      "Privacidad y seguridad": "No se almacenan datos de tarjetas; se verifica la firma de cada evento (RNF-007)."
+      "Requisitos relacionados": "RF-018, RF-019, RF-023, RNF-007"
+      "Evidencia de prueba": "Pruebas de integración del webhook (aprobado, duplicado, firma inválida)."
+
+  - indice: 38
+    encabezado: ["ID", "Valor", "Urgencia"]
+    filas:
+      - ["RF-001", "A", "A", "B", "M", "—", "Must", "MVP"]
+      - ["RF-002", "A", "A", "M", "M", "RF-001", "Must", "MVP"]
+      - ["RF-003", "M", "B", "B", "B", "RF-001", "Must", "MVP"]
+      - ["RF-004", "A", "A", "B", "M", "RF-001", "Must", "MVP"]
+      - ["RF-005", "A", "M", "B", "B", "RF-004", "Must", "MVP"]
+      - ["RF-006", "A", "A", "B", "B", "RF-004", "Must", "MVP"]
+      - ["RF-007", "A", "A", "M", "M", "RF-006", "Must", "MVP"]
+      - ["RF-008", "M", "M", "M", "M", "RF-007", "Must", "MVP"]
+      - ["RF-009", "A", "A", "M", "M", "RF-007", "Must", "MVP"]
+      - ["RF-010", "A", "M", "B", "B", "RF-007", "Must", "MVP"]
+      - ["RF-011", "A", "A", "B", "M", "RF-010", "Must", "MVP"]
+      - ["RF-012", "A", "A", "A", "A", "RF-011, RF-005", "Must", "MVP"]
+      - ["RF-013", "A", "A", "M", "M", "RF-019", "Must", "MVP"]
+      - ["RF-014", "A", "M", "B", "B", "RF-013", "Must", "MVP"]
+      - ["RF-015", "A", "M", "M", "B", "RF-014", "Must", "MVP"]
+      - ["RF-016", "M", "M", "B", "M", "RF-012", "Must", "MVP"]
+      - ["RF-017", "M", "M", "A", "M", "RF-013, RF-015", "Must", "MVP"]
+      - ["RF-018", "A", "A", "A", "A", "RF-012", "Must", "MVP"]
+      - ["RF-019", "A", "A", "A", "A", "RF-018", "Must", "MVP"]
+      - ["RF-020", "A", "A", "A", "M", "RF-015", "Must", "MVP"]
+      - ["RF-021", "M", "M", "B", "B", "RF-020", "Must", "MVP"]
+      - ["RF-022", "A", "M", "M", "M", "RF-021", "Must", "MVP"]
+      - ["RF-023", "A", "A", "A", "M", "RF-019", "Must", "MVP"]
+      - ["RF-024", "M", "B", "B", "B", "RF-015", "Must", "MVP"]
+      - ["RF-025", "A", "M", "M", "M", "RF-014", "Must", "MVP"]
+      - ["RF-026", "A", "M", "M", "M", "RF-025, RF-023", "Must", "MVP"]
+      - ["RF-027", "A", "M", "B", "B", "RF-022", "Must", "MVP"]
+      - ["RF-028", "M", "B", "M", "B", "—", "Must", "MVP"]
+      - ["RF-029", "M", "B", "B", "M", "RF-020", "Should", "MVP"]
+      - ["RF-030", "M", "M", "B", "M", "RF-002", "Must", "MVP"]
+
+  - indice: 39
+    encabezado: ["Versión / hito", "Objetivo"]
+    filas:
+      - ["MVP (2027-06-11)", "Flujo completo de compra directa con pago en sandbox", "RF-001 a RF-030", "RNF-001 a RNF-014 (críticos: RNF-006, RNF-007)", "IND-02 = 100 % e IND-04 en verde"]
+      - ["Posterior al MVP", "Mejoras de experiencia y operación real", "Por definir según EXC-01 a EXC-08", "Por definir", "Decisión del equipo y del instructor"]
+
+  - indice: 43
+    encabezado: ["RF/RNF", "Origen"]
+    filas: ["{{todas: requisitos}}"]
+    columnas: ["{id}", "{objetivo} / {actores}", "{rn}", "{hu} / {cu}", "Pendiente (UX/UI)", "{epica}", "Pendiente (plan de pruebas)", "—", "Aprobado"]
+
+grupos:
+  - tablas: [20]
+    encabezados: [["Campo", "Contenido"]]
+    instancias:
+      - 20:
+          campos:
+            "ID y nombre": "{{rf.RF-012}}"
+            "Descripción": "El sistema debe convertir el carrito confirmado en un pedido por cada productor, con los precios congelados, el costo de envío y el porcentaje de comisión vigente, y un único cobro."
+            "Fuente": "STK-02, STK-03 / OBJ-03"
+            "Justificación": "Es el paso que convierte la intención de compra en pedidos que cada productor puede atender (RN-002)."
+            "Actor principal": "ACT-02, ACT-03"
+            "Precondiciones": "Comprador con sesión iniciada; carrito con al menos un producto activo de productores verificados."
+            "Disparador": "El comprador confirma el carrito y elige la modalidad de entrega."
+            "Entradas": "Ítems del carrito, modalidad de entrega y dirección (si es domicilio)."
+            "Procesamiento / comportamiento": "Agrupa los ítems por productor; congela el precio unitario aplicando el precio por volumen alcanzado (RN-003); calcula subtotal y envío (RN-008); guarda el porcentaje de comisión vigente (RN-007); crea un Pago que cubre todos los pedidos."
+            "Salidas": "N pedidos en PENDIENTE_PAGO y la referencia del cobro para iniciar el pago (RF-018)."
+            "Postcondiciones": "El carrito queda vacío; el stock no se descuenta todavía (RN-004)."
+            "Excepciones": "Producto inactivo o de productor no verificado → 422; carrito vacío → 422."
+            "Reglas de negocio asociadas": "RN-002, RN-003, RN-007, RN-008, RN-012"
+            "Dependencias": "RF-011, RF-005, RF-018"
+            "Prioridad": "Must"
+            "Versión objetivo": "MVP"
+            "Criterios de aceptación": "Ver escenarios de RF-012 en la sección 5.4."
+            "Método de verificación": "Prueba unitaria (división del carrito y precio por volumen) y prueba E2E."
+            "Responsable de validación": "EQ-04 (Product Owner)"
+            "Estado": "Aprobado"
+      - 20:
+          campos:
+            "ID y nombre": "{{rf.RF-019}}"
+            "Descripción": "El sistema debe procesar las notificaciones de la pasarela de pagos y actualizar los pedidos del cobro según el resultado."
+            "Fuente": "STK-07 / OBJ-03"
+            "Justificación": "Confirma el pago sin depender del navegador del comprador; sostiene la retención del dinero (RN-005)."
+            "Actor principal": "ACT-06"
+            "Precondiciones": "Existe un Pago con pedidos en PENDIENTE_PAGO."
+            "Disparador": "Wompi envía un evento al endpoint del webhook."
+            "Entradas": "Evento con id, referencia, estado de la transacción y firma."
+            "Procesamiento / comportamiento": "Verifica la firma; si el id del evento ya fue procesado no hace nada (RN-013); si está APROBADA, en una transacción pasa cada pedido a PAGADO y descuenta su stock, o lo pasa a REEMBOLSADO si ya no hay stock (RN-004); si está rechazada, pasa los pedidos a CANCELADO."
+            "Salidas": "Pedidos actualizados y evento registrado."
+            "Postcondiciones": "El dinero de los pedidos PAGADO queda retenido (RN-005)."
+            "Excepciones": "Firma inválida → se rechaza sin procesar; referencia desconocida → se registra y se ignora."
+            "Reglas de negocio asociadas": "RN-004, RN-005, RN-013"
+            "Dependencias": "RF-018, RF-023, INT-01"
+            "Prioridad": "Must"
+            "Versión objetivo": "MVP"
+            "Criterios de aceptación": "Ver escenarios de RF-019 en la sección 5.4."
+            "Método de verificación": "Prueba de integración del webhook (aprobado, duplicado, firma inválida, sin stock)."
+            "Responsable de validación": "EQ-02"
+            "Estado": "Aprobado"
+      - 20:
+          campos:
+            "ID y nombre": "{{rf.RF-020}}"
+            "Descripción": "El sistema debe calcular la comisión y acreditar el saldo del productor cuando un pedido pasa a ENTREGADO."
+            "Fuente": "STK-01, STK-04 / OBJ-03"
+            "Justificación": "Libera el dinero retenido al productor y registra el ingreso de la plataforma."
+            "Actor principal": "ACT-07 (evento PedidoEntregado)"
+            "Precondiciones": "Pedido en ENVIADO o EN_DISPUTA."
+            "Disparador": "El pedido pasa a ENTREGADO (confirmación del comprador, plazo de 7 días o resolución de disputa)."
+            "Entradas": "Subtotal, costo de envío y porcentaje de comisión guardado en el pedido."
+            "Procesamiento / comportamiento": "comisión = redondeo(subtotal × porcentaje); crea un MovimientoSaldo CREDITO_PEDIDO por subtotal − comisión + envío, en la misma transacción que el cambio de estado (RNF-006)."
+            "Salidas": "Movimiento de saldo y comisión registrados en el pedido."
+            "Postcondiciones": "El saldo disponible del productor aumenta (RN-009)."
+            "Excepciones": "Si el pedido ya tiene crédito registrado, no se acredita de nuevo."
+            "Reglas de negocio asociadas": "RN-005, RN-006, RN-009, RN-012"
+            "Dependencias": "RF-015, RF-017, RF-026"
+            "Prioridad": "Must"
+            "Versión objetivo": "MVP"
+            "Criterios de aceptación": "Ver escenario de RF-020 en la sección 5.4."
+            "Método de verificación": "Prueba unitaria del cálculo y prueba de integración de la transacción."
+            "Responsable de validación": "EQ-02"
+            "Estado": "Aprobado"
+
+  - tablas: [24]
+    encabezados: [["Campo", "Contenido"]]
+    instancias:
+      - 24:
+          campos:
+            "ID y nombre": "RNF-007 – Webhook idempotente y firmado"
+            "Categoría": "Fiabilidad y seguridad"
+            "Descripción": "El sistema debe procesar cada evento de la pasarela una sola vez y solo si su firma es válida."
+            "Fuente y justificación": "RN-013; evita duplicar cambios de estado o descuentos de stock."
+            "Métrica": "Efectos producidos por eventos duplicados o con firma inválida."
+            "Umbral o meta": "0 efectos."
+            "Condiciones de medición": "Envío repetido del mismo evento y de un evento con firma alterada en el ambiente de pruebas."
+            "Método de verificación": "Prueba de integración automatizada."
+            "Evidencia esperada": "Reporte de pruebas en CI."
+            "Responsable": "EQ-02"
+            "Prioridad": "Alta"
+            "Versión objetivo": "MVP"
+            "Estado": "Aprobado"
+      - 24:
+          campos:
+            "ID y nombre": "RNF-013 – Rendimiento de la búsqueda"
+            "Categoría": "Rendimiento"
+            "Descripción": "La búsqueda de catálogo debe responder rápido con un volumen realista de productos."
+            "Fuente y justificación": "RF-009; la búsqueda es la entrada principal del comprador. Valor propuesto por el equipo."
+            "Métrica": "Percentil 95 del tiempo de respuesta del endpoint de búsqueda."
+            "Umbral o meta": "≤ 1 s"
+            "Condiciones de medición": "1.000 productos activos, ambiente desplegado de pruebas."
+            "Método de verificación": "Prueba de carga con una herramienta de medición."
+            "Evidencia esperada": "Reporte de la prueba de carga."
+            "Responsable": "EQ-01"
+            "Prioridad": "Media"
+            "Versión objetivo": "MVP"
+            "Estado": "Aprobado"
+
+  - tablas: [28]
+    encabezados: [["Campo", "Contenido"]]
+    instancias:
+      - 28:
+          campos:
+            "ID y nombre": "RN-006 – {{catalogo.reglas.RN-006.nombre}}"
+            "Descripción formal": "{{catalogo.reglas.RN-006.texto}}"
+            "Motivo o política": "La comisión es el ingreso de la plataforma; el envío lo cobra el productor y no paga comisión (RN-008)."
+            "Fuente autorizada": "Especificación de diseño §4.3 (decisión DEC-04)."
+            "Condición de aplicación": "Cuando un pedido pasa a ENTREGADO."
+            "Excepciones": "Ninguna. Los pedidos REEMBOLSADO no generan comisión."
+            "Datos involucrados": "Subtotal, costo de envío y porcentaje de comisión del pedido; MovimientoSaldo."
+            "Actor responsable": "Sistema (ACT-07)"
+            "Requisitos relacionados": "RF-020, RF-028"
+            "Casos de prueba relacionados": "Escenario RF-020 «Crédito al productor» (sección 5.4)"
+            "Estado y versión": "Aprobada – MVP"
+      - 28:
+          campos:
+            "ID y nombre": "RN-004 – {{catalogo.reglas.RN-004.nombre}}"
+            "Descripción formal": "{{catalogo.reglas.RN-004.texto}}"
+            "Motivo o política": "Evitar vender lo que no existe sin bloquear stock por pedidos que nunca se pagan."
+            "Fuente autorizada": "Especificación de diseño §4.3."
+            "Condición de aplicación": "Al aprobarse el pago y cuando un pedido pagado termina en REEMBOLSADO."
+            "Excepciones": "Un pedido que pasa a REEMBOLSADO por falta de stock no restituye stock porque nunca lo descontó."
+            "Datos involucrados": "Stock del producto, cantidades de los ítems y estado del pedido."
+            "Actor responsable": "Sistema (ACT-06, ACT-07)"
+            "Requisitos relacionados": "RF-019, RF-023"
+            "Casos de prueba relacionados": "Escenarios RF-019 «Pago aprobado» y «Sin stock al pagar» (sección 5.4)"
+            "Estado y versión": "Aprobada – MVP"

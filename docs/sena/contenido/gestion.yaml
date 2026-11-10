@@ -1,0 +1,215 @@
+# Gestión de Interesados y del Proyecto — contenido de AgroConecta
+# Índices de tabla = plantilla ORIGINAL. Fuente: especificación de diseño 2026-11-10 y catálogo.
+plantilla: Gestion_de_Interesados_y_del_Proyecto_ADSO_SENA.docx
+salida: AgroConecta_Gestion_de_Interesados_y_del_Proyecto.docx
+
+tablas:
+  - indice: 0
+    encabezado: ["Campo", "Información"]
+    campos:
+      "Nombre del proyecto": "{{comun.proyecto}}"
+      "Centro de formación": "{{comun.centro}}"
+      "Regional": "{{comun.regional}}"
+      "Ficha": "{{comun.ficha}}"
+      "Equipo responsable": "{{comun.equipo_texto}}"
+      "Instructor(es)": "{{comun.instructor}}"
+      "Cliente / patrocinador": "SENA"
+      "Versión": "{{comun.version}}"
+      "Fecha": "{{comun.fecha_entrega}}"
+
+  - indice: 2
+    encabezado: ["Elemento", "Detalle"]
+    campos:
+      "Estado": "{{comun.estado}}"
+      "Propietario": "{{comun.integrantes.EQ-01}} (EQ-01, líder del proyecto)"
+      "Revisor funcional": "{{comun.integrantes.EQ-04}} (EQ-04, Product Owner)"
+      "Revisor académico": "{{comun.instructor}}"
+      "Ubicación oficial": "Repositorio del proyecto, docs/sena"
+
+  - indice: 3
+    encabezado: ["Versión", "Fecha", "Descripción"]
+    filas:
+      - ["0.1", "2026-11-10", "Creación inicial a partir de la especificación de diseño", "Equipo AgroConecta", ""]
+      - ["1.0", "2026-12-04", "Versión para entrega", "Equipo AgroConecta", ""]
+
+  - indice: 10
+    encabezado: ["ID", "Nombre / grupo"]
+    filas:
+      - ["STK-01", "Pequeños productores agrícolas", "Usuario", "Venden sus productos en la plataforma", "Vender directo, con más margen y cobro seguro", "A", "A", "Validación del problema y del producto", "Activo"]
+      - ["STK-02", "Compradores consumidores", "Usuario", "Compran para su hogar", "Encontrar productores cercanos y pagar con seguridad", "A", "M", "—", "Activo"]
+      - ["STK-03", "Compradores negocio (restaurantes, tiendas, fruvers)", "Usuario", "Compran por volumen de forma recurrente", "Precio por volumen y proveedores confiables", "A", "M", "—", "Activo"]
+      - ["STK-04", "Administrador de la plataforma", "Usuario", "Opera la plataforma: verificación, disputas y liquidaciones", "Herramientas para controlar la operación", "M", "A", "Reglas de operación", "Activo"]
+      - ["STK-05", "Instructor(es) SENA", "Patrocinador", "Orienta y evalúa el proyecto formativo", "Entregables completos, coherentes y a tiempo", "M", "A", "Todos los entregables", "Activo"]
+      - ["STK-06", "Equipo de desarrollo", "Equipo", "Construye y documenta el producto", "Alcance claro y alcanzable en el tiempo disponible", "A", "A", "Historias terminadas", "Activo"]
+      - ["STK-07", "Wompi (proveedor externo)", "Proveedor", "Pasarela de pagos en modo sandbox", "Uso correcto de su API", "B", "M", "—", "Activo"]
+
+  - indice: 12
+    encabezado: ["ID", "Necesidades"]
+    filas:
+      - ["STK-01", "Vender sin intermediarios y cobrar seguro", "Plataforma fácil de usar desde el celular", "Información sobre cómo venden hoy (EVI-01)", "RSK-05", "Desconoce", "Apoya", "EQ-04"]
+      - ["STK-02", "Encontrar productores y pagar con confianza", "Búsqueda por zona y dinero retenido hasta recibir", "Retroalimentación sobre la compra", "RSK-05", "Desconoce", "Apoya", "EQ-04"]
+      - ["STK-03", "Comprar por volumen de forma recurrente", "Precios por volumen y comprobante del pedido", "Retroalimentación sobre precios por volumen", "RSK-05", "Desconoce", "Apoya", "EQ-04"]
+      - ["STK-04", "Controlar la operación", "Paneles de verificación, disputas y liquidaciones", "Reglas de operación", "RSK-02", "Neutral", "Apoya", "EQ-01"]
+      - ["STK-05", "Evaluar las competencias ADSO", "Entregables coherentes y trazables", "Orientación y revisión", "RSK-02", "Apoya", "Apoya", "EQ-01"]
+      - ["STK-06", "Trabajo organizado y alcanzable", "Backlog priorizado y sprints claros", "Construcción del producto", "RSK-03, RSK-04", "Apoya", "Lidera", "EQ-01"]
+      - ["STK-07", "Integraciones correctas", "Uso del sandbox según su documentación", "Entorno de pruebas de pagos", "RSK-01", "Neutral", "Neutral", "EQ-02"]
+
+  - indice: 13
+    encabezado: ["ID", "Interesado"]
+    filas:
+      - ["RSK-STK-01", "Instructor SENA (STK-05)", "Pide cambios de alcance tardíos", "Solicitudes nuevas después de aprobar los requisitos", "Pasar por control de cambios y evaluar el impacto en el MVP", "EQ-01"]
+      - ["RSK-STK-02", "Productores (STK-01)", "No están disponibles para validar el problema (RSK-05)", "Sin entrevistas al 2026-11-27", "Buscar productores mediante el centro de formación o asociaciones locales", "EQ-04"]
+
+  - indice: 14
+    encabezado: ["ID", "Interesado / audiencia"]
+    filas:
+      - ["COM-01", "Equipo de desarrollo (STK-06)", "Avance, bloqueos y tareas del día", "Coordinar el trabajo", "Diaria (Daily, 15 min)", "Reunión virtual y tablero", "EQ-01", "Tablero actualizado"]
+      - ["COM-02", "Instructor SENA (STK-05)", "Avance por hito, riesgos y decisiones", "Mantener la orientación y la validación", "Por hito", "Reunión y correo", "EQ-01", "Acta y enlace al repositorio"]
+      - ["COM-03", "Productores y compradores (STK-01 a STK-03)", "Problema, prototipo e incrementos", "Validar el problema y el producto", "Por hito", "Entrevista o demostración", "EQ-04", "Notas de entrevista (docs/sena/evidencias)"]
+
+  - indice: 15
+    encabezado: ["Entregable", "Validador funcional"]
+    campos:
+      "Problema y objetivos": ["EQ-04 (Product Owner)", "EQ-01", "Inicio", "Formulación revisada por el instructor", "ENTG-01"]
+      "Alcance y requisitos": ["EQ-04 (Product Owner)", "EQ-01", "Antes del diseño", "Requisitos revisados por el instructor y validador sin errores", "ENTG-03, ENTG-04"]
+      "Prototipo UX/UI": ["EQ-04 (Product Owner)", "EQ-03", "Antes de construcción final", "Prototipo recorrido con el Product Owner", "Enlace al prototipo"]
+      "Incremento funcional": ["EQ-04 (Product Owner)", "EQ-02", "Cada iteración", "Historias con Definition of Done cumplida", "Demo del sprint y CI en verde"]
+      "Versión final": ["{{comun.instructor}}", "EQ-01", "Cierre", "IND-02 = 100 % e IND-04 en verde", "ENTG-05 a ENTG-07"]
+
+  - indice: 16
+    encabezado: ["ID", "Integrante", "Rol principal"]
+    filas:
+      - ["EQ-01", "{{comun.integrantes.EQ-01}}", "Líder y backend", "Coordinar el equipo, arquitectura y backend (identidad, productores, catálogo)", "Decide la organización interna; escala cambios de alcance", "{{comun.horas_semana}}", "EQ-02"]
+      - ["EQ-02", "{{comun.integrantes.EQ-02}}", "Backend (pagos) y QA", "Módulo de pagos, pruebas automatizadas y CI", "Propone y ejecuta", "{{comun.horas_semana}}", "EQ-01"]
+      - ["EQ-03", "{{comun.integrantes.EQ-03}}", "Frontend y UX/UI", "Prototipos e interfaz PWA", "Propone y ejecuta", "{{comun.horas_semana}}", "EQ-04"]
+      - ["EQ-04", "{{comun.integrantes.EQ-04}}", "Frontend y análisis / Product Owner", "Requisitos, backlog, documentación, aceptación de historias y frontend", "Decide la prioridad del backlog", "{{comun.horas_semana}}", "EQ-03"]
+
+  - indice: 21
+    encabezado: ["Campo", "Diligenciamiento"]
+    campos:
+      "Metodología seleccionada": "Scrum"
+      "Razones de selección": "Equipo de 4 personas, entregas incrementales verificables cada 2 semanas y un backlog priorizado que permite controlar el alcance del MVP (RSK-02)."
+      "Duración de iteración o cadencia": "Sprints de 2 semanas: 11 sprints entre 2027-01-11 y 2027-06-11."
+      "Herramienta de seguimiento": "Tablero del repositorio (GitHub Projects) e issues enlazados a las historias."
+      "Políticas de entrada y salida del trab": "Una historia entra al sprint si cumple la Definition of Ready y sale cuando cumple la Definition of Done."
+      "Criterio para considerar una tarea ter": "Código revisado en PR, pruebas en verde en CI, criterios de aceptación cumplidos y aceptación del Product Owner."
+      "Adaptaciones realizadas": "El Product Owner es un integrante del equipo (EQ-04) que representa a los productores, porque no hay cliente real; la validación con usuarios se hace por hito (COM-03)."
+
+  - indice: 22
+    encabezado: ["Estado", "Condición de entrada"]
+    campos:
+      "Pendiente": ["Refinar y estimar la historia", "Lista para iniciar", "EQ-04"]
+      "Lista": ["Asignar responsable en la planificación del sprint", "Asignada", "EQ-01"]
+      "En progreso": ["Escribir pruebas e implementar", "Código y pruebas preparados", "Integrante asignado"]
+      "En revisión": ["Revisar el PR y ejecutar CI", "Aprobada o devuelta", "Otro integrante"]
+      "Validación": ["Demostrar al Product Owner", "Aceptada por responsable funcional", "EQ-04"]
+      "Terminada": ["Integrar a la rama principal y desplegar", "Incluida en versión o incremento", "EQ-01"]
+
+  - indice: 23
+    encabezado: ["Hito", "Objetivo"]
+    filas:
+      - ["H-01", "Documentación SENA entregada", "ENTG-01 a ENTG-04", "2026-11-10", "2026-12-04", "—", "EQ-04", "En curso"]
+      - ["H-02", "Identidad y productores", "RF-001 a RF-006", "2027-01-11", "2027-02-05", "H-01", "EQ-01", "Pendiente"]
+      - ["H-03", "Catálogo y búsqueda", "RF-007 a RF-011", "2027-02-08", "2027-03-05", "H-02", "EQ-01", "Pendiente"]
+      - ["H-04", "Pedidos y pagos", "RF-012 a RF-016, RF-018 a RF-021, RF-023", "2027-03-08", "2027-04-16", "H-03, DEP-01", "EQ-02", "Pendiente"]
+      - ["H-05", "MVP completo", "RF-017, RF-022, RF-024 a RF-030", "2027-04-19", "2027-05-28", "H-04", "EQ-01", "Pendiente"]
+      - ["H-06", "Entrega final", "ENTG-05 a ENTG-07", "2027-05-31", "2027-06-11", "H-05", "EQ-01", "Pendiente"]
+
+  - indice: 24
+    encabezado: ["Iteración", "Objetivo"]
+    filas:
+      - ["S01", "Base del proyecto, CI e identidad", "HU-001, HU-002", "Registro e inicio de sesión desplegados", "2027-01-11 a 2027-01-22", "4 personas", "RSK-03", "—"]
+      - ["S02", "Cuenta y productores", "HU-003, HU-004, HU-005, HU-006", "Productor verificado por el administrador", "2027-01-25 a 2027-02-05", "4 personas", "RSK-03", "—"]
+      - ["S03", "Publicación de productos", "HU-007, HU-008", "Productos con precios por volumen", "2027-02-08 a 2027-02-19", "4 personas", "RSK-04", "—"]
+      - ["S04", "Búsqueda, detalle y carrito", "HU-009, HU-010, HU-011", "Comprador arma su carrito", "2027-02-22 a 2027-03-05", "4 personas", "RSK-04", "—"]
+      - ["S05", "Pedidos e inicio de pago", "HU-012, HU-018", "Pedidos creados y pago iniciado en sandbox", "2027-03-08 a 2027-03-19", "4 personas", "RSK-01", "—"]
+      - ["S06", "Confirmación de pago y respuesta del productor", "HU-019, HU-013, HU-023", "Pedido PAGADO por webhook; rechazo con reembolso", "2027-03-22 a 2027-04-02", "4 personas", "RSK-01", "—"]
+      - ["S07", "Entrega y saldo", "HU-014, HU-015, HU-016, HU-020, HU-021", "Pedido ENTREGADO con saldo acreditado", "2027-04-05 a 2027-04-16", "4 personas", "RSK-02", "—"]
+      - ["S08", "Plazos y liquidaciones", "HU-017, HU-022, HU-027", "Plazos automáticos y liquidación pagada", "2027-04-19 a 2027-04-30", "4 personas", "RSK-02", "—"]
+      - ["S09", "Reputación y disputas", "HU-024, HU-025, HU-026", "Disputa resuelta y calificación registrada", "2027-05-03 a 2027-05-14", "4 personas", "RSK-04", "—"]
+      - ["S10", "Administración, notificaciones y PWA", "HU-028, HU-029, HU-030", "MVP completo e instalable", "2027-05-17 a 2027-05-28", "4 personas", "RSK-06", "—"]
+      - ["S11", "Pruebas E2E, despliegue y entrega", "Estabilización", "ENTG-05 a ENTG-07", "2027-05-31 a 2027-06-11", "4 personas", "RSK-06", "—"]
+
+  - indice: 25
+    encabezado: ["ID", "Dependencia o bloqueo"]
+    filas:
+      - ["BLQ-01", "Credenciales del entorno sandbox de Wompi (DEP-01)", "Externa", "Sin ellas no se puede probar el pago real en sandbox (HU-018, HU-019)", "2027-03-08", "Wompi", "Solicitarlas en S03; mientras tanto, usar un doble falso de PasarelaPagos", "Abierta"]
+
+  - indice: 26
+    encabezado: ["ID", "Compromiso"]
+    filas:
+      - ["ACP-01", "Entregar los 4 documentos SENA", "EQ-04", "2026-12-04", "ENTG-01 a ENTG-04 entregados", "En curso", "docs/sena/entregables"]
+      - ["ACP-02", "Completar los datos pendientes (docs/sena/PENDIENTES.md)", "EQ-01", "2026-11-27", "Sin [PENDIENTE] en los documentos", "Pendiente", "docs/sena/PENDIENTES.md"]
+
+  - indice: 30
+    encabezado: ["ID", "Fecha", "Contexto"]
+    filas:
+      - ["DEC-01", "2026-11-10", "Elegir el stack tecnológico", "Monolito Next.js; backend como servicio (Supabase/Firebase); frontend y API separados", "React + Vite (PWA), NestJS, PostgreSQL y Prisma", "Equipo", "Un solo lenguaje (TypeScript) y backend propio para la lógica de dinero", "Especificación de diseño §2"]
+      - ["DEC-02", "2026-11-10", "Organizar el backend", "Capas tradicionales; Clean Architecture", "Clean Architecture por módulo (domain, application, infrastructure, presentation)", "Equipo", "Reglas de negocio aislables y probables sin base de datos", "Especificación de diseño §3"]
+      - ["DEC-03", "2026-11-10", "Elegir la pasarela de pagos", "Wompi; PayU; Mercado Pago", "Wompi en modo sandbox", "Equipo", "Acepta tarjeta, PSE y Nequi; se accede por el puerto PasarelaPagos", "Especificación de diseño §2"]
+      - ["DEC-04", "2026-11-10", "Definir el flujo del dinero", "Pago directo al productor; recaudo de la plataforma con comisión", "La plataforma recauda, retiene hasta la entrega, cobra comisión y liquida", "Equipo", "Garantía para el comprador; requiere saldos y liquidaciones", "Especificación de diseño §4"]
+      - ["DEC-05", "2026-11-10", "Elegir la plataforma", "Web responsive; PWA; app nativa", "PWA instalable", "Equipo", "Uso desde el celular sin duplicar el desarrollo (EXC-07)", "Especificación de diseño §1.3"]
+      - ["DEC-06", "2026-11-10", "Declarar el uso de IA (regla 13.3)", "No usar IA; usar IA con revisión del equipo", "Se usó un asistente de IA para estructurar la especificación de diseño y generar los borradores de esta documentación; el equipo los revisa, corrige y aprueba", "Equipo", "El equipo mantiene la responsabilidad técnica y académica del contenido", "Historial del repositorio (git)"]
+
+  - indice: 33
+    encabezado: ["ID", "Categoría", "Riesgo"]
+    filas:
+      - ["RSK-01", "Técnico", "Dificultades al integrar la pasarela Wompi (firma, webhooks, sandbox)", "Poca experiencia con pagos en línea", "Retraso de OBJ-03", "3", "4", "12", "Mitigar: puerto PasarelaPagos con doble falso desde S05", "EQ-02", "Webhook sin funcionar al final de S06", "Abierto"]
+      - ["RSK-02", "Gestión", "Crecimiento del alcance más allá del MVP", "Ideas nuevas durante el desarrollo", "Incumplimiento de la fecha de entrega", "3", "4", "12", "Evitar: control de cambios; el MVP es RF-001 a RF-030", "EQ-01", "Historia fuera del catálogo propuesta en un sprint", "Abierto"]
+      - ["RSK-03", "Técnico", "Curva de aprendizaje de NestJS y Clean Architecture", "Tecnologías nuevas para el equipo", "Sprints iniciales más lentos", "4", "3", "12", "Mitigar: módulo de referencia en S01 y revisión en cada PR", "EQ-01", "Velocidad de S01 menor al 50 % de lo planeado", "Abierto"]
+      - ["RSK-04", "Gestión", "Baja disponibilidad de integrantes en algunos periodos", "Otras actividades académicas o personales", "Menor capacidad por sprint", "3", "3", "9", "Mitigar: acordar disponibilidad en cada planificación", "EQ-01", "Integrante sin avance en una semana", "Abierto"]
+      - ["RSK-05", "Usuario", "No contar con productores reales para validar el problema", "Distancia con productores de la zona", "Evidencias débiles y supuestos sin validar", "3", "3", "9", "Mitigar: contactar productores mediante el centro o asociaciones", "EQ-04", "Sin entrevistas al 2026-11-27", "Abierto"]
+      - ["RSK-06", "Técnico", "Límites de los planes gratuitos de hosting", "Cuotas de uso", "Caídas del ambiente de pruebas", "2", "3", "6", "Aceptar: datos de prueba ligeros", "EQ-01", "Ambiente caído más de un día", "Abierto"]
+
+  - indice: 34
+    encabezado: ["ID", "Fecha de revisión"]
+    filas:
+      - ["RSK-01", "2026-12-04", "Sin cambios (aún no inicia la construcción)", "Riesgo registrado", "—", "12", "2027-03-19"]
+      - ["RSK-02", "2026-12-04", "Alcance del MVP cerrado en RF-001 a RF-030", "Catálogo maestro de requisitos", "Alcance controlado", "12", "2027-01-22"]
+      - ["RSK-03", "2026-12-04", "Sin cambios", "Riesgo registrado", "—", "12", "2027-01-22"]
+      - ["RSK-04", "2026-12-04", "Sin cambios", "Riesgo registrado", "—", "9", "2027-01-11"]
+      - ["RSK-05", "2026-12-04", "[PENDIENTE: resultado del contacto con productores]", "Búsqueda de productores para entrevistas", "—", "9", "2027-01-11"]
+      - ["RSK-06", "2026-12-04", "Sin cambios", "Riesgo registrado", "—", "6", "2027-05-28"]
+
+  - indice: 35
+    encabezado: ["ID", "Oportunidad"]
+    filas:
+      - ["OP-01", "Validar el producto con una asociación de productores local", "Evidencia real del problema y usuarios de prueba", "Contactar a [PENDIENTE: asociación o cooperativa] mediante el centro de formación", "EQ-04", "Abierta"]
+
+  - indice: 38
+    encabezado: ["ID", "Entregable"]
+    filas:
+      - ["ENTG-01", "Formulación y constitución", "Revisado por el instructor", "EQ-04", "{{comun.instructor}}", "2026-12-04", "En progreso", "docs/sena/entregables"]
+      - ["ENTG-02", "Gestión de interesados y del proyecto", "Revisado por el instructor", "EQ-01", "{{comun.instructor}}", "2026-12-04", "En progreso", "docs/sena/entregables"]
+      - ["ENTG-03", "Alcance y especificación de requisitos", "Revisado por el instructor", "EQ-04", "{{comun.instructor}}", "2026-12-04", "En progreso", "docs/sena/entregables"]
+      - ["ENTG-04", "Backlog, historias y casos de uso", "Revisado por el instructor", "EQ-04", "{{comun.instructor}}", "2026-12-04", "En progreso", "docs/sena/entregables"]
+      - ["ENTG-05", "Software MVP desplegado", "IND-02 = 100 % e IND-04 en verde", "EQ-01", "EQ-04 y {{comun.instructor}}", "2027-06-11", "Pendiente", "—"]
+      - ["ENTG-06", "Informe de pruebas", "IND-03 = 15 de 15", "EQ-02", "{{comun.instructor}}", "2027-06-11", "Pendiente", "—"]
+      - ["ENTG-07", "Manual de usuario", "Revisado por el instructor", "EQ-03", "{{comun.instructor}}", "2027-06-11", "Pendiente", "—"]
+
+  - indice: 40
+    encabezado: ["Dimensión", "Estado"]
+    campos:
+      "Alcance": ["Verde", "MVP definido: 30 RF, 14 RNF, 15 reglas (catálogo maestro)", "—", "Revisión con el instructor"]
+      "Cronograma": ["Verde", "Documentación lista para el 2026-12-04", "—", "Preparar el entorno para S01"]
+      "Calidad": ["Verde", "Validador de documentación sin errores", "—", "Mantener el validador en verde"]
+      "Riesgos": ["Amarillo", "RSK-01 y RSK-03 con nivel 12", "Integración de pagos y curva de aprendizaje", "Módulo de referencia en S01"]
+      "Equipo": ["Verde", "4 integrantes con roles asignados", "Disponibilidad por confirmar ({{comun.horas_semana}})", "Acordar horas por semana"]
+      "Validación del cliente": ["Amarillo", "Sin entrevistas a productores todavía", "RSK-05", "Realizar EVI-01"]
+
+  - indice: 42
+    encabezado: ["Integrante", "Periodo"]
+    filas:
+      - ["{{comun.integrantes.EQ-01}}", "2026-11-10 a 2026-12-04", "[PENDIENTE: actividades]", "ENTG-02", "[PENDIENTE: commits]", "—", "—", "{{comun.instructor}}"]
+      - ["{{comun.integrantes.EQ-02}}", "2026-11-10 a 2026-12-04", "[PENDIENTE: actividades]", "—", "[PENDIENTE: commits]", "—", "—", "{{comun.instructor}}"]
+      - ["{{comun.integrantes.EQ-03}}", "2026-11-10 a 2026-12-04", "[PENDIENTE: actividades]", "—", "[PENDIENTE: commits]", "—", "—", "{{comun.instructor}}"]
+      - ["{{comun.integrantes.EQ-04}}", "2026-11-10 a 2026-12-04", "[PENDIENTE: actividades]", "ENTG-01, ENTG-03, ENTG-04", "[PENDIENTE: commits]", "—", "—", "{{comun.instructor}}"]
+
+  - indice: 43
+    encabezado: ["ID", "Indicador"]
+    campos:
+      "IND-GES-01": ["100%", "Por hito", "Registro de entregables", "EQ-01"]
+      "IND-GES-02": ["100%", "Mensual", "Registro de cambios", "EQ-01"]
+      "IND-GES-03": ["100%", "Semanal", "Registro de riesgos", "EQ-01"]
+      "IND-GES-04": ["≥ 90%", "Semanal", "Actas y tablero", "EQ-01"]
+      "IND-GES-05": ["100%", "Por iteración", "Git y tablero", "EQ-04"]

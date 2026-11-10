@@ -1,0 +1,465 @@
+# Backlog, Historias de Usuario y Casos de Uso — contenido de AgroConecta
+# Índices de tabla = plantilla ORIGINAL. Fuente: especificación de diseño 2026-11-10 y catálogo.
+plantilla: Backlog_Historias_de_Usuario_y_Casos_de_Uso_ADSO_SENA.docx
+salida: AgroConecta_Backlog_Historias_y_Casos_de_Uso.docx
+
+imagenes:
+  - despues_de: "Incluya un diagrama legible con actores externos"
+    ruta: docs/sena/diagramas/casos_de_uso.png
+    ancho_cm: 16
+
+tablas:
+  - indice: 0
+    encabezado: ["Campo", "Información"]
+    campos:
+      "Nombre del proyecto": "{{comun.proyecto}}"
+      "Centro de formación": "{{comun.centro}}"
+      "Regional": "{{comun.regional}}"
+      "Ficha": "{{comun.ficha}}"
+      "Equipo responsable": "{{comun.equipo_texto}}"
+      "Product Owner / responsable funcional": "{{comun.integrantes.EQ-04}} (EQ-04)"
+      "Instructor(es)": "{{comun.instructor}}"
+      "Versión": "{{comun.version}}"
+      "Fecha": "{{comun.fecha_entrega}}"
+
+  - indice: 2
+    encabezado: ["Elemento", "Detalle"]
+    campos:
+      "Estado": "{{comun.estado}}"
+      "Propietario": "{{comun.integrantes.EQ-04}} (EQ-04, Product Owner)"
+      "Revisor funcional": "{{comun.integrantes.EQ-04}} (EQ-04, Product Owner)"
+      "Revisor técnico": "{{comun.integrantes.EQ-01}} (EQ-01, líder técnico)"
+      "Revisor académico": "{{comun.instructor}}"
+      "Ubicación oficial": "Repositorio del proyecto, docs/sena, y tablero del proyecto"
+
+  - indice: 3
+    encabezado: ["Versión", "Fecha", "Descripción"]
+    filas:
+      - ["0.1", "2026-11-10", "Estructura y backlog inicial a partir de la especificación de diseño", "Equipo AgroConecta", ""]
+      - ["1.0", "2026-12-04", "Versión para entrega", "Equipo AgroConecta", ""]
+
+  - indice: 8
+    encabezado: ["Término", "Definición"]
+    agregar:
+      - ["Productor verificado", "Productor cuyo perfil aprobó el administrador; solo él puede publicar productos (RN-001)."]
+      - ["Pedido", "Compra a un único productor generada desde el carrito, con su propia máquina de estados (RN-002)."]
+      - ["Saldo retenido", "Dinero de un pedido pagado que aún no se entrega (RN-005)."]
+      - ["Liquidación", "Retiro de saldo disponible solicitado por el productor (RN-010)."]
+      - ["Disputa", "Reclamo del comprador sobre un pedido enviado (RN-015)."]
+      - ["Sandbox", "Entorno de pruebas de la pasarela en el que no se mueve dinero real."]
+
+  - indice: 10
+    encabezado: ["ID", "Épica"]
+    filas:
+      - ["EP-001", "Identidad y cuenta", "Que cada usuario acceda con su rol y controle sus datos", "STK-01, STK-02, STK-03", "IND-02", "Aprobada"]
+      - ["EP-002", "Productores", "Que solo productores reales y verificados vendan", "STK-01, STK-04", "IND-02", "Aprobada"]
+      - ["EP-003", "Catálogo", "Que los compradores encuentren productos por zona", "STK-01, STK-02, STK-03", "IND-02", "Aprobada"]
+      - ["EP-004", "Pedidos", "Que la compra avance por estados claros hasta la entrega", "STK-01, STK-02, STK-03", "IND-02, IND-04", "Aprobada"]
+      - ["EP-005", "Pagos", "Que el pago sea seguro: retenido hasta la entrega y liquidado al productor", "STK-01, STK-02, STK-03, STK-07", "IND-02, IND-03", "Aprobada"]
+      - ["EP-006", "Reputación", "Que los compradores confíen en productores desconocidos", "STK-02, STK-03", "IND-02", "Aprobada"]
+      - ["EP-007", "Administración", "Que la plataforma se pueda operar y controlar", "STK-04", "IND-02", "Aprobada"]
+
+  - indice: 11
+    encabezado: ["ID", "Funcionalidad"]
+    filas:
+      - ["FEAT-001", "Registro y acceso", "EP-001", "El usuario entra con el rol correcto", "RF-001, RF-002", "Alta", "MVP"]
+      - ["FEAT-002", "Cuenta y notificaciones", "EP-001", "El usuario controla su cuenta y se entera a tiempo", "RF-003, RF-030", "Alta", "MVP"]
+      - ["FEAT-003", "Perfil y entrega del productor", "EP-002", "El comprador sabe quién vende y cómo recibe", "RF-004, RF-005", "Alta", "MVP"]
+      - ["FEAT-004", "Verificación de productores", "EP-002", "Solo venden productores reales", "RF-006", "Alta", "MVP"]
+      - ["FEAT-005", "Publicación de productos", "EP-003", "El productor ofrece sus productos y precios por volumen", "RF-007, RF-008", "Alta", "MVP"]
+      - ["FEAT-006", "Búsqueda y detalle", "EP-003", "El comprador encuentra productores por zona", "RF-009, RF-010", "Alta", "MVP"]
+      - ["FEAT-007", "Carrito y creación de pedidos", "EP-004", "El comprador compra a varios productores a la vez", "RF-011, RF-012", "Alta", "MVP"]
+      - ["FEAT-008", "Ciclo de vida del pedido", "EP-004", "Productor y comprador saben en qué va el pedido", "RF-013 a RF-017", "Alta", "MVP"]
+      - ["FEAT-009", "Cobro en línea", "EP-005", "El comprador paga con tarjeta, PSE o Nequi", "RF-018, RF-019", "Alta", "MVP"]
+      - ["FEAT-010", "Saldo y liquidaciones", "EP-005", "El productor recibe su dinero tras la entrega", "RF-020, RF-021, RF-022", "Alta", "MVP"]
+      - ["FEAT-011", "Reembolsos", "EP-005", "El comprador recupera su dinero si no recibe", "RF-023", "Alta", "MVP"]
+      - ["FEAT-012", "Calificaciones", "EP-006", "Los compradores orientan a otros compradores", "RF-024", "Media", "MVP"]
+      - ["FEAT-013", "Disputas", "EP-007", "Los problemas de entrega se resuelven de forma justa", "RF-025, RF-026", "Alta", "MVP"]
+      - ["FEAT-014", "Operación administrativa", "EP-007", "El administrador controla pagos, comisión y reportes", "RF-027, RF-028, RF-029", "Media", "MVP"]
+
+  - indice: 13
+    encabezado: ["Orden", "ID", "Tipo"]
+    filas:
+      - ["1", "TT-001", "Técnica", "Base del proyecto, CI y despliegue inicial", "Transversal", "Alto", "Must", "5", "—", "Preparada", "MVP"]
+      - ["2", "HU-001", "Historia", "{{catalogo.historias.HU-001.nombre}}", "EP-001", "Alto", "Must", "5", "TT-001", "Preparada", "MVP"]
+      - ["3", "HU-002", "Historia", "{{catalogo.historias.HU-002.nombre}}", "EP-001", "Alto", "Must", "5", "HU-001", "Preparada", "MVP"]
+      - ["4", "HU-003", "Historia", "{{catalogo.historias.HU-003.nombre}}", "EP-001", "Medio", "Must", "2", "HU-001", "Propuesta", "MVP"]
+      - ["5", "HU-004", "Historia", "{{catalogo.historias.HU-004.nombre}}", "EP-002", "Alto", "Must", "3", "HU-001", "Propuesta", "MVP"]
+      - ["6", "HU-005", "Historia", "{{catalogo.historias.HU-005.nombre}}", "EP-002", "Alto", "Must", "3", "HU-004", "Propuesta", "MVP"]
+      - ["7", "HU-006", "Historia", "{{catalogo.historias.HU-006.nombre}}", "EP-002", "Alto", "Must", "3", "HU-004", "Propuesta", "MVP"]
+      - ["8", "HU-007", "Historia", "{{catalogo.historias.HU-007.nombre}}", "EP-003", "Alto", "Must", "8", "HU-006", "Propuesta", "MVP"]
+      - ["9", "HU-008", "Historia", "{{catalogo.historias.HU-008.nombre}}", "EP-003", "Medio", "Must", "5", "HU-007", "Propuesta", "MVP"]
+      - ["10", "HU-009", "Historia", "{{catalogo.historias.HU-009.nombre}}", "EP-003", "Alto", "Must", "5", "HU-007", "Propuesta", "MVP"]
+      - ["11", "HU-010", "Historia", "{{catalogo.historias.HU-010.nombre}}", "EP-003", "Alto", "Must", "3", "HU-007", "Propuesta", "MVP"]
+      - ["12", "HU-011", "Historia", "{{catalogo.historias.HU-011.nombre}}", "EP-004", "Alto", "Must", "5", "HU-010", "Propuesta", "MVP"]
+      - ["13", "HU-012", "Historia", "{{catalogo.historias.HU-012.nombre}}", "EP-004", "Alto", "Must", "8", "HU-011, HU-005", "Propuesta", "MVP"]
+      - ["14", "HU-018", "Historia", "{{catalogo.historias.HU-018.nombre}}", "EP-005", "Alto", "Must", "8", "HU-012", "Propuesta", "MVP"]
+      - ["15", "HU-019", "Historia", "{{catalogo.historias.HU-019.nombre}}", "EP-005", "Alto", "Must", "8", "HU-018", "Propuesta", "MVP"]
+      - ["16", "HU-013", "Historia", "{{catalogo.historias.HU-013.nombre}}", "EP-004", "Alto", "Must", "3", "HU-019", "Propuesta", "MVP"]
+      - ["17", "HU-023", "Historia", "{{catalogo.historias.HU-023.nombre}}", "EP-005", "Alto", "Must", "5", "HU-019", "Propuesta", "MVP"]
+      - ["18", "HU-014", "Historia", "{{catalogo.historias.HU-014.nombre}}", "EP-004", "Alto", "Must", "2", "HU-013", "Propuesta", "MVP"]
+      - ["19", "HU-015", "Historia", "{{catalogo.historias.HU-015.nombre}}", "EP-004", "Alto", "Must", "3", "HU-014", "Propuesta", "MVP"]
+      - ["20", "HU-016", "Historia", "{{catalogo.historias.HU-016.nombre}}", "EP-004", "Medio", "Must", "3", "HU-012", "Propuesta", "MVP"]
+      - ["21", "HU-020", "Historia", "{{catalogo.historias.HU-020.nombre}}", "EP-005", "Alto", "Must", "5", "HU-015", "Propuesta", "MVP"]
+      - ["22", "HU-021", "Historia", "{{catalogo.historias.HU-021.nombre}}", "EP-005", "Medio", "Must", "3", "HU-020", "Propuesta", "MVP"]
+      - ["23", "HU-017", "Historia", "{{catalogo.historias.HU-017.nombre}}", "EP-004", "Medio", "Must", "5", "HU-013, HU-015", "Propuesta", "MVP"]
+      - ["24", "HU-022", "Historia", "{{catalogo.historias.HU-022.nombre}}", "EP-005", "Alto", "Must", "3", "HU-021", "Propuesta", "MVP"]
+      - ["25", "HU-027", "Historia", "{{catalogo.historias.HU-027.nombre}}", "EP-007", "Alto", "Must", "2", "HU-022", "Propuesta", "MVP"]
+      - ["26", "HU-024", "Historia", "{{catalogo.historias.HU-024.nombre}}", "EP-006", "Medio", "Must", "3", "HU-015", "Propuesta", "MVP"]
+      - ["27", "HU-025", "Historia", "{{catalogo.historias.HU-025.nombre}}", "EP-007", "Alto", "Must", "3", "HU-014", "Propuesta", "MVP"]
+      - ["28", "HU-026", "Historia", "{{catalogo.historias.HU-026.nombre}}", "EP-007", "Alto", "Must", "5", "HU-025, HU-023", "Propuesta", "MVP"]
+      - ["29", "HU-028", "Historia", "{{catalogo.historias.HU-028.nombre}}", "EP-007", "Medio", "Must", "2", "—", "Propuesta", "MVP"]
+      - ["30", "HU-029", "Historia", "{{catalogo.historias.HU-029.nombre}}", "EP-007", "Medio", "Should", "3", "HU-020", "Propuesta", "MVP"]
+      - ["31", "HU-030", "Historia", "{{catalogo.historias.HU-030.nombre}}", "EP-001", "Medio", "Must", "5", "HU-002", "Propuesta", "MVP"]
+      - ["32", "TT-002", "Técnica", "PWA instalable (manifest y service worker)", "Transversal", "Medio", "Must", "3", "HU-009", "Propuesta", "MVP"]
+      - ["33", "TT-003", "Técnica", "Pruebas E2E del camino principal y despliegue final", "Transversal", "Alto", "Must", "8", "Todas", "Propuesta", "MVP"]
+
+  - indice: 18
+    encabezado: ["ID", "Historia", "Condición"]
+    filas:
+      - ["CA-HU-001-01", "HU-001", "Con datos válidos, rol elegido y consentimiento aceptado, la cuenta se crea con ese rol", "Éxito", "Alta", "CP-HU-001-01"]
+      - ["CA-HU-001-02", "HU-001", "Sin aceptar el tratamiento de datos o con un correo ya registrado, el registro se rechaza con un mensaje claro", "Error", "Alta", "CP-HU-001-02"]
+      - ["CA-HU-002-01", "HU-002", "Con credenciales válidas se obtiene una sesión de 15 min que se renueva con el refresh token", "Éxito", "Alta", "CP-HU-002-01"]
+      - ["CA-HU-002-02", "HU-002", "Tras 5 intentos fallidos la cuenta queda bloqueada 15 min", "Error", "Alta", "CP-HU-002-02"]
+      - ["CA-HU-003-01", "HU-003", "Al confirmar la eliminación, los datos personales se eliminan y la sesión se cierra", "Éxito", "Media", "CP-HU-003-01"]
+      - ["CA-HU-003-02", "HU-003", "Si no se confirma la contraseña, la cuenta no se elimina", "Error", "Media", "CP-HU-003-02"]
+      - ["CA-HU-004-01", "HU-004", "Con finca, documento y municipio válidos, el perfil queda en PENDIENTE de verificación", "Éxito", "Alta", "CP-HU-004-01"]
+      - ["CA-HU-004-02", "HU-004", "Con un municipio que no existe en DIVIPOLA, el perfil se rechaza", "Error", "Alta", "CP-HU-004-02"]
+      - ["CA-HU-005-01", "HU-005", "El productor guarda domicilio con zona y costo, recogida, o ambas", "Éxito", "Alta", "CP-HU-005-01"]
+      - ["CA-HU-005-02", "HU-005", "Si no elige ninguna modalidad, la configuración se rechaza", "Error", "Alta", "CP-HU-005-02"]
+      - ["CA-HU-006-01", "HU-006", "Al aprobar, el productor pasa a VERIFICADO y recibe una notificación", "Éxito", "Alta", "CP-HU-006-01"]
+      - ["CA-HU-006-02", "HU-006", "Un usuario que no es administrador no puede verificar (403)", "Error", "Alta", "CP-HU-006-02"]
+      - ["CA-HU-007-01", "HU-007", "Un productor verificado publica un producto con precio, unidad, stock e imagen", "Éxito", "Alta", "CP-HU-007-01"]
+      - ["CA-HU-007-02", "HU-007", "Un productor no verificado no puede publicar ni activar productos (RN-001)", "Error", "Alta", "CP-HU-007-02"]
+      - ["CA-HU-008-01", "HU-008", "El productor define un precio por volumen desde una cantidad mínima", "Éxito", "Media", "CP-HU-008-01"]
+      - ["CA-HU-008-02", "HU-008", "Un precio por volumen mayor que el precio base o con cantidad mínima ≤ 0 se rechaza", "Error", "Media", "CP-HU-008-02"]
+      - ["CA-HU-009-01", "HU-009", "La búsqueda filtra por texto, categoría, departamento y municipio, solo con productos activos", "Éxito", "Alta", "CP-HU-009-01"]
+      - ["CA-HU-009-02", "HU-009", "Una búsqueda sin resultados muestra un mensaje y no un error", "Límite", "Media", "CP-HU-009-02"]
+      - ["CA-HU-009-03", "HU-009", "Un municipio que no pertenece al departamento elegido se rechaza", "Error", "Media", "CP-HU-009-03"]
+      - ["CA-HU-010-01", "HU-010", "El detalle muestra producto, precios por volumen, productor, municipio y calificación promedio", "Éxito", "Alta", "CP-HU-010-01"]
+      - ["CA-HU-010-02", "HU-010", "Un producto inactivo o inexistente responde 404", "Error", "Media", "CP-HU-010-02"]
+      - ["CA-HU-011-01", "HU-011", "El comprador agrega, cambia la cantidad y quita productos del carrito", "Éxito", "Alta", "CP-HU-011-01"]
+      - ["CA-HU-011-02", "HU-011", "Una cantidad ≤ 0 o un producto inactivo no se agregan", "Error", "Alta", "CP-HU-011-02"]
+      - ["CA-HU-012-01", "HU-012", "Un carrito con productos de 2 productores genera 2 pedidos en PENDIENTE_PAGO y un único cobro", "Éxito", "Alta", "CP-HU-012-01"]
+      - ["CA-HU-012-02", "HU-012", "Un producto de un productor no verificado impide crear los pedidos (422)", "Error", "Alta", "CP-HU-012-02"]
+      - ["CA-HU-013-01", "HU-013", "Al aceptar un pedido PAGADO, pasa a ACEPTADO", "Éxito", "Alta", "CP-HU-013-01"]
+      - ["CA-HU-013-02", "HU-013", "Al rechazarlo, pasa a REEMBOLSADO y se restituye el stock", "Éxito", "Alta", "CP-HU-013-02"]
+      - ["CA-HU-013-03", "HU-013", "Un productor no puede aceptar pedidos de otro productor (403)", "Error", "Alta", "CP-HU-013-03"]
+      - ["CA-HU-014-01", "HU-014", "Un pedido ACEPTADO pasa a ENVIADO", "Éxito", "Alta", "CP-HU-014-01"]
+      - ["CA-HU-014-02", "HU-014", "Un pedido PAGADO (no aceptado) no puede marcarse como enviado (409)", "Error", "Alta", "CP-HU-014-02"]
+      - ["CA-HU-015-01", "HU-015", "Al confirmar la recepción de un pedido ENVIADO, pasa a ENTREGADO", "Éxito", "Alta", "CP-HU-015-01"]
+      - ["CA-HU-015-02", "HU-015", "Un pedido que no está ENVIADO no puede confirmarse (409)", "Error", "Alta", "CP-HU-015-02"]
+      - ["CA-HU-016-01", "HU-016", "Cada rol ve solo sus pedidos, con su estado y fechas", "Éxito", "Media", "CP-HU-016-01"]
+      - ["CA-HU-016-02", "HU-016", "Consultar un pedido ajeno responde 404", "Error", "Media", "CP-HU-016-02"]
+      - ["CA-HU-017-01", "HU-017", "PENDIENTE_PAGO por 30 min → CANCELADO; PAGADO sin respuesta por 48 h → REEMBOLSADO; ENVIADO por 7 días → ENTREGADO", "Éxito", "Alta", "CP-HU-017-01"]
+      - ["CA-HU-017-02", "HU-017", "Ejecutar el job dos veces seguidas no repite ningún efecto", "Error", "Alta", "CP-HU-017-02"]
+      - ["CA-HU-018-01", "HU-018", "El comprador es dirigido al pago de Wompi sandbox por el monto total en COP enteros", "Éxito", "Alta", "CP-HU-018-01"]
+      - ["CA-HU-018-02", "HU-018", "Si la pasarela no responde, los pedidos siguen en PENDIENTE_PAGO y se informa al comprador", "Error", "Alta", "CP-HU-018-02"]
+      - ["CA-HU-019-01", "HU-019", "Un evento APROBADA con firma válida pasa los pedidos a PAGADO y descuenta el stock", "Éxito", "Alta", "CP-HU-019-01"]
+      - ["CA-HU-019-02", "HU-019", "Un evento duplicado o con firma inválida no produce cambios", "Error", "Alta", "CP-HU-019-02"]
+      - ["CA-HU-020-01", "HU-020", "Al entregarse un pedido de $50.000 + $5.000 de envío con 8 %, se acreditan $51.000", "Éxito", "Alta", "CP-HU-020-01"]
+      - ["CA-HU-020-02", "HU-020", "Un pedido que ya recibió su crédito no se acredita otra vez", "Error", "Alta", "CP-HU-020-02"]
+      - ["CA-HU-021-01", "HU-021", "El productor ve su saldo disponible y la lista de movimientos", "Éxito", "Media", "CP-HU-021-01"]
+      - ["CA-HU-021-02", "HU-021", "Un productor no puede ver el saldo de otro (403)", "Error", "Media", "CP-HU-021-02"]
+      - ["CA-HU-022-01", "HU-022", "Una solicitud entre el mínimo y el saldo disponible crea la liquidación y un movimiento RETIRO", "Éxito", "Alta", "CP-HU-022-01"]
+      - ["CA-HU-022-02", "HU-022", "Un monto mayor al saldo o menor al mínimo se rechaza (422)", "Error", "Alta", "CP-HU-022-02"]
+      - ["CA-HU-023-01", "HU-023", "El reembolso devuelve el total (subtotal + envío) por la pasarela", "Éxito", "Alta", "CP-HU-023-01"]
+      - ["CA-HU-023-02", "HU-023", "Un pedido ENTREGADO no se puede reembolsar (409)", "Error", "Alta", "CP-HU-023-02"]
+      - ["CA-HU-024-01", "HU-024", "El comprador califica de 1 a 5 estrellas un pedido ENTREGADO", "Éxito", "Media", "CP-HU-024-01"]
+      - ["CA-HU-024-02", "HU-024", "Una segunda calificación del mismo pedido o de un pedido no entregado se rechaza", "Error", "Media", "CP-HU-024-02"]
+      - ["CA-HU-025-01", "HU-025", "El comprador abre una disputa sobre un pedido ENVIADO, que pasa a EN_DISPUTA", "Éxito", "Alta", "CP-HU-025-01"]
+      - ["CA-HU-025-02", "HU-025", "No se puede abrir disputa sobre un pedido que no está ENVIADO (409)", "Error", "Alta", "CP-HU-025-02"]
+      - ["CA-HU-026-01", "HU-026", "A favor del productor el pedido pasa a ENTREGADO; a favor del comprador, a REEMBOLSADO", "Éxito", "Alta", "CP-HU-026-01"]
+      - ["CA-HU-026-02", "HU-026", "Una disputa ya resuelta no se puede resolver de nuevo (409)", "Error", "Alta", "CP-HU-026-02"]
+      - ["CA-HU-027-01", "HU-027", "El administrador marca una liquidación SOLICITADA como PAGADA", "Éxito", "Alta", "CP-HU-027-01"]
+      - ["CA-HU-027-02", "HU-027", "Una liquidación ya PAGADA no se puede marcar otra vez", "Error", "Alta", "CP-HU-027-02"]
+      - ["CA-HU-028-01", "HU-028", "El nuevo porcentaje aplica a los pedidos creados después del cambio (RN-007)", "Éxito", "Media", "CP-HU-028-01"]
+      - ["CA-HU-028-02", "HU-028", "Un porcentaje fuera de 0 a 100 o un mínimo negativo se rechaza", "Error", "Media", "CP-HU-028-02"]
+      - ["CA-HU-029-01", "HU-029", "El reporte muestra totales de pedidos por estado y comisiones por mes", "Éxito", "Baja", "CP-HU-029-01"]
+      - ["CA-HU-029-02", "HU-029", "Un usuario que no es administrador no accede a los reportes (403)", "Error", "Baja", "CP-HU-029-02"]
+      - ["CA-HU-030-01", "HU-030", "Cada cambio de estado del pedido, la verificación y las liquidaciones generan aviso en la app y por correo", "Éxito", "Media", "CP-HU-030-01"]
+      - ["CA-HU-030-02", "HU-030", "Si el correo falla, el aviso en la app se registra igual y el error queda en el log", "Error", "Media", "CP-HU-030-02"]
+
+  - indice: 19
+    encabezado: ["ID escenario", "Nombre"]
+    filas:
+      - ["ESC-HU-012-01", "Carrito con 2 productores", "Un comprador con productos de 2 productores verificados en el carrito", "Confirma el carrito eligiendo recogida", "Se crean 2 pedidos en PENDIENTE_PAGO con precios congelados y costo de envío 0", "RN-002, RN-003, RN-008"]
+      - ["ESC-HU-012-02", "Productor no verificado", "Un carrito con un producto de un productor no verificado", "El comprador confirma el carrito", "Se rechaza (422) y no se crea ningún pedido", "RN-001"]
+      - ["ESC-HU-013-01", "Aceptar pedido", "Un pedido PAGADO del productor", "El productor lo acepta", "El pedido pasa a ACEPTADO y el comprador recibe un aviso", "—"]
+      - ["ESC-HU-013-02", "Rechazar pedido", "Un pedido PAGADO con 3 kg descontados del stock", "El productor lo rechaza", "El pedido pasa a REEMBOLSADO, se reembolsa el total y el stock vuelve a sumar 3 kg", "RN-004, RN-011"]
+      - ["ESC-HU-015-01", "Confirmar recepción", "Un pedido ENVIADO al comprador", "El comprador confirma la recepción", "El pedido pasa a ENTREGADO y se acredita el saldo del productor", "RN-005, RN-006"]
+      - ["ESC-HU-015-02", "Pedido no enviado", "Un pedido ACEPTADO", "El comprador intenta confirmar la recepción", "Se rechaza (409) y el estado no cambia", "—"]
+      - ["ESC-HU-019-01", "Pago aprobado", "Un cobro con 2 pedidos en PENDIENTE_PAGO y stock suficiente", "Llega un evento APROBADA con firma válida", "Ambos pedidos pasan a PAGADO y se descuenta el stock en una transacción", "RN-004, RN-013"]
+      - ["ESC-HU-019-02", "Evento duplicado", "Un evento ya procesado", "Llega el mismo evento otra vez", "No cambia ningún estado ni stock", "RN-013"]
+      - ["ESC-HU-020-01", "Crédito con comisión", "Un pedido ENVIADO de $50.000, envío $5.000 y comisión del 8 %", "Pasa a ENTREGADO", "Comisión $4.000; movimiento CREDITO_PEDIDO de $51.000", "RN-006, RN-012"]
+      - ["ESC-HU-020-02", "Crédito no repetido", "Un pedido ENTREGADO que ya tiene su crédito", "Se procesa de nuevo el evento PedidoEntregado", "No se crea otro movimiento", "RN-009"]
+      - ["ESC-HU-022-01", "Liquidación válida", "Saldo disponible $80.000 y mínimo $20.000", "El productor solicita $50.000", "Se crea la liquidación SOLICITADA y un movimiento RETIRO; el saldo queda en $30.000", "RN-009, RN-010"]
+      - ["ESC-HU-022-02", "Monto mayor al saldo", "Saldo disponible $30.000", "El productor solicita $40.000", "Se rechaza (422) y el saldo no cambia", "RN-010"]
+      - ["ESC-HU-025-01", "Abrir disputa", "Un pedido ENVIADO del comprador", "El comprador abre una disputa con motivo y evidencia", "El pedido pasa a EN_DISPUTA y el dinero sigue retenido", "RN-005, RN-015"]
+      - ["ESC-HU-025-02", "Disputa sobre pedido entregado", "Un pedido ENTREGADO", "El comprador intenta abrir una disputa", "Se rechaza (409)", "RN-015"]
+      - ["ESC-HU-026-01", "Resolver a favor del comprador", "Un pedido EN_DISPUTA", "El administrador resuelve a favor del comprador", "El pedido pasa a REEMBOLSADO, se reembolsa el total y se restituye el stock", "RN-004, RN-011"]
+      - ["ESC-HU-026-02", "Resolver a favor del productor", "Un pedido EN_DISPUTA", "El administrador resuelve a favor del productor", "El pedido pasa a ENTREGADO y se acredita el saldo del productor", "RN-006"]
+
+  - indice: 24
+    encabezado: ["ID", "Nombre", "Actor principal"]
+    filas:
+      - ["CU-001", "Realizar pedido y pago", "ACT-02, ACT-03", "Comprar a uno o varios productores y pagar en línea", "HU-011, HU-012, HU-018, HU-019 / RF-011, RF-012, RF-018, RF-019", "Alta", "Aprobado"]
+      - ["CU-002", "Gestionar ciclo del pedido", "ACT-01", "Llevar un pedido pagado hasta la entrega y el crédito del saldo", "HU-013, HU-014, HU-015, HU-017, HU-020 / RF-013 a RF-015, RF-017, RF-020", "Alta", "Aprobado"]
+      - ["CU-003", "Resolver disputa", "ACT-04", "Cerrar de forma justa un pedido con problemas de entrega", "HU-025, HU-026, HU-023 / RF-025, RF-026, RF-023", "Alta", "Aprobado"]
+      - ["CU-004", "Liquidar saldo", "ACT-01", "Retirar el dinero de las ventas entregadas", "HU-021, HU-022, HU-027 / RF-021, RF-022, RF-027", "Alta", "Aprobado"]
+
+  - indice: 28
+    encabezado: ["CU-001"]
+    nuevo_encabezado: ["CU-001: Realizar pedido y pago · Actor: comprador (ACT-02, ACT-03) · Objetivo: comprar a uno o varios productores y pagar en línea. Flujo principal: 1) el comprador confirma el carrito y elige la modalidad de entrega; 2) el sistema crea un pedido por productor con precios congelados y un único cobro; 3) el comprador paga en Wompi sandbox; 4) Wompi notifica el pago aprobado; 5) el sistema pasa los pedidos a PAGADO y descuenta el stock. Alternativas: pago rechazado → CANCELADO; sin stock al pagar → ese pedido pasa a REEMBOLSADO. Reglas: RN-002 a RN-005, RN-013."]
+    filas: []
+
+  - indice: 30
+    encabezado: ["ID", "Nombre"]
+    filas:
+      - ["DIA-CU-01", "Diagrama general de casos de uso", "PlantUML 1.2024.7", "1.0", "docs/sena/diagramas/casos_de_uso.png (fuente: casos_de_uso.puml)", "CU-001 a CU-004"]
+      - ["DIA-ACT-01", "Actores y sistemas externos", "PlantUML 1.2024.7 (incluido en DIA-CU-01)", "1.0", "docs/sena/diagramas/casos_de_uso.png", "ACT-01 a ACT-07"]
+
+  - indice: 31
+    encabezado: ["ID", "Pregunta"]
+    filas:
+      - ["General", "¿Cuántas horas por semana dedica cada integrante?", "[PENDIENTE: acuerdo del equipo]", "EQ-01", "2026-11-20"]
+      - ["HU-028", "¿Cuál es el porcentaje de comisión definitivo?", "Se usa 8 % por defecto (RN-007); configurable por el administrador", "EQ-04", "2026-11-10"]
+      - ["HU-022", "¿Cuál es el monto mínimo de retiro?", "[PENDIENTE: valor del mínimo de retiro]", "EQ-04", "2027-04-19"]
+      - ["HU-018", "¿Cuándo estarán las credenciales sandbox de Wompi?", "Solicitarlas en S03 (BLQ-001)", "EQ-02", "2027-02-19"]
+      - ["HU-009", "¿Basta la búsqueda por departamento y municipio sin mapa?", "Sí para el MVP (EXC-03); validar con compradores", "EQ-04", "2027-03-05"]
+
+  - indice: 34
+    encabezado: ["Versión / iteración", "Objetivo"]
+    filas:
+      - ["H-02 (S01–S02)", "Identidad y productores", "EP-001, EP-002", "HU-001, HU-002, HU-004, HU-006", "Productor verificado por el administrador", "2027-02-05"]
+      - ["H-03 (S03–S04)", "Catálogo y búsqueda", "EP-003, FEAT-007", "HU-007, HU-009, HU-011", "Comprador arma su carrito", "2027-03-05"]
+      - ["H-04 (S05–S07)", "Pedidos y pagos", "EP-004, EP-005", "HU-012, HU-018, HU-019, HU-015, HU-020", "Compra pagada en sandbox hasta el crédito del saldo", "2027-04-16"]
+      - ["H-05 (S08–S10)", "MVP completo", "EP-005, EP-006, EP-007", "HU-017, HU-022, HU-025, HU-026, HU-030", "RF-001 a RF-030 aceptados", "2027-05-28"]
+      - ["H-06 (S11)", "Entrega final", "Transversal", "TT-003", "E2E en verde y MVP desplegado", "2027-06-11"]
+
+  - indice: 35
+    encabezado: ["ID", "Historia / tarea"]
+    filas:
+      - ["TT-001", "Base del proyecto, CI y despliegue inicial", "5", "{{comun.integrantes.EQ-01}}", "—", "Pendiente", "—"]
+      - ["HU-001", "{{catalogo.historias.HU-001.nombre}}", "5", "{{comun.integrantes.EQ-01}} y {{comun.integrantes.EQ-03}}", "TT-001", "Pendiente", "—"]
+      - ["HU-002", "{{catalogo.historias.HU-002.nombre}}", "5", "{{comun.integrantes.EQ-02}} y {{comun.integrantes.EQ-04}}", "HU-001", "Pendiente", "—"]
+
+  - indice: 36
+    encabezado: ["ID", "Elemento afectado"]
+    filas:
+      - ["BLQ-001", "HU-018, HU-019, HU-023", "Faltan las credenciales del entorno sandbox de Wompi", "No se puede probar el pago contra la pasarela", "EQ-02", "2027-03-08", "Abierto"]
+
+  - indice: 38
+    encabezado: ["HU / CU", "RF / RNF"]
+    filas: ["{{todas: historias}}"]
+    columnas: ["{id}", "{rf}", "{rn}", "{actores}", "Pendiente (UX/UI)", "{epica}", "CP-{id}-01", "MVP", "Aprobada"]
+
+  - indice: 39
+    encabezado: ["Verificación", "Resultado"]
+    campos:
+      "Toda historia se relaciona con al meno": ["Cumple", "Cada HU-0NN corresponde a RF-0NN (validar.py V2)"]
+      "Cada criterio tiene método o caso de p": ["Cumple", "Cada criterio tiene un caso CP-HU-0NN-0M"]
+      "Los procesos críticos tienen caso de u": ["Cumple", "CU-001 a CU-004"]
+      "Las historias terminadas tienen eviden": ["No aplica", "Aún no hay historias terminadas (la construcción inicia en 2027-01-11)"]
+      "No existen historias fuera de alcance": ["Cumple", "Todas las historias son del MVP; las exclusiones están en EXC-01 a EXC-08"]
+
+  - indice: 41
+    encabezado: ["Indicador", "Fórmula"]
+    campos:
+      "Historias preparadas": ["≥ 100 % de las historias del siguiente sprint", "Semanal"]
+      "Cumplimiento de iteración": ["≥ 80 %", "Por iteración"]
+      "Cambios posteriores a inicio": ["≤ 1 por sprint", "Por iteración"]
+      "Cobertura de aceptación": ["100 % para críticos", "Por entrega"]
+      "Historias devueltas": ["≤ 10 %", "Por iteración"]
+      "Tiempo bloqueado": ["≤ 2 días por sprint", "Semanal"]
+
+grupos:
+  - tablas: [15]
+    encabezados: [["Campo", "Contenido"]]
+    instancias:
+      - 15:
+          campos:
+            "ID y título": "{{hu.HU-012}}"
+            "Épica / funcionalidad": "EP-004 / FEAT-007"
+            "Narrativa": "{{catalogo.historias.HU-012.enunciado}}"
+            "Contexto y problema": "El comprador puede tener en el carrito productos de varios productores, y cada uno debe recibir y atender solo lo suyo."
+            "Valor esperado": "Comprar a varios productores en un solo paso, con precios garantizados."
+            "Actor principal": "ACT-02, ACT-03"
+            "Requisitos relacionados": "RF-012, RNF-006"
+            "Reglas relacionadas": "RN-002, RN-003, RN-007, RN-008, RN-012"
+            "Prioridad": "Must"
+            "Estimación": "8 puntos (inicial; se re-estima en planning)"
+            "Dependencias": "HU-011, HU-005"
+            "Riesgos": "Errores de redondeo o de precio por volumen; se mitigan con pruebas unitarias."
+            "Prototipo relacionado": "Pendiente (diseño UX/UI)"
+            "Criterios de aceptación": "CA-HU-012-01, CA-HU-012-02"
+            "Casos de prueba": "CP-HU-012-01, CP-HU-012-02"
+            "Versión / iteración objetivo": "MVP / S05"
+            "Responsable de validación": "EQ-04 (Product Owner)"
+            "Estado": "Propuesta"
+            "Evidencia de aceptación": "Pendiente (PR y demo de S05)"
+      - 15:
+          campos:
+            "ID y título": "{{hu.HU-019}}"
+            "Épica / funcionalidad": "EP-005 / FEAT-009"
+            "Narrativa": "{{catalogo.historias.HU-019.enunciado}}"
+            "Contexto y problema": "El resultado del pago llega de forma asíncrona desde la pasarela y puede repetirse."
+            "Valor esperado": "Pedidos pagados confirmados de forma confiable, sin duplicados."
+            "Actor principal": "ACT-06"
+            "Requisitos relacionados": "RF-019, RNF-006, RNF-007"
+            "Reglas relacionadas": "RN-004, RN-005, RN-013"
+            "Prioridad": "Must"
+            "Estimación": "8 puntos (inicial; se re-estima en planning)"
+            "Dependencias": "HU-018, BLQ-001"
+            "Riesgos": "RSK-01 (integración con Wompi)."
+            "Prototipo relacionado": "No aplica (proceso del sistema)"
+            "Criterios de aceptación": "CA-HU-019-01, CA-HU-019-02"
+            "Casos de prueba": "CP-HU-019-01, CP-HU-019-02"
+            "Versión / iteración objetivo": "MVP / S06"
+            "Responsable de validación": "EQ-02"
+            "Estado": "Propuesta"
+            "Evidencia de aceptación": "Pendiente (pruebas de integración en CI)"
+
+  - tablas: [25, 26, 27]
+    encabezados: [["Campo", "Contenido"], ["Paso", "Actor"], ["ID alternativo", "Paso origen"]]
+    instancias:
+      - 25:
+          campos:
+            "ID y nombre": "{{cu.CU-001}}"
+            "Objetivo": "Comprar a uno o varios productores y pagar en línea."
+            "Alcance / nivel": "Usuario"
+            "Actor principal": "Comprador (ACT-02, ACT-03)"
+            "Actores secundarios": "Wompi (ACT-06)"
+            "Stakeholders e intereses": "Comprador: pagar seguro. Productor: recibir pedidos pagados. Plataforma: cobrar la comisión."
+            "Disparador": "El comprador confirma su carrito."
+            "Precondiciones": "Comprador con sesión iniciada y carrito con productos activos de productores verificados."
+            "Garantías mínimas": "No se descuenta stock ni se cobra dos veces; el dinero queda retenido."
+            "Postcondición de éxito": "Pedidos en PAGADO, stock descontado y dinero retenido (RN-005)."
+            "Flujo principal": "Ver tabla de flujo principal."
+            "Flujos alternativos": "A1 pago rechazado; A2 sin stock al pagar."
+            "Excepciones": "E1 productor no verificado; E2 pasarela no disponible."
+            "Reglas de negocio": "RN-002, RN-003, RN-004, RN-005, RN-007, RN-008, RN-012, RN-013"
+            "Datos de entrada y salida": "Entrada: carrito, modalidad de entrega, dirección. Salida: pedidos y estado del pago."
+            "Requisitos especiales": "RNF-006, RNF-007"
+            "Frecuencia / volumen": "Cada compra."
+            "Historias y requisitos relacionados": "HU-011, HU-012, HU-018, HU-019 / RF-011, RF-012, RF-018, RF-019"
+            "Pantallas / interfaces": "Carrito, pago, INT-01"
+            "Casos de prueba": "CP-HU-012-01, CP-HU-019-01, E2E del camino principal"
+            "Responsable de validación": "EQ-04"
+            "Estado y versión": "Aprobado – MVP"
+        26:
+          filas:
+            - ["1", "Comprador", "Confirma el carrito y elige la modalidad de entrega", "Valida productos y productores", "RN-001"]
+            - ["2", "Sistema", "—", "Crea un pedido por productor con precios congelados y un único cobro", "RN-002, RN-003, RN-007, RN-008"]
+            - ["3", "Comprador", "Paga en Wompi sandbox", "Redirige a la pasarela con el monto total", "RN-012"]
+            - ["4", "Wompi", "Notifica el resultado por webhook", "Verifica la firma y la idempotencia", "RN-013"]
+            - ["5", "Sistema", "—", "Pasa los pedidos a PAGADO y descuenta el stock en una transacción", "RN-004, RN-005"]
+        27:
+          filas:
+            - ["A1", "4", "La transacción es rechazada", "Los pedidos pasan a CANCELADO (estado final)", "El comprador puede volver a confirmar su carrito, lo que crea pedidos nuevos"]
+            - ["A2", "5", "Un producto ya no tiene stock", "Ese pedido pasa a REEMBOLSADO sin descontar stock; los demás siguen", "Reembolso total de ese pedido (RN-011)"]
+            - ["E1", "1", "Un productor perdió la verificación", "Se rechaza la confirmación (422)", "No se crean pedidos"]
+            - ["E2", "3", "La pasarela no responde", "Los pedidos siguen en PENDIENTE_PAGO", "Se cancelan a los 30 min (HU-017)"]
+      - 25:
+          campos:
+            "ID y nombre": "{{cu.CU-002}}"
+            "Objetivo": "Llevar un pedido pagado hasta la entrega y el crédito del saldo."
+            "Alcance / nivel": "Usuario"
+            "Actor principal": "Productor (ACT-01)"
+            "Actores secundarios": "Comprador (ACT-02, ACT-03), Planificador de tareas (ACT-07)"
+            "Stakeholders e intereses": "Productor: cobrar. Comprador: recibir. Plataforma: cerrar pedidos sin intervención manual."
+            "Disparador": "Un pedido pasa a PAGADO."
+            "Precondiciones": "Pedido PAGADO del productor."
+            "Garantías mínimas": "Solo se permiten transiciones válidas de la máquina de estados."
+            "Postcondición de éxito": "Pedido ENTREGADO y saldo acreditado (RN-006)."
+            "Flujo principal": "Ver tabla de flujo principal."
+            "Flujos alternativos": "A1 rechazo; A2 sin respuesta en 48 h; A3 sin confirmación en 7 días; A4 disputa (CU-003)."
+            "Excepciones": "E1 transición inválida."
+            "Reglas de negocio": "RN-004, RN-005, RN-006, RN-009, RN-011"
+            "Datos de entrada y salida": "Entrada: decisiones del productor y confirmación del comprador. Salida: estados y movimiento de saldo."
+            "Requisitos especiales": "RNF-006, RNF-008"
+            "Frecuencia / volumen": "Cada pedido pagado."
+            "Historias y requisitos relacionados": "HU-013, HU-014, HU-015, HU-017, HU-020 / RF-013, RF-014, RF-015, RF-017, RF-020"
+            "Pantallas / interfaces": "Panel de pedidos del productor y del comprador"
+            "Casos de prueba": "CP-HU-013-01, CP-HU-015-01, CP-HU-017-01, CP-HU-020-01"
+            "Responsable de validación": "EQ-04"
+            "Estado y versión": "Aprobado – MVP"
+        26:
+          filas:
+            - ["1", "Productor", "Acepta el pedido PAGADO", "Pasa el pedido a ACEPTADO y avisa al comprador", "—"]
+            - ["2", "Productor", "Despacha o deja listo para recoger", "Pasa el pedido a ENVIADO", "—"]
+            - ["3", "Comprador", "Confirma la recepción", "Pasa el pedido a ENTREGADO", "RN-005"]
+            - ["4", "Sistema", "—", "Calcula la comisión y acredita el saldo en una transacción", "RN-006, RN-009"]
+        27:
+          filas:
+            - ["A1", "1", "El productor rechaza el pedido", "El pedido pasa a REEMBOLSADO y se restituye el stock", "Reembolso total (RN-011)"]
+            - ["A2", "1", "48 h sin respuesta del productor", "El planificador pasa el pedido a REEMBOLSADO", "Reembolso total (RN-011)"]
+            - ["A3", "3", "7 días sin confirmación ni disputa", "El planificador pasa el pedido a ENTREGADO", "Se acredita el saldo"]
+            - ["A4", "3", "El comprador abre una disputa", "El pedido pasa a EN_DISPUTA y el dinero sigue retenido", "Continúa en CU-003"]
+            - ["E1", "2", "El pedido no está ACEPTADO", "Se rechaza la acción (409)", "El estado no cambia"]
+      - 25:
+          campos:
+            "ID y nombre": "{{cu.CU-003}}"
+            "Objetivo": "Cerrar de forma justa un pedido con problemas de entrega."
+            "Alcance / nivel": "Usuario"
+            "Actor principal": "Administrador (ACT-04)"
+            "Actores secundarios": "Comprador (ACT-02, ACT-03), Productor (ACT-01), Wompi (ACT-06)"
+            "Stakeholders e intereses": "Comprador: recuperar su dinero si no recibió. Productor: cobrar si cumplió."
+            "Disparador": "El comprador abre una disputa sobre un pedido ENVIADO."
+            "Precondiciones": "Pedido ENVIADO del comprador."
+            "Garantías mínimas": "El dinero sigue retenido mientras la disputa está abierta."
+            "Postcondición de éxito": "Pedido ENTREGADO o REEMBOLSADO."
+            "Flujo principal": "Ver tabla de flujo principal."
+            "Flujos alternativos": "A1 resolución a favor del productor."
+            "Excepciones": "E1 pedido que no está ENVIADO."
+            "Reglas de negocio": "RN-004, RN-005, RN-006, RN-011, RN-015"
+            "Datos de entrada y salida": "Entrada: motivo, evidencia y decisión. Salida: estado final y movimiento de saldo o reembolso."
+            "Requisitos especiales": "RNF-004, RNF-006"
+            "Frecuencia / volumen": "Excepcional."
+            "Historias y requisitos relacionados": "HU-025, HU-026, HU-023 / RF-025, RF-026, RF-023"
+            "Pantallas / interfaces": "Formulario de disputa y panel del administrador"
+            "Casos de prueba": "CP-HU-025-01, CP-HU-026-01, CP-HU-023-01"
+            "Responsable de validación": "EQ-04"
+            "Estado y versión": "Aprobado – MVP"
+        26:
+          filas:
+            - ["1", "Comprador", "Abre una disputa con motivo y evidencia", "Pasa el pedido a EN_DISPUTA", "RN-015"]
+            - ["2", "Administrador", "Revisa la evidencia", "Muestra el pedido, la disputa y el historial", "—"]
+            - ["3", "Administrador", "Resuelve a favor del comprador", "Pasa el pedido a REEMBOLSADO, reembolsa el total y restituye el stock", "RN-004, RN-011"]
+        27:
+          filas:
+            - ["A1", "3", "La resolución es a favor del productor", "El pedido pasa a ENTREGADO", "Se acredita el saldo (RN-006)"]
+            - ["E1", "1", "El pedido no está ENVIADO", "Se rechaza la disputa (409)", "El estado no cambia"]
+      - 25:
+          campos:
+            "ID y nombre": "{{cu.CU-004}}"
+            "Objetivo": "Retirar el dinero de las ventas entregadas."
+            "Alcance / nivel": "Usuario"
+            "Actor principal": "Productor (ACT-01)"
+            "Actores secundarios": "Administrador (ACT-04)"
+            "Stakeholders e intereses": "Productor: recibir su dinero. Plataforma: registrar cada pago al productor."
+            "Disparador": "El productor solicita un retiro."
+            "Precondiciones": "Saldo disponible mayor o igual al mínimo configurado."
+            "Garantías mínimas": "El saldo nunca queda negativo (RN-009)."
+            "Postcondición de éxito": "Liquidación PAGADA y movimiento RETIRO registrado."
+            "Flujo principal": "Ver tabla de flujo principal."
+            "Flujos alternativos": "—"
+            "Excepciones": "E1 monto mayor al saldo; E2 monto menor al mínimo."
+            "Reglas de negocio": "RN-009, RN-010, RN-012"
+            "Datos de entrada y salida": "Entrada: monto. Salida: liquidación y movimiento de saldo."
+            "Requisitos especiales": "RNF-004, RNF-006"
+            "Frecuencia / volumen": "A demanda del productor."
+            "Historias y requisitos relacionados": "HU-021, HU-022, HU-027 / RF-021, RF-022, RF-027"
+            "Pantallas / interfaces": "Panel de saldo del productor y panel del administrador"
+            "Casos de prueba": "CP-HU-022-01, CP-HU-022-02, CP-HU-027-01"
+            "Responsable de validación": "EQ-04"
+            "Estado y versión": "Aprobado – MVP"
+        26:
+          filas:
+            - ["1", "Productor", "Consulta su saldo disponible", "Muestra el saldo y los movimientos", "RN-009"]
+            - ["2", "Productor", "Solicita un retiro por un monto", "Crea la liquidación SOLICITADA y un movimiento RETIRO", "RN-010"]
+            - ["3", "Administrador", "Transfiere por fuera de la plataforma y marca la liquidación como pagada", "Pasa la liquidación a PAGADA y avisa al productor", "RN-010"]
+        27:
+          filas:
+            - ["E1", "2", "El monto es mayor al saldo disponible", "Se rechaza la solicitud (422)", "El saldo no cambia"]
+            - ["E2", "2", "El monto es menor al mínimo configurado", "Se rechaza la solicitud (422)", "El saldo no cambia"]

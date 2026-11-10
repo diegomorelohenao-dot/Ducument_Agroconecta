@@ -1,0 +1,220 @@
+# Catálogo maestro de IDs de AgroConecta. Fuente única de nombres para los 4 documentos.
+# Origen: docs/diseno/specs/2026-11-10-agroconecta-design.md
+
+objetivo_general: >-
+  Desarrollar, a junio de 2027, una plataforma web instalable (PWA) que permita a pequeños
+  productores agrícolas de Colombia vender directamente a consumidores y negocios, con pedidos
+  y pago en línea, para reducir su dependencia de intermediarios.
+
+objetivos:
+  OBJ-01: Documentar la formulación, la gestión, los requisitos y el backlog del producto a 2026-12-04
+  OBJ-02: Implementar el registro, la verificación de productores y el catálogo de productos con búsqueda por ubicación
+  OBJ-03: Implementar pedidos con pago en línea (sandbox), retención del dinero, comisión y liquidación al productor
+  OBJ-04: Implementar el seguimiento del pedido, las disputas y las calificaciones
+  OBJ-05: Verificar el MVP con pruebas automatizadas y desplegarlo a 2027-06-11
+
+indicadores:
+  IND-01: {nombre: Documentos SENA entregados, objetivo: OBJ-01, meta: 4 de 4 a 2026-12-04}
+  IND-02: {nombre: RF del MVP implementados y aceptados, objetivo: "OBJ-02, OBJ-03, OBJ-04", meta: 100 % (30 de 30)}
+  IND-03: {nombre: Reglas de negocio con prueba unitaria automatizada, objetivo: OBJ-03, meta: 15 de 15}
+  IND-04: {nombre: Camino principal E2E pasando en CI sobre la rama principal, objetivo: OBJ-05, meta: 100 % de las ejecuciones en la semana de entrega}
+
+interesados:
+  STK-01: Pequeños productores agrícolas
+  STK-02: Compradores consumidores
+  STK-03: Compradores negocio (restaurantes, tiendas, fruvers)
+  STK-04: Administrador de la plataforma
+  STK-05: Instructor(es) SENA
+  STK-06: Equipo de desarrollo
+  STK-07: Wompi (proveedor externo)
+
+actores:
+  ACT-01: {nombre: Productor, tipo: Humano, objetivo: Publicar productos y vender sus cosechas}
+  ACT-02: {nombre: Comprador consumidor, tipo: Humano, objetivo: Comprar productos para su hogar}
+  ACT-03: {nombre: Comprador negocio, tipo: Humano, objetivo: Comprar por volumen para su negocio}
+  ACT-04: {nombre: Administrador, tipo: Humano, objetivo: Operar la plataforma}
+  ACT-05: {nombre: Visitante (sin sesión), tipo: Humano, objetivo: Explorar el catálogo y registrarse}
+  ACT-06: {nombre: Wompi (pasarela de pagos), tipo: Sistema externo, objetivo: Procesar los cobros y notificar su resultado}
+  ACT-07: {nombre: Planificador de tareas, tipo: Sistema, objetivo: Aplicar plazos automáticos y efectos de los eventos de dominio}
+
+epicas:
+  EP-001: Identidad y cuenta
+  EP-002: Productores
+  EP-003: Catálogo
+  EP-004: Pedidos
+  EP-005: Pagos
+  EP-006: Reputación
+  EP-007: Administración
+
+funcionalidades:
+  FEAT-001: {nombre: Registro y acceso, epica: EP-001}
+  FEAT-002: {nombre: Cuenta y notificaciones, epica: EP-001}
+  FEAT-003: {nombre: Perfil y entrega del productor, epica: EP-002}
+  FEAT-004: {nombre: Verificación de productores, epica: EP-002}
+  FEAT-005: {nombre: Publicación de productos, epica: EP-003}
+  FEAT-006: {nombre: Búsqueda y detalle, epica: EP-003}
+  FEAT-007: {nombre: Carrito y creación de pedidos, epica: EP-004}
+  FEAT-008: {nombre: Ciclo de vida del pedido, epica: EP-004}
+  FEAT-009: {nombre: Cobro en línea, epica: EP-005}
+  FEAT-010: {nombre: Saldo y liquidaciones, epica: EP-005}
+  FEAT-011: {nombre: Reembolsos, epica: EP-005}
+  FEAT-012: {nombre: Calificaciones, epica: EP-006}
+  FEAT-013: {nombre: Disputas, epica: EP-007}
+  FEAT-014: {nombre: Operación administrativa, epica: EP-007}
+
+requisitos:
+  RF-001: {nombre: Registrar usuario con rol y consentimiento de datos, epica: EP-001, feat: FEAT-001, actores: [ACT-01, ACT-02, ACT-03, ACT-05], rn: [], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-002: {nombre: Iniciar y renovar sesión, epica: EP-001, feat: FEAT-001, actores: [ACT-01, ACT-02, ACT-03, ACT-04], rn: [], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-003: {nombre: Eliminar cuenta, epica: EP-001, feat: FEAT-002, actores: [ACT-01, ACT-02, ACT-03], rn: [], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-004: {nombre: Gestionar perfil de productor, epica: EP-002, feat: FEAT-003, actores: [ACT-01], rn: [RN-001], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-005: {nombre: Configurar opciones de entrega, epica: EP-002, feat: FEAT-003, actores: [ACT-01], rn: [RN-008], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-006: {nombre: Verificar productor, epica: EP-002, feat: FEAT-004, actores: [ACT-04], rn: [RN-001], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-007: {nombre: Gestionar productos, epica: EP-003, feat: FEAT-005, actores: [ACT-01], rn: [RN-001], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-008: {nombre: Definir precios por volumen, epica: EP-003, feat: FEAT-005, actores: [ACT-01], rn: [RN-003], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-009: {nombre: "Buscar productos por texto, categoría y ubicación", epica: EP-003, feat: FEAT-006, actores: [ACT-02, ACT-03, ACT-05], rn: [], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-010: {nombre: Ver detalle de producto y productor, epica: EP-003, feat: FEAT-006, actores: [ACT-02, ACT-03, ACT-05], rn: [], objetivo: OBJ-02, prioridad: Must, version: MVP}
+  RF-011: {nombre: Gestionar carrito, epica: EP-004, feat: FEAT-007, actores: [ACT-02, ACT-03], rn: [], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-012: {nombre: Generar pedidos desde el carrito, epica: EP-004, feat: FEAT-007, actores: [ACT-02, ACT-03], rn: [RN-002, RN-003, RN-007, RN-008, RN-012], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-013: {nombre: Aceptar o rechazar pedido, epica: EP-004, feat: FEAT-008, actores: [ACT-01], rn: [RN-011], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-014: {nombre: Marcar pedido como enviado, epica: EP-004, feat: FEAT-008, actores: [ACT-01], rn: [], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-015: {nombre: Confirmar recepción del pedido, epica: EP-004, feat: FEAT-008, actores: [ACT-02, ACT-03], rn: [RN-005], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-016: {nombre: Consultar pedidos e historial, epica: EP-004, feat: FEAT-008, actores: [ACT-01, ACT-02, ACT-03, ACT-04], rn: [], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-017: {nombre: Aplicar plazos automáticos del pedido, epica: EP-004, feat: FEAT-008, actores: [ACT-07], rn: [RN-011], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-018: {nombre: Iniciar pago en línea, epica: EP-005, feat: FEAT-009, actores: [ACT-02, ACT-03, ACT-06], rn: [RN-012], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-019: {nombre: Procesar notificación de pago (webhook), epica: EP-005, feat: FEAT-009, actores: [ACT-06], rn: [RN-004, RN-005, RN-013], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-020: {nombre: Calcular comisión y acreditar saldo, epica: EP-005, feat: FEAT-010, actores: [ACT-07], rn: [RN-005, RN-006, RN-009, RN-012], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-021: {nombre: Consultar saldo y movimientos, epica: EP-005, feat: FEAT-010, actores: [ACT-01], rn: [RN-009], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-022: {nombre: Solicitar liquidación de saldo, epica: EP-005, feat: FEAT-010, actores: [ACT-01], rn: [RN-010], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-023: {nombre: Ejecutar reembolso, epica: EP-005, feat: FEAT-011, actores: [ACT-04, ACT-06, ACT-07], rn: [RN-004, RN-011], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-024: {nombre: Calificar productor, epica: EP-006, feat: FEAT-012, actores: [ACT-02, ACT-03], rn: [RN-014], objetivo: OBJ-04, prioridad: Must, version: MVP}
+  RF-025: {nombre: Abrir disputa, epica: EP-007, feat: FEAT-013, actores: [ACT-02, ACT-03], rn: [RN-015], objetivo: OBJ-04, prioridad: Must, version: MVP}
+  RF-026: {nombre: Resolver disputa, epica: EP-007, feat: FEAT-013, actores: [ACT-04], rn: [RN-011], objetivo: OBJ-04, prioridad: Must, version: MVP}
+  RF-027: {nombre: Marcar liquidación como pagada, epica: EP-007, feat: FEAT-014, actores: [ACT-04], rn: [RN-010], objetivo: OBJ-04, prioridad: Must, version: MVP}
+  RF-028: {nombre: Configurar comisión y mínimo de retiro, epica: EP-007, feat: FEAT-014, actores: [ACT-04], rn: [RN-007], objetivo: OBJ-04, prioridad: Must, version: MVP}
+  RF-029: {nombre: Consultar reportes de pedidos y comisiones, epica: EP-007, feat: FEAT-014, actores: [ACT-04], rn: [], objetivo: OBJ-04, prioridad: Should, version: MVP}
+  RF-030: {nombre: Enviar notificaciones en la app y por correo, epica: EP-001, feat: FEAT-002, actores: [ACT-07], rn: [], objetivo: OBJ-04, prioridad: Must, version: MVP}
+
+historias:
+  HU-001: {nombre: Registrar usuario con rol y consentimiento de datos, rf: RF-001, enunciado: "Como visitante, quiero registrarme como productor o comprador (consumidor o negocio) aceptando el tratamiento de mis datos, para poder vender o comprar en la plataforma."}
+  HU-002: {nombre: Iniciar y renovar sesión, rf: RF-002, enunciado: "Como usuario registrado, quiero iniciar sesión y mantenerla activa de forma segura, para usar las funciones de mi rol sin volver a ingresar mis datos a cada momento."}
+  HU-003: {nombre: Eliminar cuenta, rf: RF-003, enunciado: "Como usuario, quiero eliminar mi cuenta, para ejercer mi derecho de supresión de datos personales."}
+  HU-004: {nombre: Gestionar perfil de productor, rf: RF-004, enunciado: "Como productor, quiero registrar los datos de mi finca, mi documento y mi municipio, para solicitar la verificación y poder vender."}
+  HU-005: {nombre: Configurar opciones de entrega, rf: RF-005, enunciado: "Como productor, quiero indicar si entrego a domicilio (zona y costo), si el comprador recoge, o ambas, para que el comprador sepa cómo recibirá su pedido."}
+  HU-006: {nombre: Verificar productor, rf: RF-006, enunciado: "Como administrador, quiero aprobar o rechazar la verificación de un productor, para que solo productores reales publiquen productos."}
+  HU-007: {nombre: Gestionar productos, rf: RF-007, enunciado: "Como productor verificado, quiero publicar, editar y desactivar productos con precio, unidad, stock e imágenes, para ofrecerlos a los compradores."}
+  HU-008: {nombre: Definir precios por volumen, rf: RF-008, enunciado: "Como productor, quiero definir precios más bajos a partir de ciertas cantidades, para atraer compras grandes de negocios."}
+  HU-009: {nombre: "Buscar productos por texto, categoría y ubicación", rf: RF-009, enunciado: "Como comprador o visitante, quiero buscar productos por nombre, categoría, departamento y municipio, para encontrar productores cercanos."}
+  HU-010: {nombre: Ver detalle de producto y productor, rf: RF-010, enunciado: "Como comprador o visitante, quiero ver el detalle de un producto y la información y calificación de su productor, para decidir si compro."}
+  HU-011: {nombre: Gestionar carrito, rf: RF-011, enunciado: "Como comprador, quiero agregar, cambiar y quitar productos de mi carrito, para preparar mi compra."}
+  HU-012: {nombre: Generar pedidos desde el carrito, rf: RF-012, enunciado: "Como comprador, quiero confirmar mi carrito eligiendo la modalidad de entrega, para que se generen los pedidos a cada productor con precios congelados."}
+  HU-013: {nombre: Aceptar o rechazar pedido, rf: RF-013, enunciado: "Como productor, quiero aceptar o rechazar un pedido pagado, para comprometerme solo con lo que puedo cumplir."}
+  HU-014: {nombre: Marcar pedido como enviado, rf: RF-014, enunciado: "Como productor, quiero marcar un pedido como despachado o listo para recoger, para que el comprador sepa que va en camino."}
+  HU-015: {nombre: Confirmar recepción del pedido, rf: RF-015, enunciado: "Como comprador, quiero confirmar que recibí mi pedido, para que se libere el pago al productor."}
+  HU-016: {nombre: Consultar pedidos e historial, rf: RF-016, enunciado: "Como usuario, quiero consultar mis pedidos y su estado, para hacer seguimiento a mis compras o ventas."}
+  HU-017: {nombre: Aplicar plazos automáticos del pedido, rf: RF-017, enunciado: "Como comprador, quiero que un pedido sin pago se cancele a los 30 min, que un pedido sin respuesta del productor se reembolse a las 48 h y que uno enviado se dé por entregado a los 7 días, para que ningún pedido quede detenido."}
+  HU-018: {nombre: Iniciar pago en línea, rf: RF-018, enunciado: "Como comprador, quiero pagar mis pedidos en línea con tarjeta, PSE o Nequi, para completar la compra sin efectivo."}
+  HU-019: {nombre: Procesar notificación de pago (webhook), rf: RF-019, enunciado: "Como comprador, quiero que mis pedidos pasen a pagado en cuanto la pasarela apruebe el pago, para que el productor pueda atenderlos."}
+  HU-020: {nombre: Calcular comisión y acreditar saldo, rf: RF-020, enunciado: "Como productor, quiero que al entregarse un pedido se me acredite el subtotal menos la comisión, más el envío, para disponer de mi dinero."}
+  HU-021: {nombre: Consultar saldo y movimientos, rf: RF-021, enunciado: "Como productor, quiero ver mi saldo disponible y sus movimientos, para saber cuánto puedo retirar."}
+  HU-022: {nombre: Solicitar liquidación de saldo, rf: RF-022, enunciado: "Como productor, quiero solicitar el retiro de mi saldo disponible, para recibir el dinero de mis ventas."}
+  HU-023: {nombre: Ejecutar reembolso, rf: RF-023, enunciado: "Como comprador, quiero recibir el reembolso total cuando mi pedido es rechazado o la disputa se resuelve a mi favor, para no perder mi dinero."}
+  HU-024: {nombre: Calificar productor, rf: RF-024, enunciado: "Como comprador, quiero calificar al productor después de recibir mi pedido, para orientar a otros compradores."}
+  HU-025: {nombre: Abrir disputa, rf: RF-025, enunciado: "Como comprador, quiero abrir una disputa sobre un pedido enviado con problemas, para que el administrador la revise antes de liberar el pago."}
+  HU-026: {nombre: Resolver disputa, rf: RF-026, enunciado: "Como administrador, quiero resolver una disputa a favor del productor o del comprador, para cerrar el pedido de forma justa."}
+  HU-027: {nombre: Marcar liquidación como pagada, rf: RF-027, enunciado: "Como administrador, quiero marcar una liquidación como pagada después de transferir, para dejar registro del pago al productor."}
+  HU-028: {nombre: Configurar comisión y mínimo de retiro, rf: RF-028, enunciado: "Como administrador, quiero configurar el porcentaje de comisión y el monto mínimo de retiro, para ajustar el modelo de negocio."}
+  HU-029: {nombre: Consultar reportes de pedidos y comisiones, rf: RF-029, enunciado: "Como administrador, quiero ver los totales de pedidos por estado y las comisiones por mes, para seguir la operación."}
+  HU-030: {nombre: Enviar notificaciones en la app y por correo, rf: RF-030, enunciado: "Como usuario, quiero recibir avisos en la app y por correo sobre mis pedidos, mi verificación y mis liquidaciones, para enterarme a tiempo."}
+
+reglas:
+  RN-001: {nombre: Solo productores verificados venden, texto: Solo los productores con estado VERIFICADO pueden publicar o activar productos.}
+  RN-002: {nombre: Un pedido por productor, texto: Un pedido contiene productos de un único productor.}
+  RN-003: {nombre: Precio congelado y precio por volumen, texto: "El precio unitario de cada ítem se congela al crear el pedido. Si la cantidad alcanza un umbral de precio por volumen, se aplica el precio del umbral más alto alcanzado."}
+  RN-004: {nombre: Descuento y restitución de stock, texto: "El stock se descuenta al pasar a PAGADO y se restituye si un pedido que estuvo PAGADO termina en REEMBOLSADO. El stock no se reserva al crear el pedido: si al llegar el pago aprobado ya no alcanza, ese pedido pasa directamente a REEMBOLSADO (sin descontar stock) y los demás pedidos del mismo cobro siguen su curso."}
+  RN-005: {nombre: Dinero retenido hasta la entrega, texto: El dinero de un pedido pagado queda retenido hasta que el pedido pasa a ENTREGADO.}
+  RN-006: {nombre: Cálculo de comisión y crédito, texto: "Al pasar a ENTREGADO: comisión = redondeo(subtotal × porcentaje de comisión); se acredita al productor subtotal − comisión + costo de envío."}
+  RN-007: {nombre: Porcentaje de comisión configurable, texto: El porcentaje de comisión lo configura el administrador (por defecto 8 %). Cada pedido guarda el porcentaje vigente cuando se creó.}
+  RN-008: {nombre: Costo de envío, texto: "El costo de envío lo define el productor según su zona o modalidad, se cobra con el pedido y no paga comisión. La recogida tiene costo 0."}
+  RN-009: {nombre: Saldo calculado por movimientos, texto: El saldo disponible del productor es la suma de sus movimientos de saldo; nunca se guarda como un valor editable.}
+  RN-010: {nombre: Solicitud de liquidación, texto: "El productor puede solicitar una liquidación por un monto menor o igual a su saldo disponible y mayor o igual al mínimo configurado. La solicitud crea un movimiento RETIRO; el administrador la marca PAGADA después de transferir por fuera."}
+  RN-011: {nombre: Reembolso total, texto: "El reembolso es siempre total (subtotal + envío) y se ejecuta mediante la pasarela (simulado en sandbox)."}
+  RN-012: {nombre: Montos enteros en COP, texto: Los montos se manejan en pesos colombianos (COP) como enteros. Nunca se usan números flotantes para dinero.}
+  RN-013: {nombre: Webhook idempotente y firmado, texto: El webhook es idempotente (se registra el id de cada evento procesado) y se verifica su firma antes de procesarlo.}
+  RN-014: {nombre: Calificación única tras la entrega, texto: "Solo se puede calificar un pedido ENTREGADO, una vez, y solo lo puede hacer su comprador (1 a 5 estrellas y comentario opcional)."}
+  RN-015: {nombre: Disputa solo sobre pedidos enviados, texto: "Solo se puede abrir disputa sobre un pedido en estado ENVIADO, y solo lo puede hacer su comprador."}
+
+rnf:
+  RNF-001: {categoria: Seguridad, requisito: Las contraseñas se almacenan con bcrypt.}
+  RNF-002: {categoria: Seguridad, requisito: El token de acceso dura 15 minutos y se renueva con un refresh token.}
+  RNF-003: {categoria: Seguridad, requisito: "5 intentos fallidos de inicio de sesión bloquean la cuenta 15 minutos (valor propuesto)."}
+  RNF-004: {categoria: Seguridad, requisito: Todos los endpoints aplican autorización por rol y por propiedad del recurso.}
+  RNF-005: {categoria: Seguridad, requisito: Todos los endpoints validan la entrada; una entrada inválida responde 400.}
+  RNF-006: {categoria: Integridad, requisito: "Las operaciones de dinero (pago aprobado, pedido entregado, reembolso, solicitud de liquidación) se ejecutan cada una en una sola transacción de base de datos."}
+  RNF-007: {categoria: Fiabilidad, requisito: El webhook de pagos es idempotente y verifica la firma de cada evento.}
+  RNF-008: {categoria: Fiabilidad, requisito: "Un job programado aplica los plazos automáticos cada 5 minutos y es idempotente."}
+  RNF-009: {categoria: Portabilidad y usabilidad, requisito: "La aplicación es una PWA instalable y usable desde 360 px de ancho."}
+  RNF-010: {categoria: Cumplimiento, requisito: "Cumple la Ley 1581 de 2012: consentimiento explícito al registrarse y opción de eliminar la cuenta."}
+  RNF-011: {categoria: Mantenibilidad, requisito: "El backend sigue Clean Architecture: la capa domain no depende de librerías externas."}
+  RNF-012: {categoria: Calidad, requisito: "Cada pull request ejecuta en CI lint, pruebas y build; el camino principal tiene prueba E2E."}
+  RNF-013: {categoria: Rendimiento, requisito: "La búsqueda de catálogo responde con p95 ≤ 1 s con 1.000 productos (valor propuesto)."}
+  RNF-014: {categoria: Interoperabilidad, requisito: "Los errores responden con la forma {codigo, mensaje, detalles?} y los códigos HTTP 400, 403, 404, 409 y 422 según su tipo."}
+
+casos_uso:
+  CU-001: {nombre: Realizar pedido y pago, actor: "ACT-02, ACT-03", hu: [HU-011, HU-012, HU-018, HU-019]}
+  CU-002: {nombre: Gestionar ciclo del pedido, actor: ACT-01, hu: [HU-013, HU-014, HU-015, HU-017, HU-020]}
+  CU-003: {nombre: Resolver disputa, actor: ACT-04, hu: [HU-025, HU-026, HU-023]}
+  CU-004: {nombre: Liquidar saldo, actor: ACT-01, hu: [HU-021, HU-022, HU-027]}
+
+alcance:
+  ALC-01: {nombre: Identidad y cuenta, epica: EP-001}
+  ALC-02: {nombre: Productores, epica: EP-002}
+  ALC-03: {nombre: Catálogo, epica: EP-003}
+  ALC-04: {nombre: Pedidos, epica: EP-004}
+  ALC-05: {nombre: Pagos, epica: EP-005}
+  ALC-06: {nombre: Reputación, epica: EP-006}
+  ALC-07: {nombre: Administración, epica: EP-007}
+
+exclusiones:
+  EXC-01: Notificaciones push
+  EXC-02: Chat entre productor y comprador
+  EXC-03: Mapa y geolocalización
+  EXC-04: Facturación electrónica DIAN
+  EXC-05: Pago contraentrega
+  EXC-06: Logística o transporte
+  EXC-07: App móvil nativa
+  EXC-08: Operación con dinero real
+
+riesgos:
+  RSK-01: {riesgo: "Dificultades al integrar la pasarela Wompi (firma, webhooks, sandbox)", p: 3, i: 4}
+  RSK-02: {riesgo: Crecimiento del alcance más allá del MVP, p: 3, i: 4}
+  RSK-03: {riesgo: Curva de aprendizaje de NestJS y Clean Architecture, p: 4, i: 3}
+  RSK-04: {riesgo: Baja disponibilidad de integrantes en algunos periodos, p: 3, i: 3}
+  RSK-05: {riesgo: No contar con productores reales para validar el problema, p: 3, i: 3}
+  RSK-06: {riesgo: Límites de los planes gratuitos de hosting, p: 2, i: 3}
+
+equipo:
+  EQ-01: Líder y backend
+  EQ-02: Backend (pagos) y QA
+  EQ-03: Frontend y UX/UI
+  EQ-04: Frontend y análisis / Product Owner
+
+sprints:
+  S01: {inicio: "2027-01-11", fin: "2027-01-22", historias: [HU-001, HU-002], extra: Base del proyecto y CI}
+  S02: {inicio: "2027-01-25", fin: "2027-02-05", historias: [HU-003, HU-004, HU-005, HU-006]}
+  S03: {inicio: "2027-02-08", fin: "2027-02-19", historias: [HU-007, HU-008]}
+  S04: {inicio: "2027-02-22", fin: "2027-03-05", historias: [HU-009, HU-010, HU-011]}
+  S05: {inicio: "2027-03-08", fin: "2027-03-19", historias: [HU-012, HU-018]}
+  S06: {inicio: "2027-03-22", fin: "2027-04-02", historias: [HU-019, HU-013, HU-023]}
+  S07: {inicio: "2027-04-05", fin: "2027-04-16", historias: [HU-014, HU-015, HU-016, HU-020, HU-021]}
+  S08: {inicio: "2027-04-19", fin: "2027-04-30", historias: [HU-017, HU-022, HU-027]}
+  S09: {inicio: "2027-05-03", fin: "2027-05-14", historias: [HU-024, HU-025, HU-026]}
+  S10: {inicio: "2027-05-17", fin: "2027-05-28", historias: [HU-028, HU-029, HU-030], extra: PWA instalable}
+  S11: {inicio: "2027-05-31", fin: "2027-06-11", historias: [], extra: "Pruebas E2E, despliegue, estabilización y entrega"}
+
+hitos:
+  H-01: {nombre: Documentación SENA entregada, fecha: "2026-12-04"}
+  H-02: {nombre: Identidad y productores, fecha: "2027-02-05"}
+  H-03: {nombre: Catálogo y búsqueda, fecha: "2027-03-05"}
+  H-04: {nombre: Pedidos y pagos, fecha: "2027-04-16"}
+  H-05: {nombre: MVP completo, fecha: "2027-05-28"}
+  H-06: {nombre: Entrega final, fecha: "2027-06-11"}
