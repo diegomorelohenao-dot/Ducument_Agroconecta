@@ -49,6 +49,22 @@ def test_run_vacio_no_impone_formato(doc_prueba):
     assert t.cell(1, 1).paragraphs[0].runs[0].font.size.pt == 8
 
 
+def test_sin_runs_usa_formato_de_la_marca_de_parrafo():
+    # celda y tabla sin runs con formato: se toma pPr/rPr (tamaño de la marca de párrafo)
+    from docx import Document
+    from docx.oxml.ns import qn
+
+    doc = Document()
+    t = doc.add_table(rows=2, cols=2)
+    for c in (t.cell(1, 0), t.cell(1, 1)):
+        ppr = c.paragraphs[0]._p.get_or_add_pPr()
+        rpr = ppr.makeelement(qn("w:rPr"), {})
+        rpr.append(rpr.makeelement(qn("w:sz"), {qn("w:val"): "16"}))
+        ppr.append(rpr)
+    escribir_celda(t.cell(1, 1), "nuevo")
+    assert t.cell(1, 1).paragraphs[0].runs[0].font.size.pt == 8
+
+
 def test_llenar_campos(doc_prueba):
     llenar_campos(doc_prueba.tables[0], {"Ficha": "3045678"})
     assert doc_prueba.tables[0].cell(1, 1).text == "3045678"

@@ -356,7 +356,7 @@ grupos:
             - ["5", "Sistema", "—", "Pasa los pedidos a PAGADO y descuenta el stock en una transacción", "RN-004, RN-005"]
         27:
           filas:
-            - ["A1", "4", "La transacción es rechazada", "Los pedidos pasan a CANCELADO", "El comprador puede intentar de nuevo"]
+            - ["A1", "4", "La transacción es rechazada", "Los pedidos pasan a CANCELADO (estado final)", "El comprador puede volver a confirmar su carrito, lo que crea pedidos nuevos"]
             - ["A2", "5", "Un producto ya no tiene stock", "Ese pedido pasa a REEMBOLSADO sin descontar stock; los demás siguen", "Reembolso total de ese pedido (RN-011)"]
             - ["E1", "1", "Un productor perdió la verificación", "Se rechaza la confirmación (422)", "No se crean pedidos"]
             - ["E2", "3", "La pasarela no responde", "Los pedidos siguen en PENDIENTE_PAGO", "Se cancelan a los 30 min (HU-017)"]
@@ -373,7 +373,7 @@ grupos:
             "Garantías mínimas": "Solo se permiten transiciones válidas de la máquina de estados."
             "Postcondición de éxito": "Pedido ENTREGADO y saldo acreditado (RN-006)."
             "Flujo principal": "Ver tabla de flujo principal."
-            "Flujos alternativos": "A1 rechazo; A2 sin respuesta en 48 h; A3 sin confirmación en 7 días."
+            "Flujos alternativos": "A1 rechazo; A2 sin respuesta en 48 h; A3 sin confirmación en 7 días; A4 disputa (CU-003)."
             "Excepciones": "E1 transición inválida."
             "Reglas de negocio": "RN-004, RN-005, RN-006, RN-009, RN-011"
             "Datos de entrada y salida": "Entrada: decisiones del productor y confirmación del comprador. Salida: estados y movimiento de saldo."
@@ -395,6 +395,7 @@ grupos:
             - ["A1", "1", "El productor rechaza el pedido", "El pedido pasa a REEMBOLSADO y se restituye el stock", "Reembolso total (RN-011)"]
             - ["A2", "1", "48 h sin respuesta del productor", "El planificador pasa el pedido a REEMBOLSADO", "Reembolso total (RN-011)"]
             - ["A3", "3", "7 días sin confirmación ni disputa", "El planificador pasa el pedido a ENTREGADO", "Se acredita el saldo"]
+            - ["A4", "3", "El comprador abre una disputa", "El pedido pasa a EN_DISPUTA y el dinero sigue retenido", "Continúa en CU-003"]
             - ["E1", "2", "El pedido no está ACEPTADO", "Se rechaza la acción (409)", "El estado no cambia"]
       - 25:
           campos:

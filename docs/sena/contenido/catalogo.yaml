@@ -29,13 +29,13 @@ interesados:
   STK-07: Wompi (proveedor externo)
 
 actores:
-  ACT-01: {nombre: Productor, tipo: Humano}
-  ACT-02: {nombre: Comprador consumidor, tipo: Humano}
-  ACT-03: {nombre: Comprador negocio, tipo: Humano}
-  ACT-04: {nombre: Administrador, tipo: Humano}
-  ACT-05: {nombre: Visitante (sin sesión), tipo: Humano}
-  ACT-06: {nombre: Wompi (pasarela de pagos), tipo: Sistema}
-  ACT-07: {nombre: Planificador de tareas, tipo: Sistema}
+  ACT-01: {nombre: Productor, tipo: Humano, objetivo: Publicar productos y vender sus cosechas}
+  ACT-02: {nombre: Comprador consumidor, tipo: Humano, objetivo: Comprar productos para su hogar}
+  ACT-03: {nombre: Comprador negocio, tipo: Humano, objetivo: Comprar por volumen para su negocio}
+  ACT-04: {nombre: Administrador, tipo: Humano, objetivo: Operar la plataforma}
+  ACT-05: {nombre: Visitante (sin sesión), tipo: Humano, objetivo: Explorar el catálogo y registrarse}
+  ACT-06: {nombre: Wompi (pasarela de pagos), tipo: Sistema externo, objetivo: Procesar los cobros y notificar su resultado}
+  ACT-07: {nombre: Planificador de tareas, tipo: Sistema, objetivo: Aplicar plazos automáticos y efectos de los eventos de dominio}
 
 epicas:
   EP-001: Identidad y cuenta

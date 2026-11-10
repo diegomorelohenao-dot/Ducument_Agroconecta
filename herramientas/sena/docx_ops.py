@@ -76,7 +76,18 @@ def _rpr_modelo(tc):
         rpr = _rpr_con_texto(fila, excluir=tc)
         if rpr is not None:
             return rpr
-    return next((r.find(qn("w:rPr")) for r in tc.iter(qn("w:r")) if r.find(qn("w:rPr")) is not None), None)
+    rpr = next((r.find(qn("w:rPr")) for r in tc.iter(qn("w:r")) if r.find(qn("w:rPr")) is not None), None)
+    if rpr is not None:
+        return rpr
+    # último recurso: formato de la marca de párrafo (pPr/rPr), sin marcas de revisión
+    marca = tc.find(f"{qn('w:p')}/{qn('w:pPr')}/{qn('w:rPr')}")
+    if marca is None:
+        return None
+    marca = deepcopy(marca)
+    for etiqueta in ("w:ins", "w:del", "w:rPrChange"):
+        for el in marca.findall(qn(etiqueta)):
+            marca.remove(el)
+    return marca
 
 
 def escribir_celda(celda: _Cell, texto: str) -> None:

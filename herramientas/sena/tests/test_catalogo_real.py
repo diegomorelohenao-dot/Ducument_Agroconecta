@@ -17,7 +17,7 @@ CLAVES = {
     "reglas": {"nombre", "texto"}, "rnf": {"categoria", "requisito"},
     "historias": {"nombre", "rf", "enunciado"}, "riesgos": {"riesgo", "p", "i"},
     "requisitos": {"nombre", "epica", "feat", "actores", "rn", "objetivo", "prioridad", "version"},
-    "indicadores": {"nombre", "objetivo", "meta"}, "actores": {"nombre", "tipo"},
+    "indicadores": {"nombre", "objetivo", "meta"}, "actores": {"nombre", "tipo", "objetivo"},
     "funcionalidades": {"nombre", "epica"}, "casos_uso": {"nombre", "actor", "hu"},
     "alcance": {"nombre", "epica"}, "sprints": {"inicio", "fin", "historias", "extra"},
     "hitos": {"nombre", "fecha"},

@@ -124,7 +124,7 @@ tablas:
       "Necesidad": "La dependencia de intermediarios reduce el ingreso de los productores (PRO-01). Magnitud: [PENDIENTE: dato y fuente]."
       "Valor para usuarios": "El productor publica y vende directamente; el comprador encuentra productores por zona, conoce el origen y paga con el dinero retenido hasta recibir."
       "Valor organizacional": "La plataforma registra pedidos, pagos, comisiones y liquidaciones con trazabilidad completa (RN-009, RNF-006)."
-      "Viabilidad técnica": "Stack conocido y gratuito (React, NestJS, PostgreSQL); Wompi ofrece un entorno sandbox para pagos."
+      "Viabilidad técnica": "Stack gratuito y bien documentado (React, NestJS, PostgreSQL); NestJS y Clean Architecture son nuevos para el equipo (RSK-03). Wompi ofrece un entorno sandbox para pagos."
       "Viabilidad operativa": "PWA usable desde el celular (RNF-009); el administrador verifica productores y resuelve disputas."
       "Viabilidad económica": "Costo de infraestructura $0 con planes gratuitos (RES-02); el modelo de negocio es una comisión configurable (RN-007)."
       "Pertinencia formativa": "Permite demostrar análisis de requisitos, diseño con Clean Architecture, desarrollo web, integración con APIs externas, pruebas automatizadas y despliegue."
@@ -153,7 +153,7 @@ tablas:
       - ["OBJ-01", "Cuatro documentos definidos", "4 de 4 entregados", "Sí, con las plantillas y la especificación", "Base para construir y evaluar", "2026-12-04", "Ninguno"]
       - ["OBJ-02", "Registro, verificación y catálogo", "RF-001 a RF-010 aceptados", "Sí, sprints S01 a S04", "Habilita la oferta de productos", "2027-03-05", "Ninguno"]
       - ["OBJ-03", "Pedidos, pago, comisión y liquidación", "RF-011 a RF-023 y 15 reglas con prueba", "Condicionado a la integración con Wompi (RSK-01)", "Núcleo del modelo de negocio", "2027-04-30", "Ninguno"]
-      - ["OBJ-04", "Seguimiento, disputas y calificaciones", "RF-024 a RF-030 aceptados", "Sí, sprints S07 a S10", "Da confianza a compradores y productores", "2027-05-28", "Ninguno"]
+      - ["OBJ-04", "Seguimiento, disputas y calificaciones", "RF-024 a RF-030 aceptados", "Sí, sprints S08 a S10", "Da confianza a compradores y productores", "2027-05-28", "Ninguno"]
       - ["OBJ-05", "Pruebas y despliegue del MVP", "E2E en verde en CI", "Sí, sprint S11", "Demuestra un producto funcional", "2027-06-11", "Ninguno"]
 
   - indice: 22
@@ -258,7 +258,7 @@ tablas:
   - indice: 35
     encabezado: ["Dimensión", "Estado"]
     campos:
-      "Técnica": ["Viable", "Stack conocido; la integración con Wompi es el punto de mayor riesgo", "Prueba temprana de integración en S05 y S06 (RSK-01)", "EQ-02", "2027-04-02"]
+      "Técnica": ["Viable", "Stack gratuito y documentado, con curva de aprendizaje (RSK-03); la integración con Wompi es el punto de mayor riesgo", "Prueba temprana de integración en S05 y S06 (RSK-01)", "EQ-02", "2027-04-02"]
       "Operativa": ["Viable", "PWA usable desde el celular", "Validar con productores reales", "EQ-04", "2027-05-28"]
       "Económica": ["Viable", "Costo $0 con planes gratuitos", "Vigilar límites de hosting (RSK-06)", "EQ-01", "2027-06-11"]
       "Temporal": ["Condicionada", "7 meses para 30 RF con 4 personas", "Control del alcance del MVP (RSK-02)", "EQ-01", "Cada sprint"]

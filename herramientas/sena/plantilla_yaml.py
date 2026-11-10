@@ -81,6 +81,10 @@ def campos_item(coleccion: str, id_: str, cat: dict) -> dict[str, str]:
         hu = _hu_de_rf(cat).get(id_, "")
         campos["hu"] = hu
         campos["cu"] = _cu_de_hu(cat, hu)
+    elif coleccion == "actores":
+        campos["rf_del_actor"] = sorted(
+            rid for rid, r in cat.get("requisitos", {}).items() if id_ in r.get("actores", [])
+        )
     elif coleccion == "historias":
         for k, v in cat.get("requisitos", {}).get(item["rf"], {}).items():
             campos.setdefault(k if k != "nombre" else "rf_nombre", v)

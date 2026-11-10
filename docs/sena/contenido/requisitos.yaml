@@ -76,7 +76,7 @@ tablas:
       "Pruebas": "Pruebas unitarias del dominio, de integración (repositorios y webhook) y E2E del camino principal."
       "Despliegue": "Frontend en Vercel; API y base de datos en Railway o Render (planes gratuitos)."
       "Documentación": "Documentos SENA, README técnico, informe de pruebas (ENTG-06) y manual de usuario (ENTG-07)."
-      "Transferencia o capacitación": "Demostración final al instructor (HIT-06)."
+      "Transferencia o capacitación": "Demostración final al instructor (hito H-06, 2027-06-11)."
 
   - indice: 15
     encabezado: ["ID", "Exclusión"]
@@ -146,14 +146,8 @@ tablas:
 
   - indice: 30
     encabezado: ["ID", "Actor", "Tipo"]
-    filas:
-      - ["ACT-01", "Productor", "Humano", "Publicar productos y vender sus cosechas", "RF-001 a RF-007, RF-013, RF-014, RF-021, RF-022"]
-      - ["ACT-02", "Comprador consumidor", "Humano", "Comprar productos para su hogar", "RF-001, RF-009 a RF-012, RF-015, RF-018, RF-024, RF-025"]
-      - ["ACT-03", "Comprador negocio", "Humano", "Comprar por volumen para su negocio", "RF-001, RF-009 a RF-012, RF-015, RF-018, RF-024, RF-025"]
-      - ["ACT-04", "Administrador", "Humano", "Operar la plataforma", "RF-006, RF-023, RF-026 a RF-029"]
-      - ["ACT-05", "Visitante (sin sesión)", "Humano", "Explorar el catálogo y registrarse", "RF-001, RF-009, RF-010"]
-      - ["ACT-06", "Wompi (pasarela de pagos)", "Sistema externo", "Procesar los cobros y notificar su resultado", "RF-018, RF-019, RF-023"]
-      - ["ACT-07", "Planificador de tareas", "Sistema", "Aplicar plazos automáticos y efectos de los eventos de dominio", "RF-017, RF-020, RF-023, RF-030"]
+    filas: ["{{todas: actores}}"]
+    columnas: ["{id}", "{nombre}", "{tipo}", "{objetivo}", "{rf_del_actor}"]
 
   - indice: 31
     encabezado: ["Recurso / acción"]
