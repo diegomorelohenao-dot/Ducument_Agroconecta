@@ -98,6 +98,13 @@ def test_imagenes_del_yaml(tmp_path, plantilla_prueba, ctx_prueba):
     assert len(d.inline_shapes) == 1
 
 
+def test_salida_pide_actualizar_campos(tmp_path, plantilla_prueba, ctx_prueba):
+    # la tabla de contenido cambia de páginas al llenar; Word la actualiza al abrir
+    y = _yaml(tmp_path, {"plantilla": "prueba.docx", "salida": "salida.docx"})
+    d = Document(generar_documento(y, plantilla_prueba.parent, tmp_path / "out", ctx_prueba))
+    assert d.settings.element.xpath("./w:updateFields[@w:val='true']")
+
+
 def test_clonado_no_corre_indices(tmp_path, plantilla_prueba, ctx_prueba):
     y = _yaml(tmp_path, {
         "plantilla": "prueba.docx",

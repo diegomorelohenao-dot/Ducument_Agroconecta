@@ -32,6 +32,16 @@ def _aplicar(t, op: dict, ctx: dict) -> None:
         raise ValueError(f"Operación sin campos/filas/agregar: {op}")
 
 
+def _pedir_actualizar_campos(doc) -> None:
+    """Hace que Word actualice la tabla de contenido al abrir (las páginas cambian al llenar)."""
+    from docx.oxml.ns import qn
+
+    settings = doc.settings.element
+    if settings.find(qn("w:updateFields")) is None:
+        el = settings.makeelement(qn("w:updateFields"), {qn("w:val"): "true"})
+        settings.append(el)
+
+
 def generar_documento(yaml_doc: Path, dir_plantillas: Path, dir_salida: Path, ctx: dict) -> Path:
     datos = cargar_yaml(yaml_doc)
     doc, _ = construir(datos, dir_plantillas, ctx)
@@ -74,6 +84,7 @@ def construir(datos: dict, dir_plantillas: Path, ctx: dict):
         docx_ops.rellenar_linea(doc, linea["etiqueta"], resolver(linea["valor"], ctx))
     for img in datos.get("imagenes", []):
         docx_ops.insertar_imagen_despues_de(doc, img["despues_de"], RAIZ / img["ruta"], img["ancho_cm"])
+    _pedir_actualizar_campos(doc)
     return doc, [t for t, _ in entradas + planes]
 
 
