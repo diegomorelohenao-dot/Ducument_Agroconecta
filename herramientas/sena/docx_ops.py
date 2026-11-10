@@ -168,7 +168,9 @@ def clonar_bloque(primera: Table, ultima: Table) -> list[Table]:
         el = el.getnext()
     else:
         raise ValueError("La última tabla no sigue a la primera en el documento")
-    ancla = ultima._tbl
+    separador = ultima._tbl.makeelement(qn("w:p"), {})
+    ultima._tbl.addnext(separador)  # Word fusiona tablas contiguas
+    ancla = separador
     nuevas = []
     for original in elementos:
         copia = deepcopy(original)

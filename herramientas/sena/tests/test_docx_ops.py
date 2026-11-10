@@ -77,3 +77,10 @@ def test_clonar_bloque(doc_prueba):
     assert len(nuevas) == 2 and len(doc_prueba.tables) == 6
     assert doc_prueba.tables[4]._tbl is nuevas[0]._tbl
     assert doc_prueba.tables[5]._tbl is nuevas[1]._tbl
+
+
+def test_clonar_bloque_separa_con_parrafo(doc_prueba):
+    # Word fusiona tablas contiguas: el clon debe quedar separado por un párrafo
+    t3 = doc_prueba.tables[3]
+    clonar_bloque(t3, t3)
+    assert t3._tbl.getnext().tag.endswith("}p")
