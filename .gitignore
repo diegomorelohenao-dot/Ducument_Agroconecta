@@ -1,0 +1,5 @@
+herramientas/sena/.venv/
+herramientas/sena/plantuml.jar
+__pycache__/
+.pytest_cache/
+docs/sena/entregables/~$*

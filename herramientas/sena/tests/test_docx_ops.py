@@ -1,0 +1,79 @@
+import pytest
+
+from docx_ops import (
+    PlantillaCambiadaError,
+    agregar_filas,
+    clonar_bloque,
+    escribir_celda,
+    llenar_campos,
+    reemplazar_filas,
+    rellenar_linea,
+    tabla,
+)
+
+
+def test_tabla_con_encabezado_distinto_falla(doc_prueba):
+    with pytest.raises(PlantillaCambiadaError, match="T1"):
+        tabla(doc_prueba, 1, ["Código"])
+
+
+def test_tabla_acepta_prefijo_sin_tildes(doc_prueba):
+    assert tabla(doc_prueba, 0, ["campo", "informacion"])._tbl is doc_prueba.tables[0]._tbl
+
+
+def test_escribir_celda_conserva_formato(doc_prueba):
+    celda = doc_prueba.tables[0].cell(1, 1)
+    escribir_celda(celda, "3045678\nsegunda")
+    r = celda.paragraphs[0].runs[0]
+    assert (r.text, r.bold, r.font.size.pt) == ("3045678", True, 9)
+    assert celda.paragraphs[1].runs[0].bold is True
+    assert celda.paragraphs[1].runs[0].text == "segunda"
+    assert len(celda.paragraphs) == 2
+
+
+def test_llenar_campos(doc_prueba):
+    llenar_campos(doc_prueba.tables[0], {"Ficha": "3045678"})
+    assert doc_prueba.tables[0].cell(1, 1).text == "3045678"
+
+
+def test_llenar_campos_clave_inexistente(doc_prueba):
+    with pytest.raises(KeyError, match="Regional"):
+        llenar_campos(doc_prueba.tables[0], {"Regional": "x"})
+
+
+def test_reemplazar_filas(doc_prueba):
+    t = doc_prueba.tables[1]
+    reemplazar_filas(t, [["RF-010", "A", "B"]] * 3, nuevo_encabezado=["ID", "Nombre", "Prioridad"])
+    assert [c.text for c in t.rows[0].cells] == ["ID", "Nombre", "Prioridad"]
+    assert len(t.rows) == 4 and t.cell(3, 0).text == "RF-010"
+
+
+def test_reemplazar_filas_columnas_distintas(doc_prueba):
+    with pytest.raises(ValueError):
+        reemplazar_filas(doc_prueba.tables[1], [["solo una"]])
+
+
+def test_agregar_filas(doc_prueba):
+    agregar_filas(doc_prueba.tables[1], [["RF-003", "X", "Y"]])
+    t = doc_prueba.tables[1]
+    assert len(t.rows) == 4 and t.cell(1, 0).text == "RF-001" and t.cell(3, 0).text == "RF-003"
+
+
+def test_rellenar_linea_misma_y_siguiente(doc_prueba):
+    rellenar_linea(doc_prueba, "Nombre del proyecto:", "AgroConecta")
+    rellenar_linea(doc_prueba, "Limitaciones:", "Ninguna")
+    textos = [p.text for p in doc_prueba.paragraphs]
+    assert "Nombre del proyecto: AgroConecta" in textos and "Ninguna" in textos
+
+
+def test_rellenar_linea_inexistente(doc_prueba):
+    with pytest.raises(KeyError):
+        rellenar_linea(doc_prueba, "No existe:", "x")
+
+
+def test_clonar_bloque(doc_prueba):
+    t2, t3 = doc_prueba.tables[2], doc_prueba.tables[3]
+    nuevas = clonar_bloque(t2, t3)
+    assert len(nuevas) == 2 and len(doc_prueba.tables) == 6
+    assert doc_prueba.tables[4]._tbl is nuevas[0]._tbl
+    assert doc_prueba.tables[5]._tbl is nuevas[1]._tbl
