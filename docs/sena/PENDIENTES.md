@@ -7,9 +7,6 @@ en los YAML de `docs/sena/contenido/` y regenerar antes del 2026-12-04.
 - [PENDIENTE: acuerdo del equipo]
 - [PENDIENTE: valor del mínimo de retiro]
 
-## comun.yaml
-- [PENDIENTE: horas por semana por integrante]
-
 ## formulacion.yaml
 - [PENDIENTE: confirmar con EVI-01 y EVI-03]
 - [PENDIENTE: dato y fuente]
