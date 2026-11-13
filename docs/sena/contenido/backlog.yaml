@@ -125,9 +125,9 @@ tablas:
       - ["CA-HU-003-02", "HU-003", "Si no se confirma la contraseña, la cuenta no se elimina", "Error", "Media", "CP-HU-003-02"]
       - ["CA-HU-004-01", "HU-004", "Con finca, documento y municipio válidos, el perfil queda en PENDIENTE de verificación", "Éxito", "Alta", "CP-HU-004-01"]
       - ["CA-HU-004-02", "HU-004", "Con un municipio que no existe en DIVIPOLA, el perfil se rechaza", "Error", "Alta", "CP-HU-004-02"]
-      - ["CA-HU-005-01", "HU-005", "El productor guarda domicilio con zona y costo, recogida, o ambas", "Éxito", "Alta", "CP-HU-005-01"]
+      - ["CA-HU-005-01", "HU-005", "El productor guarda una o ambas modalidades: domicilio con zona y costo, y recogida con su dirección; la recogida tiene costo 0", "Éxito", "Alta", "CP-HU-005-01"]
       - ["CA-HU-005-02", "HU-005", "Si no elige ninguna modalidad, la configuración se rechaza", "Error", "Alta", "CP-HU-005-02"]
-      - ["CA-HU-006-01", "HU-006", "Al aprobar, el productor pasa a VERIFICADO y recibe una notificación", "Éxito", "Alta", "CP-HU-006-01"]
+      - ["CA-HU-006-01", "HU-006", "Al aprobar una solicitud, el productor pasa a VERIFICADO; al rechazarla, pasa a RECHAZADO. En ambos casos recibe una notificación con el resultado", "Éxito", "Alta", "CP-HU-006-01"]
       - ["CA-HU-006-02", "HU-006", "Un usuario que no es administrador no puede verificar (403)", "Error", "Alta", "CP-HU-006-02"]
       - ["CA-HU-007-01", "HU-007", "Un productor verificado publica un producto con precio, unidad, stock e imagen", "Éxito", "Alta", "CP-HU-007-01"]
       - ["CA-HU-007-02", "HU-007", "Un productor no verificado no puede publicar ni activar productos (RN-001)", "Error", "Alta", "CP-HU-007-02"]
@@ -151,12 +151,12 @@ tablas:
       - ["CA-HU-015-02", "HU-015", "Un pedido que no está ENVIADO no puede confirmarse (409)", "Error", "Alta", "CP-HU-015-02"]
       - ["CA-HU-016-01", "HU-016", "Cada rol ve solo sus pedidos, con su estado y fechas", "Éxito", "Media", "CP-HU-016-01"]
       - ["CA-HU-016-02", "HU-016", "Consultar un pedido ajeno responde 404", "Error", "Media", "CP-HU-016-02"]
-      - ["CA-HU-017-01", "HU-017", "PENDIENTE_PAGO por 30 min → CANCELADO; PAGADO sin respuesta por 48 h → REEMBOLSADO; ENVIADO por 7 días → ENTREGADO", "Éxito", "Alta", "CP-HU-017-01"]
+      - ["CA-HU-017-01", "HU-017", "PENDIENTE_PAGO sin pago durante 30 min → CANCELADO; PAGADO sin respuesta del productor durante 48 h → REEMBOLSADO; ENVIADO durante 7 días sin confirmación ni disputa → ENTREGADO", "Éxito", "Alta", "CP-HU-017-01"]
       - ["CA-HU-017-02", "HU-017", "Ejecutar el job dos veces seguidas no repite ningún efecto", "Error", "Alta", "CP-HU-017-02"]
       - ["CA-HU-018-01", "HU-018", "El comprador es dirigido al pago de Wompi sandbox por el monto total en COP enteros", "Éxito", "Alta", "CP-HU-018-01"]
       - ["CA-HU-018-02", "HU-018", "Si la pasarela no responde, los pedidos siguen en PENDIENTE_PAGO y se informa al comprador", "Error", "Alta", "CP-HU-018-02"]
       - ["CA-HU-019-01", "HU-019", "Un evento APROBADA con firma válida pasa los pedidos a PAGADO y descuenta el stock", "Éxito", "Alta", "CP-HU-019-01"]
-      - ["CA-HU-019-02", "HU-019", "Un evento duplicado o con firma inválida no produce cambios", "Error", "Alta", "CP-HU-019-02"]
+      - ["CA-HU-019-02", "HU-019", "Un pago rechazado deja los pedidos en CANCELADO; un webhook duplicado o con firma inválida no modifica estados ni stock", "Error", "Alta", "CP-HU-019-02"]
       - ["CA-HU-020-01", "HU-020", "Al entregarse un pedido de $50.000 + $5.000 de envío con 8 %, se acreditan $51.000", "Éxito", "Alta", "CP-HU-020-01"]
       - ["CA-HU-020-02", "HU-020", "Un pedido que ya recibió su crédito no se acredita otra vez", "Error", "Alta", "CP-HU-020-02"]
       - ["CA-HU-021-01", "HU-021", "El productor ve su saldo disponible y la lista de movimientos", "Éxito", "Media", "CP-HU-021-01"]
@@ -167,7 +167,7 @@ tablas:
       - ["CA-HU-023-02", "HU-023", "Un pedido ENTREGADO no se puede reembolsar (409)", "Error", "Alta", "CP-HU-023-02"]
       - ["CA-HU-024-01", "HU-024", "El comprador califica de 1 a 5 estrellas un pedido ENTREGADO", "Éxito", "Media", "CP-HU-024-01"]
       - ["CA-HU-024-02", "HU-024", "Una segunda calificación del mismo pedido o de un pedido no entregado se rechaza", "Error", "Media", "CP-HU-024-02"]
-      - ["CA-HU-025-01", "HU-025", "El comprador abre una disputa sobre un pedido ENVIADO, que pasa a EN_DISPUTA", "Éxito", "Alta", "CP-HU-025-01"]
+      - ["CA-HU-025-01", "HU-025", "El comprador del pedido ENVIADO registra el motivo y la evidencia; el pedido pasa a EN_DISPUTA y el dinero continúa retenido", "Éxito", "Alta", "CP-HU-025-01"]
       - ["CA-HU-025-02", "HU-025", "No se puede abrir disputa sobre un pedido que no está ENVIADO (409)", "Error", "Alta", "CP-HU-025-02"]
       - ["CA-HU-026-01", "HU-026", "A favor del productor el pedido pasa a ENTREGADO; a favor del comprador, a REEMBOLSADO", "Éxito", "Alta", "CP-HU-026-01"]
       - ["CA-HU-026-02", "HU-026", "Una disputa ya resuelta no se puede resolver de nuevo (409)", "Error", "Alta", "CP-HU-026-02"]
@@ -356,7 +356,7 @@ grupos:
             - ["5", "Sistema", "—", "Pasa los pedidos a PAGADO y descuenta el stock en una transacción", "RN-004, RN-005"]
         27:
           filas:
-            - ["A1", "4", "La transacción es rechazada", "Los pedidos pasan a CANCELADO (estado final)", "El comprador puede volver a confirmar su carrito, lo que crea pedidos nuevos"]
+            - ["A1", "4", "Wompi informa que la transacción fue rechazada", "Los pedidos de ese cobro pasan a CANCELADO (estado final)", "El comprador puede volver a confirmar su carrito; se crean pedidos nuevos"]
             - ["A2", "5", "Un producto ya no tiene stock", "Ese pedido pasa a REEMBOLSADO sin descontar stock; los demás siguen", "Reembolso total de ese pedido (RN-011)"]
             - ["E1", "1", "Un productor perdió la verificación", "Se rechaza la confirmación (422)", "No se crean pedidos"]
             - ["E2", "3", "La pasarela no responde", "Los pedidos siguen en PENDIENTE_PAGO", "Se cancelan a los 30 min (HU-017)"]
@@ -375,7 +375,7 @@ grupos:
             "Flujo principal": "Ver tabla de flujo principal."
             "Flujos alternativos": "A1 rechazo; A2 sin respuesta en 48 h; A3 sin confirmación en 7 días; A4 disputa (CU-003)."
             "Excepciones": "E1 transición inválida."
-            "Reglas de negocio": "RN-004, RN-005, RN-006, RN-009, RN-011"
+            "Reglas de negocio": "RN-004, RN-005, RN-006, RN-009, RN-011, RN-016"
             "Datos de entrada y salida": "Entrada: decisiones del productor y confirmación del comprador. Salida: estados y movimiento de saldo."
             "Requisitos especiales": "RNF-006, RNF-008"
             "Frecuencia / volumen": "Cada pedido pagado."
@@ -394,7 +394,7 @@ grupos:
           filas:
             - ["A1", "1", "El productor rechaza el pedido", "El pedido pasa a REEMBOLSADO y se restituye el stock", "Reembolso total (RN-011)"]
             - ["A2", "1", "48 h sin respuesta del productor", "El planificador pasa el pedido a REEMBOLSADO", "Reembolso total (RN-011)"]
-            - ["A3", "3", "7 días sin confirmación ni disputa", "El planificador pasa el pedido a ENTREGADO", "Se acredita el saldo"]
+            - ["A3", "3", "7 días desde el envío sin confirmación ni disputa", "El planificador pasa el pedido a ENTREGADO", "Se acredita el saldo"]
             - ["A4", "3", "El comprador abre una disputa", "El pedido pasa a EN_DISPUTA y el dinero sigue retenido", "Continúa en CU-003"]
             - ["E1", "2", "El pedido no está ACEPTADO", "Se rechaza la acción (409)", "El estado no cambia"]
       - 25:

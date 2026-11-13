@@ -1,5 +1,6 @@
 @startuml casos_de_uso
 ' Diagrama general de casos de uso de AgroConecta (DIA-CU-01)
+' Vista de contexto: cuatro procesos principales y exploración pública del catálogo.
 left to right direction
 skinparam shadowing false
 skinparam packageStyle rectangle
@@ -9,44 +10,41 @@ skinparam usecase {
 }
 
 actor "Productor\n(ACT-01)" as Productor
-actor "Comprador\n(ACT-02 consumidor /\nACT-03 negocio)" as Comprador
+actor "Comprador consumidor\n(ACT-02)" as Consumidor
+actor "Comprador negocio\n(ACT-03)" as Negocio
 actor "Administrador\n(ACT-04)" as Admin
 actor "Visitante\n(ACT-05)" as Visitante
-actor "Wompi\n(ACT-06)" as Wompi <<sistema>>
-actor "Planificador de tareas\n(ACT-07)" as Planificador <<sistema>>
+actor "Wompi\n(ACT-06)\n<<sistema externo>>" as Wompi
+actor "Planificador de tareas\n(ACT-07)\n<<sistema>>" as Planificador
 
 rectangle "AgroConecta" {
-  usecase "CU-001\nRealizar pedido y pago" as CU1
-  usecase "CU-002\nGestionar ciclo del pedido" as CU2
-  usecase "CU-003\nResolver disputa" as CU3
-  usecase "CU-004\nLiquidar saldo" as CU4
-
-  usecase "Gestionar carrito\n(HU-011)" as H11
-  usecase "Iniciar pago en línea\n(HU-018)" as H18
-  usecase "Procesar webhook\n(HU-019)" as H19
-  usecase "Acreditar saldo\n(HU-020)" as H20
-  usecase "Ejecutar reembolso\n(HU-023)" as H23
-  usecase "Aplicar plazos\n(HU-017)" as H17
+  usecase "CU-001\nRealizar pedido y pago\nHU-011, HU-012, HU-018, HU-019" as CU1
+  usecase "CU-002\nGestionar ciclo del pedido\nHU-013, HU-014, HU-015,\nHU-016, HU-017, HU-020" as CU2
+  usecase "CU-003\nResolver disputa\nHU-025, HU-026, HU-023" as CU3
+  usecase "CU-004\nLiquidar saldo\nHU-021, HU-022, HU-027" as CU4
   usecase "Buscar productos\n(HU-009)" as H09
+  usecase "Consultar detalle de producto\n(HU-010)" as H10
 }
 
-Comprador --> CU1
-Comprador --> CU2
-Comprador --> CU3
+Consumidor --> CU1
+Negocio --> CU1
 Productor --> CU2
-Productor --> CU4
+Consumidor --> CU2
+Negocio --> CU2
+Consumidor --> CU3
+Negocio --> CU3
 Admin --> CU3
+Productor --> CU4
 Admin --> CU4
-Visitante --> H09
-Comprador --> H09
 
-CU1 ..> H11 : <<include>>
-CU1 ..> H18 : <<include>>
-H19 <-- Wompi
-CU1 ..> H19 : <<include>>
-CU2 ..> H20 : <<include>>
-CU2 ..> H17 : <<include>>
-H17 <-- Planificador
-CU3 ..> H23 : <<include>>
-H23 --> Wompi
+Visitante --> H09
+Visitante --> H10
+Consumidor --> H09
+Consumidor --> H10
+Negocio --> H09
+Negocio --> H10
+
+Wompi --> CU1 : webhook de pago
+Wompi --> CU3 : reembolsos
+Planificador --> CU2 : plazos y automatizaciones
 @enduml
