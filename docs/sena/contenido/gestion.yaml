@@ -111,8 +111,8 @@ tablas:
       - ["H-01", "Documentación SENA entregada", "ENTG-01 a ENTG-04", "2026-11-10", "2026-12-04", "—", "EQ-04", "En curso"]
       - ["H-02", "Identidad y productores", "RF-001 a RF-006, RF-031", "2027-01-11", "2027-02-05", "H-01", "EQ-02", "Pendiente"]
       - ["H-03", "Catálogo y búsqueda", "RF-007 a RF-011, RF-032", "2027-02-08", "2027-03-05", "H-02", "EQ-02", "Pendiente"]
-      - ["H-04", "Pedidos y pagos", "RF-012 a RF-016, RF-018 a RF-021, RF-023, RF-036", "2027-03-08", "2027-04-16", "H-03, DEP-01", "EQ-01", "Pendiente"]
-      - ["H-05", "MVP completo", "RF-017, RF-022, RF-024 a RF-030, RF-033 a RF-035", "2027-04-19", "2027-05-28", "H-04", "EQ-01", "Pendiente"]
+      - ["H-04", "Pedidos y pagos", "RF-012 a RF-016, RF-018 a RF-021, RF-023", "2027-03-08", "2027-04-16", "H-03, DEP-01", "EQ-01", "Pendiente"]
+      - ["H-05", "MVP completo", "RF-017, RF-022, RF-024 a RF-030, RF-033 a RF-036", "2027-04-19", "2027-05-28", "H-04", "EQ-01", "Pendiente"]
       - ["H-06", "Entrega final", "ENTG-05 a ENTG-07", "2027-05-31", "2027-06-11", "H-05", "EQ-01", "Pendiente"]
 
   - indice: 24
@@ -124,8 +124,8 @@ tablas:
       - ["S04", "Búsqueda, detalle y carrito", "HU-009, HU-010, HU-011", "Comprador arma su carrito", "2027-02-22 a 2027-03-05", "4 personas", "RSK-04", "—"]
       - ["S05", "Pedidos e inicio de pago", "HU-012, HU-018", "Pedidos creados y pago iniciado en sandbox", "2027-03-08 a 2027-03-19", "4 personas", "RSK-01", "—"]
       - ["S06", "Confirmación de pago y respuesta del productor", "HU-019, HU-013, HU-023", "Pedido PAGADO por webhook; rechazo con reembolso", "2027-03-22 a 2027-04-02", "4 personas", "RSK-01", "—"]
-      - ["S07", "Entrega y saldo", "HU-014, HU-015, HU-016, HU-020, HU-021, HU-036", "Pedido ENTREGADO con saldo acreditado", "2027-04-05 a 2027-04-16", "4 personas", "RSK-02", "—"]
-      - ["S08", "Plazos y liquidaciones", "HU-017, HU-022, HU-027", "Plazos automáticos y liquidación pagada", "2027-04-19 a 2027-04-30", "4 personas", "RSK-02", "—"]
+      - ["S07", "Entrega y saldo", "HU-014, HU-015, HU-016, HU-020, HU-021", "Pedido ENTREGADO con saldo acreditado", "2027-04-05 a 2027-04-16", "4 personas", "RSK-02", "—"]
+      - ["S08", "Plazos y liquidaciones", "HU-017, HU-022, HU-027, HU-036", "Plazos automáticos, liquidación pagada y volver a comprar", "2027-04-19 a 2027-04-30", "4 personas", "RSK-02", "—"]
       - ["S09", "Reputación y disputas", "HU-024, HU-025, HU-026, HU-033", "Disputa resuelta y calificaciones registradas", "2027-05-03 a 2027-05-14", "4 personas", "RSK-04", "—"]
       - ["S10", "Administración, notificaciones y PWA", "HU-028, HU-029, HU-030, HU-034, HU-035", "MVP completo e instalable", "2027-05-17 a 2027-05-28", "4 personas", "RSK-06", "—"]
       - ["S11", "Pruebas E2E, despliegue y entrega", "Estabilización", "ENTG-05 a ENTG-07", "2027-05-31 a 2027-06-11", "4 personas", "RSK-06", "—"]

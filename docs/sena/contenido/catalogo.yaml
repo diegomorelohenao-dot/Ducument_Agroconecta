@@ -96,7 +96,7 @@ requisitos:
   RF-030: {nombre: Enviar notificaciones en la app y por correo, epica: EP-001, feat: FEAT-002, actores: [ACT-07], rn: [], objetivo: OBJ-04, prioridad: Must, version: MVP}
   RF-031: {nombre: Recuperar contraseña, epica: EP-001, feat: FEAT-001, actores: [ACT-01, ACT-02, ACT-03], rn: [RN-017], objetivo: OBJ-02, prioridad: Must, version: MVP}
   RF-032: {nombre: Configurar perfil público con storytelling, epica: EP-002, feat: FEAT-003, actores: [ACT-01], rn: [RN-018], objetivo: OBJ-02, prioridad: Must, version: MVP}
-  RF-033: {nombre: Calificar al consumidor, epica: EP-006, feat: FEAT-012, actores: [ACT-01], rn: [RN-019], objetivo: OBJ-04, prioridad: Must, version: MVP}
+  RF-033: {nombre: Calificar al comprador, epica: EP-006, feat: FEAT-012, actores: [ACT-01], rn: [RN-019], objetivo: OBJ-04, prioridad: Must, version: MVP}
   RF-034: {nombre: Desactivar publicación, epica: EP-007, feat: FEAT-015, actores: [ACT-04], rn: [RN-020], objetivo: OBJ-04, prioridad: Must, version: MVP}
   RF-035: {nombre: Suspender o reactivar cuentas, epica: EP-007, feat: FEAT-015, actores: [ACT-04], rn: [RN-020], objetivo: OBJ-04, prioridad: Must, version: MVP}
   RF-036: {nombre: Volver a comprar un pedido anterior, epica: EP-004, feat: FEAT-007, actores: [ACT-02, ACT-03], rn: [RN-021], objetivo: OBJ-03, prioridad: Could, version: MVP}
@@ -134,7 +134,7 @@ historias:
   HU-030: {nombre: Enviar notificaciones en la app y por correo, rf: RF-030, enunciado: "Como comprador o productor, quiero recibir avisos dentro de la aplicación y por correo sobre los cambios de mis pedidos, la verificación de mi perfil y mis liquidaciones, para estar informado oportunamente."}
   HU-031: {nombre: Recuperar contraseña, rf: RF-031, enunciado: "Como usuario registrado, quiero recuperar el acceso a mi cuenta con un enlace enviado a mi correo, para no perder mi cuenta si olvido la contraseña."}
   HU-032: {nombre: Configurar perfil público con storytelling, rf: RF-032, enunciado: "Como productor, quiero contar la historia de mi finca, mis prácticas de cultivo y mostrar fotos en mi perfil público, para generar confianza y diferenciarme ante los compradores."}
-  HU-033: {nombre: Calificar al consumidor, rf: RF-033, enunciado: "Como productor, quiero calificar al comprador después de entregar un pedido, para que otros productores conozcan su comportamiento al recibir sus pedidos."}
+  HU-033: {nombre: Calificar al comprador, rf: RF-033, enunciado: "Como productor, quiero calificar al comprador después de entregar un pedido, para que otros productores conozcan su comportamiento al recibir sus pedidos."}
   HU-034: {nombre: Desactivar publicación, rf: RF-034, enunciado: "Como administrador, quiero desactivar una publicación que incumple las políticas, para retirarla del catálogo y avisar al productor el motivo."}
   HU-035: {nombre: Suspender o reactivar cuentas, rf: RF-035, enunciado: "Como administrador, quiero suspender o reactivar la cuenta de un usuario indicando el motivo, para actuar ante usuarios que abusan de la plataforma."}
   HU-036: {nombre: Volver a comprar un pedido anterior, rf: RF-036, enunciado: "Como comprador, quiero volver a agregar al carrito los productos de un pedido anterior, para repetir mis compras frecuentes sin buscarlos de nuevo."}
@@ -224,8 +224,8 @@ sprints:
   S04: {inicio: "2027-02-22", fin: "2027-03-05", historias: [HU-009, HU-010, HU-011]}
   S05: {inicio: "2027-03-08", fin: "2027-03-19", historias: [HU-012, HU-018]}
   S06: {inicio: "2027-03-22", fin: "2027-04-02", historias: [HU-019, HU-013, HU-023]}
-  S07: {inicio: "2027-04-05", fin: "2027-04-16", historias: [HU-014, HU-015, HU-016, HU-020, HU-021, HU-036]}
-  S08: {inicio: "2027-04-19", fin: "2027-04-30", historias: [HU-017, HU-022, HU-027]}
+  S07: {inicio: "2027-04-05", fin: "2027-04-16", historias: [HU-014, HU-015, HU-016, HU-020, HU-021]}
+  S08: {inicio: "2027-04-19", fin: "2027-04-30", historias: [HU-017, HU-022, HU-027, HU-036]}
   S09: {inicio: "2027-05-03", fin: "2027-05-14", historias: [HU-024, HU-025, HU-026, HU-033]}
   S10: {inicio: "2027-05-17", fin: "2027-05-28", historias: [HU-028, HU-029, HU-030, HU-034, HU-035], extra: PWA instalable}
   S11: {inicio: "2027-05-31", fin: "2027-06-11", historias: [], extra: "Pruebas E2E, despliegue, estabilización y entrega"}

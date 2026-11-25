@@ -56,7 +56,7 @@ def test_equipo_y_responsables():
 NUEVOS_RF = {
     "RF-031": "Recuperar contraseña",
     "RF-032": "Configurar perfil público con storytelling",
-    "RF-033": "Calificar al consumidor",
+    "RF-033": "Calificar al comprador",
     "RF-034": "Desactivar publicación",
     "RF-035": "Suspender o reactivar cuentas",
     "RF-036": "Volver a comprar un pedido anterior",
@@ -77,3 +77,16 @@ def test_sin_totales_viejos():
         texto = _texto(nombre)
         for viejo in ("RF-001 a RF-030", "30 de 30", "15 de 15", "RN-001 a RN-015", "30 RF"):
             assert viejo not in texto, (nombre, viejo)
+
+
+def test_correcciones_revision_pr16():
+    cat = cargar_yaml(CONTENIDO / "catalogo.yaml")
+    assert cat["requisitos"]["RF-033"]["nombre"] == "Calificar al comprador"
+    assert "HU-036" in cat["sprints"]["S08"]["historias"]
+    assert "HU-036" not in cat["sprints"]["S07"]["historias"]
+    spec = (RAIZ / "docs" / "diseno" / "specs" / "2026-11-10-agroconecta-design.md").read_text(encoding="utf-8")
+    modelo = spec.split("## 5. Modelo de datos")[1].split("## 6.")[0]
+    roles = spec.split("## 6. Roles y permisos")[1].split("## 7.")[0]
+    assert "| Calificacion |" in modelo and "1:1 Pedido |" not in modelo.split("| Calificacion |")[1].split("\n")[0]
+    assert "TokenRecuperacion" in modelo and "AccionModeracion" in modelo and "historia" in modelo
+    assert "Desactivar publicaciones" in roles and "Calificar al comprador" in roles

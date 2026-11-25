@@ -170,14 +170,16 @@ tablas:
     encabezado: ["ID", "Dato / entidad"]
     filas:
       - ["DAT-01", "Usuario", "Autenticación, rol, suspensión y recuperación de contraseña", "Registro", "Personal", "Hasta eliminar la cuenta", "RF-001 a RF-003, RF-031, RF-035"]
-      - ["DAT-02", "Perfil de productor", "Identificar al productor y su finca", "Productor", "Personal", "Hasta eliminar la cuenta", "RF-004 a RF-006"]
+      - ["DAT-02", "Perfil de productor", "Identificar al productor y su finca; storytelling opcional", "Productor", "Personal", "Hasta eliminar la cuenta", "RF-004 a RF-006, RF-032"]
       - ["DAT-03", "Perfil de comprador", "Datos de entrega y razón social / NIT de negocios", "Comprador", "Personal", "Hasta eliminar la cuenta", "RF-001, RF-012"]
       - ["DAT-04", "Producto y precio por volumen", "Catálogo", "Productor", "Público", "Mientras esté activo", "RF-007 a RF-010"]
       - ["DAT-05", "Pedido e ítems", "Registro de la compra con precios congelados", "Sistema", "Interno", "Duración del proyecto", "RF-011 a RF-017"]
       - ["DAT-06", "Pago y eventos de webhook", "Conciliación con la pasarela e idempotencia", "Wompi", "Confidencial", "Duración del proyecto", "RF-018, RF-019"]
       - ["DAT-07", "Movimientos de saldo y liquidaciones", "Saldo del productor y retiros", "Sistema", "Confidencial", "Duración del proyecto", "RF-020 a RF-022, RF-027"]
-      - ["DAT-08", "Disputa y calificación", "Resolver reclamos y reputación", "Comprador y administrador", "Interno", "Duración del proyecto", "RF-024 a RF-026"]
+      - ["DAT-08", "Disputa y calificaciones", "Resolver reclamos y reputación de productores y compradores", "Comprador, productor y administrador", "Interno", "Duración del proyecto", "RF-024 a RF-026, RF-033"]
       - ["DAT-09", "Departamentos y municipios", "Ubicación del productor y búsqueda", "DANE (DIVIPOLA)", "Público", "Permanente", "RF-004, RF-009"]
+      - ["DAT-10", "Token de recuperación de contraseña", "Restablecer el acceso", "Sistema", "Confidencial", "24 horas o hasta usarse", "RF-031"]
+      - ["DAT-11", "Acciones de moderación", "Registrar desactivaciones y suspensiones con su motivo", "Administrador", "Interno", "Duración del proyecto", "RF-034, RF-035"]
 
   - indice: 33
     encabezado: ["Dimensión", "Regla o métrica"]

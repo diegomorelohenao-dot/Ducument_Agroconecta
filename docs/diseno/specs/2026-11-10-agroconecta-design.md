@@ -152,11 +152,11 @@ Cualquier otra transición es inválida y la entidad `Pedido` la rechaza con `Tr
 
 | Entidad | Campos principales | Relaciones |
 |---|---|---|
-| Usuario | correo (único), hash de contraseña, rol, estado, fecha de aceptación de tratamiento de datos | 1:1 PerfilProductor o PerfilComprador |
-| PerfilProductor | nombre de la finca, documento, municipio, estado de verificación (PENDIENTE/VERIFICADO/RECHAZADO), ofrece domicilio, zona y costo de envío, ofrece recogida, dirección de recogida | 1:N Producto |
+| Usuario | correo (único), hash de contraseña, rol, estado (ACTIVO/SUSPENDIDO), fecha de aceptación de tratamiento de datos | 1:1 PerfilProductor o PerfilComprador |
+| PerfilProductor | nombre de la finca, documento, municipio, estado de verificación (PENDIENTE/VERIFICADO/RECHAZADO), ofrece domicilio, zona y costo de envío, ofrece recogida, dirección de recogida, storytelling opcional: historia, prácticas de cultivo y hasta 5 fotos de la finca (RN-018) | 1:N Producto |
 | PerfilComprador | tipo (CONSUMIDOR/NEGOCIO), razón social y NIT (si es negocio), direcciones | 1:N Pedido |
 | Categoria | nombre | 1:N Producto |
-| Producto | nombre, descripción, unidad, precio, stock, imágenes, activo | N:1 PerfilProductor, N:1 Categoria, 1:N PrecioVolumen |
+| Producto | nombre, descripción, unidad, precio, stock, imágenes, activo, motivo de desactivación (si la desactivó el administrador) | N:1 PerfilProductor, N:1 Categoria, 1:N PrecioVolumen |
 | PrecioVolumen | cantidad mínima, precio unitario | N:1 Producto |
 | Pedido | estado, modalidad de entrega, dirección, subtotal, costo de envío, porcentaje de comisión, comisión, marcas de tiempo por estado | N:1 comprador, N:1 productor, N:1 Pago, 1:N ItemPedido |
 | ItemPedido | cantidad, precio unitario congelado | N:1 Pedido, N:1 Producto |
@@ -165,9 +165,11 @@ Cualquier otra transición es inválida y la entidad `Pedido` la rechaza con `Tr
 | MovimientoSaldo | tipo (CREDITO_PEDIDO/RETIRO), monto, fecha | N:1 productor; referencia a Pedido o Liquidacion |
 | Liquidacion | monto, estado (SOLICITADA/PAGADA), fechas | N:1 productor |
 | Disputa | motivo, evidencia (imágenes), resolución, resuelta por | 1:1 Pedido |
-| Calificacion | estrellas (1–5), comentario | 1:1 Pedido |
+| Calificacion | autor (COMPRADOR o PRODUCTOR), estrellas (1–5), comentario | N:1 Pedido; máximo una por autor y pedido (RN-014, RN-019) |
 | Departamento / Municipio | código DANE, nombre | precargados |
 | Configuracion | porcentaje de comisión, mínimo de retiro | registro único |
+| TokenRecuperacion | hash del token, fecha de vencimiento (24 h), usado | N:1 Usuario (RN-017) |
+| AccionModeracion | tipo (DESACTIVAR_PUBLICACION / SUSPENDER_CUENTA / REACTIVAR_CUENTA), motivo, fecha | N:1 administrador; referencia a Producto o Usuario (RN-020) |
 
 ---
 
@@ -178,9 +180,13 @@ Cualquier otra transición es inválida y la entidad `Pedido` la rechaza con `Tr
 | Publicar y editar sus productos | ✅ (solo si está verificado) | — | — |
 | Buscar productos y comprar | — | ✅ | — |
 | Aceptar, rechazar y despachar pedidos | ✅ (solo los suyos) | — | — |
-| Confirmar recepción, abrir disputa, calificar | — | ✅ (solo los suyos) | — |
+| Confirmar recepción, abrir disputa, calificar al productor, volver a comprar | — | ✅ (solo los suyos) | — |
 | Ver saldo y solicitar liquidación | ✅ (solo el suyo) | — | — |
+| Configurar su perfil con storytelling | ✅ (solo el suyo) | — | — |
+| Calificar al comprador y ver su calificación | ✅ (solo sus pedidos entregados) | — | — |
+| Recuperar la contraseña | ✅ | ✅ | ✅ |
 | Verificar productores, resolver disputas, marcar liquidaciones como pagadas, configurar comisión | — | — | ✅ |
+| Desactivar publicaciones y suspender o reactivar cuentas | — | — | ✅ |
 
 La búsqueda y el detalle del catálogo son públicos (sin iniciar sesión); para comprar hay que iniciar sesión.
 
@@ -203,7 +209,7 @@ Aprobada por el Product Owner. Se agregan al MVP:
 |---|---|---|
 | RF-031 | Recuperar contraseña | RN-017: enlace de un solo uso, vence a las 24 h |
 | RF-032 | Perfil público del productor con storytelling (historia, prácticas de cultivo, hasta 5 fotos JPG/PNG de máx. 5 MB) | RN-018: opcional; si falta, se muestran solo los datos básicos |
-| RF-033 | Calificar al consumidor | RN-019: solo el productor de un pedido ENTREGADO, una vez; el productor ve el promedio del comprador al recibir un pedido |
+| RF-033 | Calificar al comprador | RN-019: solo el productor de un pedido ENTREGADO, una vez; el productor ve el promedio del comprador al recibir un pedido |
 | RF-034 | Desactivar publicación (moderación posterior, sin cola de aprobación previa) | RN-020: motivo obligatorio, notificación y registro |
 | RF-035 | Suspender o reactivar cuentas (el administrador no elimina cuentas) | RN-020: una cuenta suspendida no inicia sesión, no compra ni publica; sus pedidos en curso continúan |
 | RF-036 | Volver a comprar un pedido anterior (prioridad *Could*) | RN-021: precio actual; productos inexistentes o desactivados no se agregan; si el stock no alcanza, se agrega lo disponible; se avisa al comprador |
