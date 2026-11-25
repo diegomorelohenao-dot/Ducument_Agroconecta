@@ -74,7 +74,7 @@ tablas:
       "Organización, área o comunidad": "Pequeños productores agrícolas de Colombia y sus compradores: consumidores finales y negocios (restaurantes, tiendas, fruvers)."
       "Proceso relacionado": "Comercialización de productos agrícolas desde la finca hasta el comprador."
       "Usuarios o población involucrada": "Productores (STK-01), compradores consumidores (STK-02), compradores negocio (STK-03) y el administrador de la plataforma (STK-04)."
-      "Herramientas o métodos actuales": "Venta a intermediarios y acopiadores, plazas de mercado y contacto informal por redes sociales o WhatsApp. [PENDIENTE: confirmar con EVI-01 y EVI-03]"
+      "Herramientas o métodos actuales": "Venta principalmente a intermediarios, y en menor medida a gremios (Federación de Cafeteros), compradores directos y comercializadoras; plazas, centrales de abasto y mercados campesinos tienen poco peso. La mayoría depende de un solo comprador y casi ninguno está asociado (EVI-01). El contacto informal por redes sociales o WhatsApp se revisa en EVI-03."
       "Normas, políticas o condiciones releva": "Ley 1581 de 2012 (protección de datos personales). La operación con dinero real y la facturación electrónica DIAN quedan fuera del alcance (EXC-04, EXC-08)."
       "Antecedentes de soluciones previas": "Existen marketplaces genéricos y canales en redes sociales, sin pago protegido hasta la entrega ni búsqueda de productores por ubicación (ver ALT-02 y ALT-03)."
       "Fuente de la información": "Especificación de diseño del proyecto (REF-01). Cifras del sector: [PENDIENTE: dato y fuente]"
@@ -82,7 +82,7 @@ tablas:
   - indice: 9
     encabezado: ["ID", "Evidencia", "Tipo", "Fuente"]
     filas:
-      - ["EVI-01", "Entrevistas a pequeños productores sobre cómo venden hoy y qué margen pierden", "Entrevista", "[PENDIENTE: productores entrevistados]", "[PENDIENTE: fecha]", "[PENDIENTE: hallazgo]", "docs/sena/evidencias/"]
+      - ["EVI-01", "Cómo venden hoy los pequeños productores y qué margen pierden. Por la contingencia de RSK-05 se usan fuentes secundarias; las entrevistas propias quedan pendientes (OP-01)", "Revisión documental", "Encuesta a 86 productores de Sonsón, Antioquia (Quintero Galeano et al., 2024); reportaje de La Liga Contra el Silencio (2019); DANE TIC 2022", "2026-11-25 (consulta)", "El intermediario es el canal principal (32,9 %); el 61,2 % vende a un solo comprador y solo el 8,1 % está asociado; el 89,5 % prioriza el cumplimiento de los pagos al elegir comprador; según la Gobernación de Antioquia, el 80 % del precio final queda en los intermediarios", "docs/sena/evidencias/EVI-01_productores_fuentes_secundarias.md"]
       - ["EVI-02", "Comparación de precios mayoristas (SIPSA, DANE) con precios al consumidor", "Documento", "DANE – SIPSA", "[PENDIENTE: fecha de consulta]", "[PENDIENTE: hallazgo]", "docs/sena/evidencias/"]
       - ["EVI-03", "Revisión de los canales de venta que usan hoy productores y compradores", "Observación", "[PENDIENTE: canales revisados]", "[PENDIENTE: fecha]", "[PENDIENTE: hallazgo]", "docs/sena/evidencias/"]
 
@@ -114,7 +114,7 @@ tablas:
       "¿Describe una situación verificable": ["X", "", "La dependencia de intermediarios se verifica con EVI-01 y EVI-02."]
       "¿Identifica claramente a la población": ["X", "", "Pequeños productores, consumidores y negocios de Colombia."]
       "¿Distingue causas y consecuencias": ["X", "", "Ver árbol del problema (CAU-01 a CAU-03, EFE-01 a EFE-03)."]
-      "¿Cuenta con al menos una evidencia": ["", "X", "Evidencias EVI-01 a EVI-03 planificadas; se recolectan antes del 2026-12-04 (ver Anexo C)."]
+      "¿Cuenta con al menos una evidencia": ["X", "", "EVI-01 documentada con fuentes secundarias (encuesta a 86 productores de Sonsón); EVI-02 y EVI-03 se completan antes del 2026-12-04."]
       "¿Puede abordarse parcialmente mediante": ["X", "", "El software ataca CAU-01 a CAU-03 con catálogo, búsqueda por ubicación y pago retenido."]
       "¿La formulación evita prometer resulta": ["X", "", "Los objetivos se miden con indicadores del producto (IND-01 a IND-04), no con ingresos de los productores."]
 
@@ -143,7 +143,7 @@ tablas:
     filas:
       - ["OBJ-01", "{{catalogo.objetivos.OBJ-01}}", "ENTG-01 a ENTG-04", "IND-01", "Los 4 documentos entregados y revisados por el instructor"]
       - ["OBJ-02", "{{catalogo.objetivos.OBJ-02}}", "ENTG-05", "IND-02", "RF-001 a RF-010 aceptados"]
-      - ["OBJ-03", "{{catalogo.objetivos.OBJ-03}}", "ENTG-05", "IND-02, IND-03", "RF-011 a RF-023 aceptados y RN-001 a RN-015 con prueba"]
+      - ["OBJ-03", "{{catalogo.objetivos.OBJ-03}}", "ENTG-05", "IND-02, IND-03", "RF-011 a RF-023 aceptados y RN-001 a RN-016 con prueba"]
       - ["OBJ-04", "{{catalogo.objetivos.OBJ-04}}", "ENTG-05", "IND-02", "RF-024 a RF-030 aceptados"]
       - ["OBJ-05", "{{catalogo.objetivos.OBJ-05}}", "ENTG-05, ENTG-06", "IND-04", "Camino principal E2E en verde y MVP desplegado"]
 
@@ -152,7 +152,7 @@ tablas:
     filas:
       - ["OBJ-01", "Cuatro documentos definidos", "4 de 4 entregados", "Sí, con las plantillas y la especificación", "Base para construir y evaluar", "2026-12-04", "Ninguno"]
       - ["OBJ-02", "Registro, verificación y catálogo", "RF-001 a RF-010 aceptados", "Sí, sprints S01 a S04", "Habilita la oferta de productos", "2027-03-05", "Ninguno"]
-      - ["OBJ-03", "Pedidos, pago, comisión y liquidación", "RF-011 a RF-023 y 15 reglas con prueba", "Condicionado a la integración con Wompi (RSK-01)", "Núcleo del modelo de negocio", "2027-04-30", "Ninguno"]
+      - ["OBJ-03", "Pedidos, pago, comisión y liquidación", "RF-011 a RF-023 y 16 reglas con prueba", "Condicionado a la integración con Wompi (RSK-01)", "Núcleo del modelo de negocio", "2027-04-30", "Ninguno"]
       - ["OBJ-04", "Seguimiento, disputas y calificaciones", "RF-024 a RF-030 aceptados", "Sí, sprints S08 a S10", "Da confianza a compradores y productores", "2027-05-28", "Ninguno"]
       - ["OBJ-05", "Pruebas y despliegue del MVP", "E2E en verde en CI", "Sí, sprint S11", "Demuestra un producto funcional", "2027-06-11", "Ninguno"]
 
@@ -215,7 +215,7 @@ tablas:
       - ["ENTG-03", "Alcance y especificación de requisitos", "RF, RNF, reglas de negocio, actores y datos", "Revisado por el instructor", "EQ-04", "2026-12-04", "ENTG-01"]
       - ["ENTG-04", "Backlog, historias y casos de uso", "Épicas, historias con criterios y casos de uso", "Revisado por el instructor", "EQ-04", "2026-12-04", "ENTG-03"]
       - ["ENTG-05", "Software MVP desplegado", "Plataforma web PWA con RF-001 a RF-030", "IND-02 = 100 % e IND-04 en verde", "EQ-02", "2027-06-11", "ENTG-03, ENTG-04"]
-      - ["ENTG-06", "Informe de pruebas", "Resultados de pruebas unitarias, de integración y E2E", "IND-03 = 15 de 15", "EQ-01", "2027-06-11", "ENTG-05"]
+      - ["ENTG-06", "Informe de pruebas", "Resultados de pruebas unitarias, de integración y E2E", "IND-03 = 16 de 16", "EQ-01", "2027-06-11", "ENTG-05"]
       - ["ENTG-07", "Manual de usuario", "Guía de uso para productor, comprador y administrador", "Revisado por el instructor", "EQ-03", "2027-06-11", "ENTG-05"]
 
   - indice: 31
@@ -317,7 +317,7 @@ tablas:
       - ["RSK-02", "Evitar", "Toda funcionalidad nueva pasa por control de cambios; el MVP es RF-001 a RF-030", "Mover lo nuevo a EXC (posterior al MVP)", "Historia fuera del catálogo propuesta en un sprint", "Abierto"]
       - ["RSK-03", "Mitigar", "Plantilla de módulo de referencia en S01 y revisión de código en cada PR", "Pareo entre integrantes", "Velocidad de S01 menor al 50 % de lo planeado", "Abierto"]
       - ["RSK-04", "Mitigar", "Acordar disponibilidad por sprint en la planificación", "Redistribuir historias entre integrantes", "Integrante sin avance en una semana", "Abierto"]
-      - ["RSK-05", "Mitigar", "Buscar productores a través del centro de formación o asociaciones locales", "Validar con compradores y fuentes secundarias (EVI-02)", "Sin entrevistas al 2026-11-27", "Abierto"]
+      - ["RSK-05", "Mitigar", "Buscar productores a través del centro de formación o asociaciones locales", "Validar con fuentes secundarias (EVI-01, EVI-02) y con compradores", "Sin entrevistas al 2026-11-27", "Contingencia aplicada"]
       - ["RSK-06", "Aceptar", "Usar datos de prueba ligeros", "Cambiar de proveedor gratuito", "Ambiente caído más de un día", "Abierto"]
 
   - indice: 51

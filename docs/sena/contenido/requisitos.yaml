@@ -31,6 +31,7 @@ tablas:
     encabezado: ["Versión", "Fecha", "Descripción"]
     filas:
       - ["0.1", "2026-11-10", "Creación inicial a partir de la especificación de diseño", "Equipo AgroConecta", ""]
+      - ["0.2", "2026-11-25", "Revisión del Product Owner: conteo de reglas (16), prioridad por RNF, valores definitivos de RNF-003 y RNF-013 y mínimo de retiro (ver 14.2)", "{{comun.integrantes.EQ-04}}", ""]
       - ["1.0", "2026-12-04", "Versión para entrega", "Equipo AgroConecta", ""]
 
   - indice: 8
@@ -113,7 +114,7 @@ tablas:
     filas:
       - ["CA-ALC-01", "Los 4 documentos están entregados y son consistentes entre sí", "Inspección (validador de documentación)", "EQ-04", "Salida de validar.py sin errores"]
       - ["CA-ALC-02", "Se recorre el flujo completo: registro y verificación del productor, publicación, compra pagada en sandbox, entrega confirmada, comisión y saldo registrados, liquidación solicitada y marcada como pagada", "Demostración y prueba E2E", "EQ-01", "Ejecución de CI y video de la demostración"]
-      - ["CA-ALC-03", "Todas las reglas RN-001 a RN-015 tienen prueba unitaria automatizada", "Prueba", "EQ-01", "Reporte de pruebas (IND-03)"]
+      - ["CA-ALC-03", "Todas las reglas RN-001 a RN-016 tienen prueba unitaria automatizada", "Prueba", "EQ-01", "Reporte de pruebas (IND-03)"]
 
   - indice: 19
     encabezado: ["ID", "Nombre", "Módulo"]
@@ -131,13 +132,14 @@ tablas:
       - ["RF-019", "Firma inválida", "Una notificación con firma incorrecta", "Llega al endpoint del webhook", "Se rechaza y no se procesa"]
       - ["RF-019", "Sin stock al pagar", "Un pedido cuyo producto se agotó antes del pago", "Llega el webhook APROBADA", "Ese pedido pasa a REEMBOLSADO sin descontar stock; los demás pedidos del cobro pasan a PAGADO"]
       - ["RF-020", "Crédito al productor", "Un pedido ENVIADO con subtotal $50.000, envío $5.000 y comisión del 8 %", "El comprador confirma la recepción", "Comisión $4.000; se acredita al productor $46.000 + $5.000 = $51.000"]
+      - ["RF-022", "Liquidación válida", "Un productor con saldo disponible de $80.000 y el mínimo por defecto de $20.000", "Solicita una liquidación de $50.000", "Se crea la liquidación SOLICITADA y un movimiento RETIRO; el saldo disponible queda en $30.000"]
       - ["RF-022", "Monto mayor al saldo", "Un productor con saldo disponible de $30.000", "Solicita una liquidación de $40.000", "El sistema rechaza la solicitud (422) y el saldo no cambia"]
       - ["RF-022", "Monto menor al mínimo", "Un mínimo de retiro configurado de $20.000", "El productor solicita $10.000", "El sistema rechaza la solicitud (422)"]
 
   - indice: 23
     encabezado: ["ID", "Categoría"]
     filas: ["{{todas: rnf}}"]
-    columnas: ["{id}", "{categoria}", "{requisito}", "Alta", "Prueba automatizada / inspección", "Aprobado"]
+    columnas: ["{id}", "{categoria}", "{requisito}", "{prioridad}", "Prueba automatizada / inspección", "Aprobado"]
 
   - indice: 27
     encabezado: ["ID", "Nombre", "Regla"]
@@ -159,7 +161,7 @@ tablas:
       - ["Aceptar, rechazar y despachar pedidos", "Solo los suyos", "—", "—", "RNF-004"]
       - ["Confirmar recepción, abrir disputa y calificar", "—", "Solo los suyos", "—", "RN-014, RN-015"]
       - ["Ver saldo y solicitar liquidación", "Solo el suyo", "—", "—", "RN-010"]
-      - ["Verificar productores, resolver disputas, marcar liquidaciones pagadas y configurar comisión", "—", "—", "Sí", "RN-007, RN-010"]
+      - ["Verificar productores, resolver disputas, marcar liquidaciones pagadas y configurar la comisión y el mínimo de retiro", "—", "—", "Sí", "RN-007, RN-010"]
 
   - indice: 32
     encabezado: ["ID", "Dato / entidad"]
@@ -212,7 +214,7 @@ tablas:
       "Reintentos e idempotencia": "Cada evento se procesa una sola vez: se registra su id (RN-013)."
       "Privacidad y seguridad": "No se almacenan datos de tarjetas; se verifica la firma de cada evento (RNF-007)."
       "Requisitos relacionados": "RF-018, RF-019, RF-023, RNF-007"
-      "Evidencia de prueba": "Pruebas de integración del webhook (aprobado, duplicado, firma inválida)."
+      "Evidencia de prueba": "Pruebas de integración del webhook (aprobado, duplicado, firma inválida, sin stock)."
 
   - indice: 38
     encabezado: ["ID", "Valor", "Urgencia"]
@@ -258,6 +260,17 @@ tablas:
     encabezado: ["RF/RNF", "Origen"]
     filas: ["{{todas: requisitos}}"]
     columnas: ["{id}", "{objetivo} / {actores}", "{rn}", "{hu} / {cu}", "Pendiente (UX/UI)", "{epica}", "Pendiente (plan de pruebas)", "—", "Aprobado"]
+
+  - indice: 45
+    encabezado: ["ID", "Sección / requisito"]
+    filas:
+      - ["OBS-001", "4.7 (CA-ALC-03) e IND-03", "Se contaban 15 reglas de negocio, pero el catálogo tiene 16 desde que se agregó RN-016 (plazos automáticos). Se corrigió a RN-001 a RN-016 y 16 de 16 en los cuatro documentos.", "Mayor", "EQ-04", "2026-11-27", "Cerrada"]
+      - ["OBS-002", "6.1 y 6.2 (RNF-013)", "La tabla general asignaba prioridad Alta a todos los RNF, mientras la ficha de RNF-013 dice Media. Cada RNF tiene ahora su propia prioridad en el catálogo.", "Menor", "EQ-04", "2026-11-27", "Cerrada"]
+      - ["OBS-003", "RNF-003 y RNF-013", "Valores propuestos revisados y aceptados: bloqueo tras 5 intentos fallidos consecutivos durante 15 minutos; búsqueda con p95 ≤ 1 s con 1.000 productos y 10 usuarios concurrentes, sin medir el arranque en frío del hosting gratuito.", "Menor", "EQ-04", "2026-11-27", "Cerrada"]
+      - ["OBS-004", "6.2 (RNF-013)", "La descripción usaba «rápido» sin métrica, contra la regla de redacción de la sección 1.2.", "Menor", "EQ-04", "2026-11-27", "Cerrada"]
+      - ["OBS-005", "5.4 (RF-022) y RN-010", "Faltaba el valor del mínimo de retiro. Se fija en $20.000 COP por defecto, configurable por el administrador (RF-028), y se agrega el escenario de éxito de RF-022.", "Menor", "EQ-04", "2026-11-27", "Cerrada"]
+      - ["OBS-006", "11.2 Matriz de priorización", "Revisada sin cambios: las dependencias y prioridades son coherentes con el plan de sprints. RF-028 no tiene dependencias porque la comisión (8 %) y el mínimo de retiro ($20.000) tienen valores por defecto.", "Menor", "EQ-04", "2026-11-27", "Cerrada"]
+      - ["OBS-007", "10.2 (INT-01)", "Falta el tiempo de espera según la documentación de Wompi.", "Menor", "EQ-01", "2026-12-04", "Abierta"]
 
 grupos:
   - tablas: [20]
@@ -352,11 +365,11 @@ grupos:
           campos:
             "ID y nombre": "RNF-013 – Rendimiento de la búsqueda"
             "Categoría": "Rendimiento"
-            "Descripción": "La búsqueda de catálogo debe responder rápido con un volumen realista de productos."
-            "Fuente y justificación": "RF-009; la búsqueda es la entrada principal del comprador. Valor propuesto por el equipo."
+            "Descripción": "La búsqueda de catálogo debe responder dentro del umbral definido con un volumen realista de productos y de usuarios."
+            "Fuente y justificación": "RF-009; la búsqueda es la entrada principal del comprador. Umbral revisado y aceptado por el Product Owner (EQ-04)."
             "Métrica": "Percentil 95 del tiempo de respuesta del endpoint de búsqueda."
             "Umbral o meta": "≤ 1 s"
-            "Condiciones de medición": "1.000 productos activos, ambiente desplegado de pruebas."
+            "Condiciones de medición": "1.000 productos activos y 10 usuarios concurrentes en el ambiente desplegado de pruebas, con el servicio ya activo: no se mide el primer arranque en frío del plan gratuito (RSK-06)."
             "Método de verificación": "Prueba de carga con una herramienta de medición."
             "Evidencia esperada": "Reporte de la prueba de carga."
             "Responsable": "EQ-02"
