@@ -195,9 +195,24 @@ La búsqueda y el detalle del catálogo son públicos (sin iniciar sesión); par
 - PWA instalable y responsive.
 - Pasarela Wompi en modo sandbox.
 
+### 7.1.1 Ampliación de alcance (2026-11-25)
+
+Aprobada por el Product Owner. Se agregan al MVP:
+
+| RF | Funcionalidad | Regla |
+|---|---|---|
+| RF-031 | Recuperar contraseña | RN-017: enlace de un solo uso, vence a las 24 h |
+| RF-032 | Perfil público del productor con storytelling (historia, prácticas de cultivo, hasta 5 fotos JPG/PNG de máx. 5 MB) | RN-018: opcional; si falta, se muestran solo los datos básicos |
+| RF-033 | Calificar al consumidor | RN-019: solo el productor de un pedido ENTREGADO, una vez; el productor ve el promedio del comprador al recibir un pedido |
+| RF-034 | Desactivar publicación (moderación posterior, sin cola de aprobación previa) | RN-020: motivo obligatorio, notificación y registro |
+| RF-035 | Suspender o reactivar cuentas (el administrador no elimina cuentas) | RN-020: una cuenta suspendida no inicia sesión, no compra ni publica; sus pedidos en curso continúan |
+| RF-036 | Volver a comprar un pedido anterior (prioridad *Could*) | RN-021: precio actual; productos inexistentes o desactivados no se agregan; si el stock no alcanza, se agrega lo disponible; se avisa al comprador |
+
+Decisiones asociadas: el modelo de negocio sigue siendo solo comisión por venta (sin suscripciones); no hay cola de moderación previa de publicaciones; una calificación enviada no se edita (RN-014).
+
 ### 7.2 Fuera del MVP
 
-Notificaciones push, chat entre productor y comprador, mapa y geolocalización, facturación electrónica DIAN, pago contraentrega, logística o transporte, app nativa, operación con dinero real.
+Notificaciones push, chat entre productor y comprador, mapa y geolocalización, facturación electrónica DIAN, pago contraentrega, logística o transporte, app nativa, operación con dinero real, suscripciones o planes de pago recurrente.
 
 ---
 

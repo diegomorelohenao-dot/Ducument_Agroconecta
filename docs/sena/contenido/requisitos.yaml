@@ -72,7 +72,7 @@ tablas:
     campos:
       "Análisis": "Los 4 documentos SENA (ENTG-01 a ENTG-04) y la especificación de diseño."
       "Diseño": "Prototipo UX/UI y arquitectura Clean Architecture por módulo."
-      "Construcción": "MVP con RF-001 a RF-030 (frontend React PWA, API NestJS, PostgreSQL)."
+      "Construcción": "MVP con RF-001 a RF-036 (frontend React PWA, API NestJS, PostgreSQL)."
       "Pruebas": "Pruebas unitarias del dominio, de integración (repositorios y webhook) y E2E del camino principal."
       "Despliegue": "Frontend en Vercel; API y base de datos en Railway o Render (planes gratuitos)."
       "Documentación": "Documentos SENA, README técnico, informe de pruebas (ENTG-06) y manual de usuario (ENTG-07)."
@@ -113,7 +113,7 @@ tablas:
     filas:
       - ["CA-ALC-01", "Los 4 documentos están entregados y son consistentes entre sí", "Inspección (validador de documentación)", "EQ-04", "Salida de validar.py sin errores"]
       - ["CA-ALC-02", "Se recorre el flujo completo: registro y verificación del productor, publicación, compra pagada en sandbox, entrega confirmada, comisión y saldo registrados, liquidación solicitada y marcada como pagada", "Demostración y prueba E2E", "EQ-01", "Ejecución de CI y video de la demostración"]
-      - ["CA-ALC-03", "Todas las reglas RN-001 a RN-015 tienen prueba unitaria automatizada", "Prueba", "EQ-01", "Reporte de pruebas (IND-03)"]
+      - ["CA-ALC-03", "Todas las reglas RN-001 a RN-021 tienen prueba unitaria automatizada", "Prueba", "EQ-01", "Reporte de pruebas (IND-03)"]
 
   - indice: 19
     encabezado: ["ID", "Nombre", "Módulo"]
@@ -157,14 +157,19 @@ tablas:
       - ["Buscar productos y ver detalle", "Sí", "Sí", "Sí", "También el visitante sin sesión"]
       - ["Comprar (carrito, pedido y pago)", "—", "Sí", "—", "Requiere iniciar sesión"]
       - ["Aceptar, rechazar y despachar pedidos", "Solo los suyos", "—", "—", "RNF-004"]
-      - ["Confirmar recepción, abrir disputa y calificar", "—", "Solo los suyos", "—", "RN-014, RN-015"]
+      - ["Confirmar recepción, abrir disputa y calificar al productor", "—", "Solo los suyos", "—", "RN-014, RN-015"]
+      - ["Calificar al comprador y ver su calificación", "Solo sus pedidos entregados", "—", "—", "RN-019"]
+      - ["Configurar su perfil con storytelling", "Solo el suyo", "—", "—", "RN-018"]
+      - ["Recuperar la contraseña", "Sí", "Sí", "Sí", "RN-017"]
+      - ["Volver a comprar un pedido anterior", "—", "Solo los suyos", "—", "RN-021"]
       - ["Ver saldo y solicitar liquidación", "Solo el suyo", "—", "—", "RN-010"]
       - ["Verificar productores, resolver disputas, marcar liquidaciones pagadas y configurar comisión", "—", "—", "Sí", "RN-007, RN-010"]
+      - ["Desactivar publicaciones y suspender o reactivar cuentas", "—", "—", "Sí", "RN-020"]
 
   - indice: 32
     encabezado: ["ID", "Dato / entidad"]
     filas:
-      - ["DAT-01", "Usuario", "Autenticación y rol", "Registro", "Personal", "Hasta eliminar la cuenta", "RF-001 a RF-003"]
+      - ["DAT-01", "Usuario", "Autenticación, rol, suspensión y recuperación de contraseña", "Registro", "Personal", "Hasta eliminar la cuenta", "RF-001 a RF-003, RF-031, RF-035"]
       - ["DAT-02", "Perfil de productor", "Identificar al productor y su finca", "Productor", "Personal", "Hasta eliminar la cuenta", "RF-004 a RF-006"]
       - ["DAT-03", "Perfil de comprador", "Datos de entrega y razón social / NIT de negocios", "Comprador", "Personal", "Hasta eliminar la cuenta", "RF-001, RF-012"]
       - ["DAT-04", "Producto y precio por volumen", "Catálogo", "Productor", "Público", "Mientras esté activo", "RF-007 a RF-010"]
@@ -247,11 +252,17 @@ tablas:
       - ["RF-028", "M", "B", "M", "B", "—", "Must", "MVP"]
       - ["RF-029", "M", "B", "B", "M", "RF-020", "Should", "MVP"]
       - ["RF-030", "M", "M", "B", "M", "RF-002", "Must", "MVP"]
+      - ["RF-031", "A", "M", "M", "B", "RF-002, RF-030", "Must", "MVP"]
+      - ["RF-032", "M", "M", "B", "M", "RF-004", "Must", "MVP"]
+      - ["RF-033", "M", "B", "B", "B", "RF-015", "Must", "MVP"]
+      - ["RF-034", "A", "M", "B", "B", "RF-007", "Must", "MVP"]
+      - ["RF-035", "A", "M", "M", "B", "RF-002", "Must", "MVP"]
+      - ["RF-036", "M", "B", "B", "M", "RF-011, RF-016", "Could", "MVP"]
 
   - indice: 39
     encabezado: ["Versión / hito", "Objetivo"]
     filas:
-      - ["MVP (2027-06-11)", "Flujo completo de compra directa con pago en sandbox", "RF-001 a RF-030", "RNF-001 a RNF-014 (críticos: RNF-006, RNF-007)", "IND-02 = 100 % e IND-04 en verde"]
+      - ["MVP (2027-06-11)", "Flujo completo de compra directa con pago en sandbox", "RF-001 a RF-036", "RNF-001 a RNF-014 (críticos: RNF-006, RNF-007)", "IND-02 = 100 % e IND-04 en verde"]
       - ["Posterior al MVP", "Mejoras de experiencia y operación real", "Por definir según EXC-01 a EXC-08", "Por definir", "Decisión del equipo y del instructor"]
 
   - indice: 43

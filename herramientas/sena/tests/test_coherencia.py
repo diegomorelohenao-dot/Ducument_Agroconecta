@@ -45,9 +45,35 @@ def test_equipo_y_responsables():
     assert "Technical Leader" in equipo["EQ-02"] and "Product Owner" in equipo["EQ-04"]
     form, gest, req = _texto("formulacion"), _texto("gestion"), _texto("requisitos")
     # pagos y QA → EQ-01 (Diego); técnico/arquitectura → EQ-02 (Jhonatan)
-    assert '"IND-03 = 15 de 15", "EQ-01"' in form          # ENTG-06 informe de pruebas
+    assert '"IND-03 = 21 de 21", "EQ-01"' in form          # ENTG-06 informe de pruebas
     assert '"Aceptar", "EQ-02"' in form                     # RSK-06 hosting
     assert '"EQ-01", "Abierta"]' in req                     # RSD-06 credenciales Wompi
     assert '(EQ-02, líder técnico)' in req
     assert '"Líder del proyecto": ["{{comun.integrantes.EQ-01}}' in form
     assert "Scrum Master" in gest
+
+
+NUEVOS_RF = {
+    "RF-031": "Recuperar contraseña",
+    "RF-032": "Configurar perfil público con storytelling",
+    "RF-033": "Calificar al consumidor",
+    "RF-034": "Desactivar publicación",
+    "RF-035": "Suspender o reactivar cuentas",
+    "RF-036": "Volver a comprar un pedido anterior",
+}
+
+
+def test_alcance_nuevo_en_el_catalogo():
+    cat = cargar_yaml(CONTENIDO / "catalogo.yaml")
+    assert {k: cat["requisitos"][k]["nombre"] for k in NUEVOS_RF} == NUEVOS_RF
+    assert cat["requisitos"]["RF-036"]["prioridad"] == "Could"
+    assert all(f"RN-0{n}" in cat["reglas"] for n in range(17, 22))
+    assert "FEAT-015" in cat["funcionalidades"]
+    assert "HU-016" in cat["casos_uso"]["CU-002"]["hu"]  # hallazgo del PR #13
+
+
+def test_sin_totales_viejos():
+    for nombre in ("formulacion", "gestion", "requisitos", "backlog", "catalogo"):
+        texto = _texto(nombre)
+        for viejo in ("RF-001 a RF-030", "30 de 30", "15 de 15", "RN-001 a RN-015", "30 RF"):
+            assert viejo not in texto, (nombre, viejo)

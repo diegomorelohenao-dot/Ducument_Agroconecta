@@ -109,25 +109,25 @@ tablas:
     encabezado: ["Hito", "Objetivo"]
     filas:
       - ["H-01", "Documentación SENA entregada", "ENTG-01 a ENTG-04", "2026-11-10", "2026-12-04", "—", "EQ-04", "En curso"]
-      - ["H-02", "Identidad y productores", "RF-001 a RF-006", "2027-01-11", "2027-02-05", "H-01", "EQ-02", "Pendiente"]
-      - ["H-03", "Catálogo y búsqueda", "RF-007 a RF-011", "2027-02-08", "2027-03-05", "H-02", "EQ-02", "Pendiente"]
-      - ["H-04", "Pedidos y pagos", "RF-012 a RF-016, RF-018 a RF-021, RF-023", "2027-03-08", "2027-04-16", "H-03, DEP-01", "EQ-01", "Pendiente"]
-      - ["H-05", "MVP completo", "RF-017, RF-022, RF-024 a RF-030", "2027-04-19", "2027-05-28", "H-04", "EQ-01", "Pendiente"]
+      - ["H-02", "Identidad y productores", "RF-001 a RF-006, RF-031", "2027-01-11", "2027-02-05", "H-01", "EQ-02", "Pendiente"]
+      - ["H-03", "Catálogo y búsqueda", "RF-007 a RF-011, RF-032", "2027-02-08", "2027-03-05", "H-02", "EQ-02", "Pendiente"]
+      - ["H-04", "Pedidos y pagos", "RF-012 a RF-016, RF-018 a RF-021, RF-023, RF-036", "2027-03-08", "2027-04-16", "H-03, DEP-01", "EQ-01", "Pendiente"]
+      - ["H-05", "MVP completo", "RF-017, RF-022, RF-024 a RF-030, RF-033 a RF-035", "2027-04-19", "2027-05-28", "H-04", "EQ-01", "Pendiente"]
       - ["H-06", "Entrega final", "ENTG-05 a ENTG-07", "2027-05-31", "2027-06-11", "H-05", "EQ-01", "Pendiente"]
 
   - indice: 24
     encabezado: ["Iteración", "Objetivo"]
     filas:
       - ["S01", "Base del proyecto, CI e identidad", "HU-001, HU-002", "Registro e inicio de sesión desplegados", "2027-01-11 a 2027-01-22", "4 personas", "RSK-03", "—"]
-      - ["S02", "Cuenta y productores", "HU-003, HU-004, HU-005, HU-006", "Productor verificado por el administrador", "2027-01-25 a 2027-02-05", "4 personas", "RSK-03", "—"]
-      - ["S03", "Publicación de productos", "HU-007, HU-008", "Productos con precios por volumen", "2027-02-08 a 2027-02-19", "4 personas", "RSK-04", "—"]
+      - ["S02", "Cuenta y productores", "HU-003, HU-004, HU-005, HU-006, HU-031", "Productor verificado por el administrador", "2027-01-25 a 2027-02-05", "4 personas", "RSK-03", "—"]
+      - ["S03", "Publicación de productos", "HU-007, HU-008, HU-032", "Productos con precios por volumen y perfil con storytelling", "2027-02-08 a 2027-02-19", "4 personas", "RSK-04", "—"]
       - ["S04", "Búsqueda, detalle y carrito", "HU-009, HU-010, HU-011", "Comprador arma su carrito", "2027-02-22 a 2027-03-05", "4 personas", "RSK-04", "—"]
       - ["S05", "Pedidos e inicio de pago", "HU-012, HU-018", "Pedidos creados y pago iniciado en sandbox", "2027-03-08 a 2027-03-19", "4 personas", "RSK-01", "—"]
       - ["S06", "Confirmación de pago y respuesta del productor", "HU-019, HU-013, HU-023", "Pedido PAGADO por webhook; rechazo con reembolso", "2027-03-22 a 2027-04-02", "4 personas", "RSK-01", "—"]
-      - ["S07", "Entrega y saldo", "HU-014, HU-015, HU-016, HU-020, HU-021", "Pedido ENTREGADO con saldo acreditado", "2027-04-05 a 2027-04-16", "4 personas", "RSK-02", "—"]
+      - ["S07", "Entrega y saldo", "HU-014, HU-015, HU-016, HU-020, HU-021, HU-036", "Pedido ENTREGADO con saldo acreditado", "2027-04-05 a 2027-04-16", "4 personas", "RSK-02", "—"]
       - ["S08", "Plazos y liquidaciones", "HU-017, HU-022, HU-027", "Plazos automáticos y liquidación pagada", "2027-04-19 a 2027-04-30", "4 personas", "RSK-02", "—"]
-      - ["S09", "Reputación y disputas", "HU-024, HU-025, HU-026", "Disputa resuelta y calificación registrada", "2027-05-03 a 2027-05-14", "4 personas", "RSK-04", "—"]
-      - ["S10", "Administración, notificaciones y PWA", "HU-028, HU-029, HU-030", "MVP completo e instalable", "2027-05-17 a 2027-05-28", "4 personas", "RSK-06", "—"]
+      - ["S09", "Reputación y disputas", "HU-024, HU-025, HU-026, HU-033", "Disputa resuelta y calificaciones registradas", "2027-05-03 a 2027-05-14", "4 personas", "RSK-04", "—"]
+      - ["S10", "Administración, notificaciones y PWA", "HU-028, HU-029, HU-030, HU-034, HU-035", "MVP completo e instalable", "2027-05-17 a 2027-05-28", "4 personas", "RSK-06", "—"]
       - ["S11", "Pruebas E2E, despliegue y entrega", "Estabilización", "ENTG-05 a ENTG-07", "2027-05-31 a 2027-06-11", "4 personas", "RSK-06", "—"]
 
   - indice: 25
@@ -155,7 +155,7 @@ tablas:
     encabezado: ["ID", "Categoría", "Riesgo"]
     filas:
       - ["RSK-01", "Técnico", "Dificultades al integrar la pasarela Wompi (firma, webhooks, sandbox)", "Poca experiencia con pagos en línea", "Retraso de OBJ-03", "3", "4", "12", "Mitigar: puerto PasarelaPagos con doble falso desde S05", "EQ-01", "Webhook sin funcionar al final de S06", "Abierto"]
-      - ["RSK-02", "Gestión", "Crecimiento del alcance más allá del MVP", "Ideas nuevas durante el desarrollo", "Incumplimiento de la fecha de entrega", "3", "4", "12", "Evitar: control de cambios; el MVP es RF-001 a RF-030", "EQ-01", "Historia fuera del catálogo propuesta en un sprint", "Abierto"]
+      - ["RSK-02", "Gestión", "Crecimiento del alcance más allá del MVP", "Ideas nuevas durante el desarrollo", "Incumplimiento de la fecha de entrega", "3", "4", "12", "Evitar: control de cambios; el MVP es RF-001 a RF-036", "EQ-01", "Historia fuera del catálogo propuesta en un sprint", "Abierto"]
       - ["RSK-03", "Técnico", "Curva de aprendizaje de NestJS y Clean Architecture", "Tecnologías nuevas para el equipo", "Sprints iniciales más lentos", "4", "3", "12", "Mitigar: módulo de referencia en S01 y revisión en cada PR", "EQ-02", "Velocidad de S01 menor al 50 % de lo planeado", "Abierto"]
       - ["RSK-04", "Gestión", "Baja disponibilidad de integrantes en algunos periodos", "Otras actividades académicas o personales", "Menor capacidad por sprint", "3", "3", "9", "Mitigar: acordar disponibilidad en cada planificación", "EQ-01", "Integrante sin avance en una semana", "Abierto"]
       - ["RSK-05", "Usuario", "No contar con productores reales para validar el problema", "Distancia con productores de la zona", "Evidencias débiles y supuestos sin validar", "3", "3", "9", "Mitigar: contactar productores mediante el centro o asociaciones", "EQ-04", "Sin entrevistas al 2026-11-27", "Abierto"]
@@ -165,7 +165,7 @@ tablas:
     encabezado: ["ID", "Fecha de revisión"]
     filas:
       - ["RSK-01", "2026-12-04", "Sin cambios (aún no inicia la construcción)", "Riesgo registrado", "—", "12", "2027-03-19"]
-      - ["RSK-02", "2026-12-04", "Alcance del MVP cerrado en RF-001 a RF-030", "Catálogo maestro de requisitos", "Alcance controlado", "12", "2027-01-22"]
+      - ["RSK-02", "2026-12-04", "Alcance del MVP cerrado en RF-001 a RF-036", "Catálogo maestro de requisitos", "Alcance controlado", "12", "2027-01-22"]
       - ["RSK-03", "2026-12-04", "Sin cambios", "Riesgo registrado", "—", "12", "2027-01-22"]
       - ["RSK-04", "2026-12-04", "Sin cambios", "Riesgo registrado", "—", "9", "2027-01-11"]
       - ["RSK-05", "2026-12-04", "[PENDIENTE: resultado del contacto con productores]", "Búsqueda de productores para entrevistas", "—", "9", "2027-01-11"]
@@ -184,13 +184,13 @@ tablas:
       - ["ENTG-03", "Alcance y especificación de requisitos", "Revisado por el instructor", "EQ-04", "{{comun.instructor}}", "2026-12-04", "En progreso", "docs/sena/entregables"]
       - ["ENTG-04", "Backlog, historias y casos de uso", "Revisado por el instructor", "EQ-04", "{{comun.instructor}}", "2026-12-04", "En progreso", "docs/sena/entregables"]
       - ["ENTG-05", "Software MVP desplegado", "IND-02 = 100 % e IND-04 en verde", "EQ-02", "EQ-04 y {{comun.instructor}}", "2027-06-11", "Pendiente", "—"]
-      - ["ENTG-06", "Informe de pruebas", "IND-03 = 15 de 15", "EQ-01", "{{comun.instructor}}", "2027-06-11", "Pendiente", "—"]
+      - ["ENTG-06", "Informe de pruebas", "IND-03 = 21 de 21", "EQ-01", "{{comun.instructor}}", "2027-06-11", "Pendiente", "—"]
       - ["ENTG-07", "Manual de usuario", "Revisado por el instructor", "EQ-03", "{{comun.instructor}}", "2027-06-11", "Pendiente", "—"]
 
   - indice: 40
     encabezado: ["Dimensión", "Estado"]
     campos:
-      "Alcance": ["Verde", "MVP definido: 30 RF, 14 RNF, 15 reglas (catálogo maestro)", "—", "Revisión con el instructor"]
+      "Alcance": ["Verde", "MVP definido: 36 RF, 14 RNF, 21 reglas (catálogo maestro)", "—", "Revisión con el instructor"]
       "Cronograma": ["Verde", "Documentación lista para el 2026-12-04", "—", "Preparar el entorno para S01"]
       "Calidad": ["Verde", "Validador de documentación sin errores", "—", "Mantener el validador en verde"]
       "Riesgos": ["Amarillo", "RSK-01 y RSK-03 con nivel 12", "Integración de pagos y curva de aprendizaje", "Módulo de referencia en S01"]
