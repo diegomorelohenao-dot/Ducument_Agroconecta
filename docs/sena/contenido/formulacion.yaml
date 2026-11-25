@@ -143,7 +143,7 @@ tablas:
     filas:
       - ["OBJ-01", "{{catalogo.objetivos.OBJ-01}}", "ENTG-01 a ENTG-04", "IND-01", "Los 4 documentos entregados y revisados por el instructor"]
       - ["OBJ-02", "{{catalogo.objetivos.OBJ-02}}", "ENTG-05", "IND-02", "RF-001 a RF-010 aceptados"]
-      - ["OBJ-03", "{{catalogo.objetivos.OBJ-03}}", "ENTG-05", "IND-02, IND-03", "RF-011 a RF-023 aceptados y RN-001 a RN-015 con prueba"]
+      - ["OBJ-03", "{{catalogo.objetivos.OBJ-03}}", "ENTG-05", "IND-02, IND-03", "RF-011 a RF-023 aceptados y RN-001 a RN-016 con prueba"]
       - ["OBJ-04", "{{catalogo.objetivos.OBJ-04}}", "ENTG-05", "IND-02", "RF-024 a RF-030 aceptados"]
       - ["OBJ-05", "{{catalogo.objetivos.OBJ-05}}", "ENTG-05, ENTG-06", "IND-04", "Camino principal E2E en verde y MVP desplegado"]
 
@@ -152,7 +152,7 @@ tablas:
     filas:
       - ["OBJ-01", "Cuatro documentos definidos", "4 de 4 entregados", "Sí, con las plantillas y la especificación", "Base para construir y evaluar", "2026-12-04", "Ninguno"]
       - ["OBJ-02", "Registro, verificación y catálogo", "RF-001 a RF-010 aceptados", "Sí, sprints S01 a S04", "Habilita la oferta de productos", "2027-03-05", "Ninguno"]
-      - ["OBJ-03", "Pedidos, pago, comisión y liquidación", "RF-011 a RF-023 y 15 reglas con prueba", "Condicionado a la integración con Wompi (RSK-01)", "Núcleo del modelo de negocio", "2027-04-30", "Ninguno"]
+      - ["OBJ-03", "Pedidos, pago, comisión y liquidación", "RF-011 a RF-023 y 16 reglas con prueba", "Condicionado a la integración con Wompi (RSK-01)", "Núcleo del modelo de negocio", "2027-04-30", "Ninguno"]
       - ["OBJ-04", "Seguimiento, disputas y calificaciones", "RF-024 a RF-030 aceptados", "Sí, sprints S08 a S10", "Da confianza a compradores y productores", "2027-05-28", "Ninguno"]
       - ["OBJ-05", "Pruebas y despliegue del MVP", "E2E en verde en CI", "Sí, sprint S11", "Demuestra un producto funcional", "2027-06-11", "Ninguno"]
 
@@ -215,7 +215,7 @@ tablas:
       - ["ENTG-03", "Alcance y especificación de requisitos", "RF, RNF, reglas de negocio, actores y datos", "Revisado por el instructor", "EQ-04", "2026-12-04", "ENTG-01"]
       - ["ENTG-04", "Backlog, historias y casos de uso", "Épicas, historias con criterios y casos de uso", "Revisado por el instructor", "EQ-04", "2026-12-04", "ENTG-03"]
       - ["ENTG-05", "Software MVP desplegado", "Plataforma web PWA con RF-001 a RF-030", "IND-02 = 100 % e IND-04 en verde", "EQ-02", "2027-06-11", "ENTG-03, ENTG-04"]
-      - ["ENTG-06", "Informe de pruebas", "Resultados de pruebas unitarias, de integración y E2E", "IND-03 = 15 de 15", "EQ-01", "2027-06-11", "ENTG-05"]
+      - ["ENTG-06", "Informe de pruebas", "Resultados de pruebas unitarias, de integración y E2E", "IND-03 = 16 de 16", "EQ-01", "2027-06-11", "ENTG-05"]
       - ["ENTG-07", "Manual de usuario", "Guía de uso para productor, comprador y administrador", "Revisado por el instructor", "EQ-03", "2027-06-11", "ENTG-05"]
 
   - indice: 31
