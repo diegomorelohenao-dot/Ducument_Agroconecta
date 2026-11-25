@@ -142,18 +142,18 @@ tablas:
     encabezado: ["ID", "Objetivo específico"]
     filas:
       - ["OBJ-01", "{{catalogo.objetivos.OBJ-01}}", "ENTG-01 a ENTG-04", "IND-01", "Los 4 documentos entregados y revisados por el instructor"]
-      - ["OBJ-02", "{{catalogo.objetivos.OBJ-02}}", "ENTG-05", "IND-02", "RF-001 a RF-010 aceptados"]
-      - ["OBJ-03", "{{catalogo.objetivos.OBJ-03}}", "ENTG-05", "IND-02, IND-03", "RF-011 a RF-023 aceptados y RN-001 a RN-015 con prueba"]
-      - ["OBJ-04", "{{catalogo.objetivos.OBJ-04}}", "ENTG-05", "IND-02", "RF-024 a RF-030 aceptados"]
+      - ["OBJ-02", "{{catalogo.objetivos.OBJ-02}}", "ENTG-05", "IND-02", "RF-001 a RF-010, RF-031 y RF-032 aceptados"]
+      - ["OBJ-03", "{{catalogo.objetivos.OBJ-03}}", "ENTG-05", "IND-02, IND-03", "RF-011 a RF-023 y RF-036 aceptados y RN-001 a RN-021 con prueba"]
+      - ["OBJ-04", "{{catalogo.objetivos.OBJ-04}}", "ENTG-05", "IND-02", "RF-024 a RF-030 y RF-033 a RF-035 aceptados"]
       - ["OBJ-05", "{{catalogo.objetivos.OBJ-05}}", "ENTG-05, ENTG-06", "IND-04", "Camino principal E2E en verde y MVP desplegado"]
 
   - indice: 20
     encabezado: ["Objetivo", "Específico", "Medible"]
     filas:
       - ["OBJ-01", "Cuatro documentos definidos", "4 de 4 entregados", "Sí, con las plantillas y la especificación", "Base para construir y evaluar", "2026-12-04", "Ninguno"]
-      - ["OBJ-02", "Registro, verificación y catálogo", "RF-001 a RF-010 aceptados", "Sí, sprints S01 a S04", "Habilita la oferta de productos", "2027-03-05", "Ninguno"]
-      - ["OBJ-03", "Pedidos, pago, comisión y liquidación", "RF-011 a RF-023 y 15 reglas con prueba", "Condicionado a la integración con Wompi (RSK-01)", "Núcleo del modelo de negocio", "2027-04-30", "Ninguno"]
-      - ["OBJ-04", "Seguimiento, disputas y calificaciones", "RF-024 a RF-030 aceptados", "Sí, sprints S08 a S10", "Da confianza a compradores y productores", "2027-05-28", "Ninguno"]
+      - ["OBJ-02", "Registro, verificación y catálogo", "RF-001 a RF-010, RF-031 y RF-032 aceptados", "Sí, sprints S01 a S04", "Habilita la oferta de productos", "2027-03-05", "Ninguno"]
+      - ["OBJ-03", "Pedidos, pago, comisión y liquidación", "RF-011 a RF-023, RF-036 y 21 reglas con prueba", "Condicionado a la integración con Wompi (RSK-01)", "Núcleo del modelo de negocio", "2027-04-30", "Ninguno"]
+      - ["OBJ-04", "Seguimiento, disputas, calificaciones y moderación", "RF-024 a RF-030 y RF-033 a RF-035 aceptados", "Sí, sprints S08 a S10", "Da confianza a compradores y productores", "2027-05-28", "Ninguno"]
       - ["OBJ-05", "Pruebas y despliegue del MVP", "E2E en verde en CI", "Sí, sprint S11", "Demuestra un producto funcional", "2027-06-11", "Ninguno"]
 
   - indice: 22
@@ -172,8 +172,8 @@ tablas:
     encabezado: ["ID", "Indicador"]
     filas:
       - ["IND-01", "Documentos SENA entregados", "OBJ-01", "0", "4", "Documentos", "Registro de entregables", "Por hito", "EQ-01"]
-      - ["IND-02", "RF del MVP implementados y aceptados", "OBJ-02, OBJ-03, OBJ-04", "0 %", "100 % (30 de 30)", "Porcentaje", "Registro de aceptación del backlog", "Por sprint", "EQ-04"]
-      - ["IND-03", "Reglas de negocio con prueba unitaria automatizada", "OBJ-03", "0", "15", "Reglas", "Reporte de pruebas en CI", "Por sprint", "EQ-01"]
+      - ["IND-02", "RF del MVP implementados y aceptados", "OBJ-02, OBJ-03, OBJ-04", "0 %", "100 % (36 de 36)", "Porcentaje", "Registro de aceptación del backlog", "Por sprint", "EQ-04"]
+      - ["IND-03", "Reglas de negocio con prueba unitaria automatizada", "OBJ-03", "0", "21", "Reglas", "Reporte de pruebas en CI", "Por sprint", "EQ-01"]
       - ["IND-04", "Camino principal E2E pasando en CI", "OBJ-05", "0 %", "100 % de las ejecuciones en la semana de entrega", "Porcentaje", "Historial de CI (GitHub Actions)", "Semanal", "EQ-01"]
 
   - indice: 26
@@ -214,18 +214,18 @@ tablas:
       - ["ENTG-02", "Gestión de interesados y del proyecto", "Interesados, equipo, metodología, cronograma y riesgos", "Revisado por el instructor", "EQ-01", "2026-12-04", "ENTG-01"]
       - ["ENTG-03", "Alcance y especificación de requisitos", "RF, RNF, reglas de negocio, actores y datos", "Revisado por el instructor", "EQ-04", "2026-12-04", "ENTG-01"]
       - ["ENTG-04", "Backlog, historias y casos de uso", "Épicas, historias con criterios y casos de uso", "Revisado por el instructor", "EQ-04", "2026-12-04", "ENTG-03"]
-      - ["ENTG-05", "Software MVP desplegado", "Plataforma web PWA con RF-001 a RF-030", "IND-02 = 100 % e IND-04 en verde", "EQ-02", "2027-06-11", "ENTG-03, ENTG-04"]
-      - ["ENTG-06", "Informe de pruebas", "Resultados de pruebas unitarias, de integración y E2E", "IND-03 = 15 de 15", "EQ-01", "2027-06-11", "ENTG-05"]
+      - ["ENTG-05", "Software MVP desplegado", "Plataforma web PWA con RF-001 a RF-036", "IND-02 = 100 % e IND-04 en verde", "EQ-02", "2027-06-11", "ENTG-03, ENTG-04"]
+      - ["ENTG-06", "Informe de pruebas", "Resultados de pruebas unitarias, de integración y E2E", "IND-03 = 21 de 21", "EQ-01", "2027-06-11", "ENTG-05"]
       - ["ENTG-07", "Manual de usuario", "Guía de uso para productor, comprador y administrador", "Revisado por el instructor", "EQ-03", "2027-06-11", "ENTG-05"]
 
   - indice: 31
     encabezado: ["ID", "Hito"]
     filas:
       - ["HIT-01", "Documentación SENA entregada", "ENTG-01 a ENTG-04 entregados", "2026-12-04", "{{comun.instructor}}"]
-      - ["HIT-02", "Identidad y productores", "RF-001 a RF-006 aceptados", "2027-02-05", "EQ-04"]
-      - ["HIT-03", "Catálogo y búsqueda", "RF-007 a RF-011 aceptados", "2027-03-05", "EQ-04"]
+      - ["HIT-02", "Identidad y productores", "RF-001 a RF-006 y RF-031 aceptados", "2027-02-05", "EQ-04"]
+      - ["HIT-03", "Catálogo y búsqueda", "RF-007 a RF-011 y RF-032 aceptados", "2027-03-05", "EQ-04"]
       - ["HIT-04", "Pedidos y pagos", "Compra pagada en sandbox de punta a punta", "2027-04-16", "EQ-04"]
-      - ["HIT-05", "MVP completo", "RF-001 a RF-030 aceptados", "2027-05-28", "EQ-04"]
+      - ["HIT-05", "MVP completo", "RF-001 a RF-036 aceptados", "2027-05-28", "EQ-04"]
       - ["HIT-06", "Entrega final", "ENTG-05 a ENTG-07 entregados", "2027-06-11", "{{comun.instructor}}"]
 
   - indice: 32
@@ -261,7 +261,7 @@ tablas:
       "Técnica": ["Viable", "Stack gratuito y documentado, con curva de aprendizaje (RSK-03); la integración con Wompi es el punto de mayor riesgo", "Prueba temprana de integración en S05 y S06 (RSK-01)", "EQ-01", "2027-04-02"]
       "Operativa": ["Viable", "PWA usable desde el celular", "Validar con productores reales", "EQ-04", "2027-05-28"]
       "Económica": ["Viable", "Costo $0 con planes gratuitos", "Vigilar límites de hosting (RSK-06)", "EQ-01", "2027-06-11"]
-      "Temporal": ["Condicionada", "7 meses para 30 RF con 4 personas", "Control del alcance del MVP (RSK-02)", "EQ-01", "Cada sprint"]
+      "Temporal": ["Condicionada", "7 meses para 36 RF con 4 personas", "Control del alcance del MVP (RSK-02)", "EQ-01", "Cada sprint"]
       "Legal y ética": ["Viable", "Sin dinero real; datos tratados según la Ley 1581 de 2012", "Incluir consentimiento y eliminación de cuenta (RF-001, RF-003)", "EQ-04", "2027-02-05"]
       "Formativa": ["Viable", "Cubre las competencias del programa ADSO", "—", "{{comun.instructor}}", "—"]
 
@@ -314,7 +314,7 @@ tablas:
     encabezado: ["Riesgo", "Estrategia"]
     filas:
       - ["RSK-01", "Mitigar", "Integrar Wompi detrás del puerto PasarelaPagos y probarlo con un doble falso desde S05", "Completar el flujo con el doble falso y documentar la limitación", "Webhook sin funcionar al final de S06", "Abierto"]
-      - ["RSK-02", "Evitar", "Toda funcionalidad nueva pasa por control de cambios; el MVP es RF-001 a RF-030", "Mover lo nuevo a EXC (posterior al MVP)", "Historia fuera del catálogo propuesta en un sprint", "Abierto"]
+      - ["RSK-02", "Evitar", "Toda funcionalidad nueva pasa por control de cambios; el MVP es RF-001 a RF-036", "Mover lo nuevo a EXC (posterior al MVP)", "Historia fuera del catálogo propuesta en un sprint", "Abierto"]
       - ["RSK-03", "Mitigar", "Plantilla de módulo de referencia en S01 y revisión de código en cada PR", "Pareo entre integrantes", "Velocidad de S01 menor al 50 % de lo planeado", "Abierto"]
       - ["RSK-04", "Mitigar", "Acordar disponibilidad por sprint en la planificación", "Redistribuir historias entre integrantes", "Integrante sin avance en una semana", "Abierto"]
       - ["RSK-05", "Mitigar", "Buscar productores a través del centro de formación o asociaciones locales", "Validar con compradores y fuentes secundarias (EVI-02)", "Sin entrevistas al 2026-11-27", "Abierto"]

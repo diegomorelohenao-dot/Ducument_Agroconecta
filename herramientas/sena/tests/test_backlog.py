@@ -8,7 +8,7 @@ from validar import v5_criterios_por_historia
 def test_backlog():
     d = generar_y_abrir("backlog")
     maestro = d.tables[13]
-    assert sum(1 for f in maestro.rows if f.cells[1].text.startswith("HU-")) == 30
+    assert sum(1 for f in maestro.rows if f.cells[1].text.startswith("HU-")) == 36
     fichas_cu = [t for t in d.tables
                  if len(t.rows) > 1 and len(t.columns) == 2 and t.cell(1, 1).text.startswith("CU-00")]
     assert [t.cell(1, 1).text[:6] for t in fichas_cu] == ["CU-001", "CU-002", "CU-003", "CU-004"]

@@ -3,9 +3,9 @@ from conftest import generar_y_abrir, tabla_por_encabezado, tabla_texto
 
 def test_requisitos():
     d = generar_y_abrir("requisitos")
-    assert len(d.tables[19].rows) == 31 and d.tables[19].cell(12, 1).text == "Generar pedidos desde el carrito"
+    assert len(d.tables[19].rows) == 37 and d.tables[19].cell(12, 1).text == "Generar pedidos desde el carrito"
     reglas = tabla_por_encabezado(d, ["ID", "Nombre", "Regla", "Fuente"])
-    assert len(reglas.rows) == 17 and "RF-020" in reglas.cell(6, 5).text  # fila de RN-006
+    assert len(reglas.rows) == 22 and "RF-020" in reglas.cell(6, 5).text  # fila de RN-006
     assert tabla_por_encabezado(d, ["Recurso / acción"]).cell(0, 1).text == "Productor"
     escenarios = tabla_texto(tabla_por_encabezado(d, ["ID requisito", "Escenario"]))
     assert "4.000" in escenarios
