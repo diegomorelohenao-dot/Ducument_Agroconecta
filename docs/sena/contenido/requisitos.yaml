@@ -131,6 +131,7 @@ tablas:
       - ["RF-019", "Firma inválida", "Una notificación con firma incorrecta", "Llega al endpoint del webhook", "Se rechaza y no se procesa"]
       - ["RF-019", "Sin stock al pagar", "Un pedido cuyo producto se agotó antes del pago", "Llega el webhook APROBADA", "Ese pedido pasa a REEMBOLSADO sin descontar stock; los demás pedidos del cobro pasan a PAGADO"]
       - ["RF-020", "Crédito al productor", "Un pedido ENVIADO con subtotal $50.000, envío $5.000 y comisión del 8 %", "El comprador confirma la recepción", "Comisión $4.000; se acredita al productor $46.000 + $5.000 = $51.000"]
+      - ["RF-022", "Liquidación válida", "Un productor con saldo disponible de $80.000 y el mínimo por defecto de $20.000", "Solicita una liquidación de $50.000", "Se crea la liquidación SOLICITADA y un movimiento RETIRO; el saldo disponible queda en $30.000"]
       - ["RF-022", "Monto mayor al saldo", "Un productor con saldo disponible de $30.000", "Solicita una liquidación de $40.000", "El sistema rechaza la solicitud (422) y el saldo no cambia"]
       - ["RF-022", "Monto menor al mínimo", "Un mínimo de retiro configurado de $20.000", "El productor solicita $10.000", "El sistema rechaza la solicitud (422)"]
 
@@ -159,7 +160,7 @@ tablas:
       - ["Aceptar, rechazar y despachar pedidos", "Solo los suyos", "—", "—", "RNF-004"]
       - ["Confirmar recepción, abrir disputa y calificar", "—", "Solo los suyos", "—", "RN-014, RN-015"]
       - ["Ver saldo y solicitar liquidación", "Solo el suyo", "—", "—", "RN-010"]
-      - ["Verificar productores, resolver disputas, marcar liquidaciones pagadas y configurar comisión", "—", "—", "Sí", "RN-007, RN-010"]
+      - ["Verificar productores, resolver disputas, marcar liquidaciones pagadas y configurar la comisión y el mínimo de retiro", "—", "—", "Sí", "RN-007, RN-010"]
 
   - indice: 32
     encabezado: ["ID", "Dato / entidad"]
