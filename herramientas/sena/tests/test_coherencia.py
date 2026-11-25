@@ -45,7 +45,7 @@ def test_equipo_y_responsables():
     assert "Technical Leader" in equipo["EQ-02"] and "Product Owner" in equipo["EQ-04"]
     form, gest, req = _texto("formulacion"), _texto("gestion"), _texto("requisitos")
     # pagos y QA → EQ-01 (Diego); técnico/arquitectura → EQ-02 (Jhonatan)
-    assert '"IND-03 = 15 de 15", "EQ-01"' in form          # ENTG-06 informe de pruebas
+    assert '"IND-03 = 16 de 16", "EQ-01"' in form          # ENTG-06 informe de pruebas
     assert '"Aceptar", "EQ-02"' in form                     # RSK-06 hosting
     assert '"EQ-01", "Abierta"]' in req                     # RSD-06 credenciales Wompi
     assert '(EQ-02, líder técnico)' in req

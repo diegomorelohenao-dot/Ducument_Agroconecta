@@ -184,13 +184,13 @@ tablas:
       - ["ENTG-03", "Alcance y especificación de requisitos", "Revisado por el instructor", "EQ-04", "{{comun.instructor}}", "2026-12-04", "En progreso", "docs/sena/entregables"]
       - ["ENTG-04", "Backlog, historias y casos de uso", "Revisado por el instructor", "EQ-04", "{{comun.instructor}}", "2026-12-04", "En progreso", "docs/sena/entregables"]
       - ["ENTG-05", "Software MVP desplegado", "IND-02 = 100 % e IND-04 en verde", "EQ-02", "EQ-04 y {{comun.instructor}}", "2027-06-11", "Pendiente", "—"]
-      - ["ENTG-06", "Informe de pruebas", "IND-03 = 15 de 15", "EQ-01", "{{comun.instructor}}", "2027-06-11", "Pendiente", "—"]
+      - ["ENTG-06", "Informe de pruebas", "IND-03 = 16 de 16", "EQ-01", "{{comun.instructor}}", "2027-06-11", "Pendiente", "—"]
       - ["ENTG-07", "Manual de usuario", "Revisado por el instructor", "EQ-03", "{{comun.instructor}}", "2027-06-11", "Pendiente", "—"]
 
   - indice: 40
     encabezado: ["Dimensión", "Estado"]
     campos:
-      "Alcance": ["Verde", "MVP definido: 30 RF, 14 RNF, 15 reglas (catálogo maestro)", "—", "Revisión con el instructor"]
+      "Alcance": ["Verde", "MVP definido: 30 RF, 14 RNF, 16 reglas (catálogo maestro)", "—", "Revisión con el instructor"]
       "Cronograma": ["Verde", "Documentación lista para el 2026-12-04", "—", "Preparar el entorno para S01"]
       "Calidad": ["Verde", "Validador de documentación sin errores", "—", "Mantener el validador en verde"]
       "Riesgos": ["Amarillo", "RSK-01 y RSK-03 con nivel 12", "Integración de pagos y curva de aprendizaje", "Módulo de referencia en S01"]
