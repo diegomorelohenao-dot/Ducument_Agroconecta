@@ -7,7 +7,7 @@ def test_catalogo_real_consistente():
     cat = cargar_yaml(CONTENIDO / "catalogo.yaml")
     assert v2_consistencia_catalogo(cat) == []
     assert len(cat["requisitos"]) == 30 and len(cat["historias"]) == 30
-    assert len(cat["reglas"]) == 15 and len(cat["rnf"]) == 14 and len(cat["casos_uso"]) == 4
+    assert len(cat["reglas"]) == 16 and len(cat["rnf"]) == 14 and len(cat["casos_uso"]) == 4
     assert len(cat["epicas"]) == 7 and len(cat["funcionalidades"]) == 14
     hus = [h for s in cat["sprints"].values() for h in s["historias"]]
     assert sorted(hus) == sorted(cat["historias"])

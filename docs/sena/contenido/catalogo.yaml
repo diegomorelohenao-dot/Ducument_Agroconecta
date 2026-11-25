@@ -79,13 +79,13 @@ requisitos:
   RF-014: {nombre: Marcar pedido como enviado, epica: EP-004, feat: FEAT-008, actores: [ACT-01], rn: [], objetivo: OBJ-03, prioridad: Must, version: MVP}
   RF-015: {nombre: Confirmar recepción del pedido, epica: EP-004, feat: FEAT-008, actores: [ACT-02, ACT-03], rn: [RN-005], objetivo: OBJ-03, prioridad: Must, version: MVP}
   RF-016: {nombre: Consultar pedidos e historial, epica: EP-004, feat: FEAT-008, actores: [ACT-01, ACT-02, ACT-03, ACT-04], rn: [], objetivo: OBJ-03, prioridad: Must, version: MVP}
-  RF-017: {nombre: Aplicar plazos automáticos del pedido, epica: EP-004, feat: FEAT-008, actores: [ACT-07], rn: [RN-011], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-017: {nombre: Actualizar pedidos automáticamente según sus plazos, epica: EP-004, feat: FEAT-008, actores: [ACT-07], rn: [RN-011, RN-016], objetivo: OBJ-03, prioridad: Must, version: MVP}
   RF-018: {nombre: Iniciar pago en línea, epica: EP-005, feat: FEAT-009, actores: [ACT-02, ACT-03, ACT-06], rn: [RN-012], objetivo: OBJ-03, prioridad: Must, version: MVP}
-  RF-019: {nombre: Procesar notificación de pago (webhook), epica: EP-005, feat: FEAT-009, actores: [ACT-06], rn: [RN-004, RN-005, RN-013], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-019: {nombre: Actualizar el estado del pedido tras el pago, epica: EP-005, feat: FEAT-009, actores: [ACT-06], rn: [RN-004, RN-005, RN-013], objetivo: OBJ-03, prioridad: Must, version: MVP}
   RF-020: {nombre: Calcular comisión y acreditar saldo, epica: EP-005, feat: FEAT-010, actores: [ACT-07], rn: [RN-005, RN-006, RN-009, RN-012], objetivo: OBJ-03, prioridad: Must, version: MVP}
   RF-021: {nombre: Consultar saldo y movimientos, epica: EP-005, feat: FEAT-010, actores: [ACT-01], rn: [RN-009], objetivo: OBJ-03, prioridad: Must, version: MVP}
   RF-022: {nombre: Solicitar liquidación de saldo, epica: EP-005, feat: FEAT-010, actores: [ACT-01], rn: [RN-010], objetivo: OBJ-03, prioridad: Must, version: MVP}
-  RF-023: {nombre: Ejecutar reembolso, epica: EP-005, feat: FEAT-011, actores: [ACT-04, ACT-06, ACT-07], rn: [RN-004, RN-011], objetivo: OBJ-03, prioridad: Must, version: MVP}
+  RF-023: {nombre: Procesar el reembolso total, epica: EP-005, feat: FEAT-011, actores: [ACT-04, ACT-06, ACT-07], rn: [RN-004, RN-011], objetivo: OBJ-03, prioridad: Must, version: MVP}
   RF-024: {nombre: Calificar productor, epica: EP-006, feat: FEAT-012, actores: [ACT-02, ACT-03], rn: [RN-014], objetivo: OBJ-04, prioridad: Must, version: MVP}
   RF-025: {nombre: Abrir disputa, epica: EP-007, feat: FEAT-013, actores: [ACT-02, ACT-03], rn: [RN-015], objetivo: OBJ-04, prioridad: Must, version: MVP}
   RF-026: {nombre: Resolver disputa, epica: EP-007, feat: FEAT-013, actores: [ACT-04], rn: [RN-011], objetivo: OBJ-04, prioridad: Must, version: MVP}
@@ -95,36 +95,36 @@ requisitos:
   RF-030: {nombre: Enviar notificaciones en la app y por correo, epica: EP-001, feat: FEAT-002, actores: [ACT-07], rn: [], objetivo: OBJ-04, prioridad: Must, version: MVP}
 
 historias:
-  HU-001: {nombre: Registrar usuario con rol y consentimiento de datos, rf: RF-001, enunciado: "Como visitante, quiero registrarme como productor o comprador (consumidor o negocio) aceptando el tratamiento de mis datos, para poder vender o comprar en la plataforma."}
-  HU-002: {nombre: Iniciar y renovar sesión, rf: RF-002, enunciado: "Como usuario registrado, quiero iniciar sesión y mantenerla activa de forma segura, para usar las funciones de mi rol sin volver a ingresar mis datos a cada momento."}
-  HU-003: {nombre: Eliminar cuenta, rf: RF-003, enunciado: "Como usuario, quiero eliminar mi cuenta, para ejercer mi derecho de supresión de datos personales."}
-  HU-004: {nombre: Gestionar perfil de productor, rf: RF-004, enunciado: "Como productor, quiero registrar los datos de mi finca, mi documento y mi municipio, para solicitar la verificación y poder vender."}
-  HU-005: {nombre: Configurar opciones de entrega, rf: RF-005, enunciado: "Como productor, quiero indicar si entrego a domicilio (zona y costo), si el comprador recoge, o ambas, para que el comprador sepa cómo recibirá su pedido."}
-  HU-006: {nombre: Verificar productor, rf: RF-006, enunciado: "Como administrador, quiero aprobar o rechazar la verificación de un productor, para que solo productores reales publiquen productos."}
-  HU-007: {nombre: Gestionar productos, rf: RF-007, enunciado: "Como productor verificado, quiero publicar, editar y desactivar productos con precio, unidad, stock e imágenes, para ofrecerlos a los compradores."}
-  HU-008: {nombre: Definir precios por volumen, rf: RF-008, enunciado: "Como productor, quiero definir precios más bajos a partir de ciertas cantidades, para atraer compras grandes de negocios."}
-  HU-009: {nombre: "Buscar productos por texto, categoría y ubicación", rf: RF-009, enunciado: "Como comprador o visitante, quiero buscar productos por nombre, categoría, departamento y municipio, para encontrar productores cercanos."}
-  HU-010: {nombre: Ver detalle de producto y productor, rf: RF-010, enunciado: "Como comprador o visitante, quiero ver el detalle de un producto y la información y calificación de su productor, para decidir si compro."}
-  HU-011: {nombre: Gestionar carrito, rf: RF-011, enunciado: "Como comprador, quiero agregar, cambiar y quitar productos de mi carrito, para preparar mi compra."}
-  HU-012: {nombre: Generar pedidos desde el carrito, rf: RF-012, enunciado: "Como comprador, quiero confirmar mi carrito eligiendo la modalidad de entrega, para que se generen los pedidos a cada productor con precios congelados."}
-  HU-013: {nombre: Aceptar o rechazar pedido, rf: RF-013, enunciado: "Como productor, quiero aceptar o rechazar un pedido pagado, para comprometerme solo con lo que puedo cumplir."}
-  HU-014: {nombre: Marcar pedido como enviado, rf: RF-014, enunciado: "Como productor, quiero marcar un pedido como despachado o listo para recoger, para que el comprador sepa que va en camino."}
-  HU-015: {nombre: Confirmar recepción del pedido, rf: RF-015, enunciado: "Como comprador, quiero confirmar que recibí mi pedido, para que se libere el pago al productor."}
-  HU-016: {nombre: Consultar pedidos e historial, rf: RF-016, enunciado: "Como usuario, quiero consultar mis pedidos y su estado, para hacer seguimiento a mis compras o ventas."}
-  HU-017: {nombre: Aplicar plazos automáticos del pedido, rf: RF-017, enunciado: "Como comprador, quiero que un pedido sin pago se cancele a los 30 min, que un pedido sin respuesta del productor se reembolse a las 48 h y que uno enviado se dé por entregado a los 7 días, para que ningún pedido quede detenido."}
-  HU-018: {nombre: Iniciar pago en línea, rf: RF-018, enunciado: "Como comprador, quiero pagar mis pedidos en línea con tarjeta, PSE o Nequi, para completar la compra sin efectivo."}
-  HU-019: {nombre: Procesar notificación de pago (webhook), rf: RF-019, enunciado: "Como comprador, quiero que mis pedidos pasen a pagado en cuanto la pasarela apruebe el pago, para que el productor pueda atenderlos."}
-  HU-020: {nombre: Calcular comisión y acreditar saldo, rf: RF-020, enunciado: "Como productor, quiero que al entregarse un pedido se me acredite el subtotal menos la comisión, más el envío, para disponer de mi dinero."}
-  HU-021: {nombre: Consultar saldo y movimientos, rf: RF-021, enunciado: "Como productor, quiero ver mi saldo disponible y sus movimientos, para saber cuánto puedo retirar."}
-  HU-022: {nombre: Solicitar liquidación de saldo, rf: RF-022, enunciado: "Como productor, quiero solicitar el retiro de mi saldo disponible, para recibir el dinero de mis ventas."}
-  HU-023: {nombre: Ejecutar reembolso, rf: RF-023, enunciado: "Como comprador, quiero recibir el reembolso total cuando mi pedido es rechazado o la disputa se resuelve a mi favor, para no perder mi dinero."}
-  HU-024: {nombre: Calificar productor, rf: RF-024, enunciado: "Como comprador, quiero calificar al productor después de recibir mi pedido, para orientar a otros compradores."}
-  HU-025: {nombre: Abrir disputa, rf: RF-025, enunciado: "Como comprador, quiero abrir una disputa sobre un pedido enviado con problemas, para que el administrador la revise antes de liberar el pago."}
-  HU-026: {nombre: Resolver disputa, rf: RF-026, enunciado: "Como administrador, quiero resolver una disputa a favor del productor o del comprador, para cerrar el pedido de forma justa."}
-  HU-027: {nombre: Marcar liquidación como pagada, rf: RF-027, enunciado: "Como administrador, quiero marcar una liquidación como pagada después de transferir, para dejar registro del pago al productor."}
-  HU-028: {nombre: Configurar comisión y mínimo de retiro, rf: RF-028, enunciado: "Como administrador, quiero configurar el porcentaje de comisión y el monto mínimo de retiro, para ajustar el modelo de negocio."}
-  HU-029: {nombre: Consultar reportes de pedidos y comisiones, rf: RF-029, enunciado: "Como administrador, quiero ver los totales de pedidos por estado y las comisiones por mes, para seguir la operación."}
-  HU-030: {nombre: Enviar notificaciones en la app y por correo, rf: RF-030, enunciado: "Como usuario, quiero recibir avisos en la app y por correo sobre mis pedidos, mi verificación y mis liquidaciones, para enterarme a tiempo."}
+  HU-001: {nombre: Registrar usuario con rol y consentimiento de datos, rf: RF-001, enunciado: "Como visitante, quiero crear una cuenta eligiendo si seré productor o comprador (consumidor o negocio) y aceptar el tratamiento de mis datos, para empezar a vender o comprar en AgroConecta."}
+  HU-002: {nombre: Iniciar y renovar sesión, rf: RF-002, enunciado: "Como usuario registrado, quiero iniciar sesión y mantener mi acceso de forma segura, para consultar y utilizar las funciones correspondientes a mi rol sin tener que ingresar mis credenciales en cada visita."}
+  HU-003: {nombre: Eliminar cuenta, rf: RF-003, enunciado: "Como usuario, quiero solicitar y confirmar la eliminación de mi cuenta, para dejar de usar AgroConecta y ejercer mi derecho de supresión de datos personales."}
+  HU-004: {nombre: Gestionar perfil de productor, rf: RF-004, enunciado: "Como productor, quiero completar la información de mi finca, mi documento y mi municipio, para enviar mi perfil a revisión y poder vender cuando sea verificado."}
+  HU-005: {nombre: Configurar opciones de entrega, rf: RF-005, enunciado: "Como productor, quiero configurar si ofrezco entrega a domicilio (con sus zonas y costos), recogida en mi finca, o ambas opciones, para que cada comprador pueda elegir cómo recibir su pedido."}
+  HU-006: {nombre: Verificar productor, rf: RF-006, enunciado: "Como administrador, quiero revisar la información de cada productor y aprobar o rechazar su solicitud de verificación, para permitir que solo productores validados publiquen y vendan."}
+  HU-007: {nombre: Gestionar productos, rf: RF-007, enunciado: "Como productor verificado, quiero publicar, editar y desactivar mis productos indicando descripción, unidad, precio, existencias e imágenes, para mantener actualizada mi oferta para los compradores."}
+  HU-008: {nombre: Definir precios por volumen, rf: RF-008, enunciado: "Como productor, quiero establecer precios unitarios especiales a partir de determinadas cantidades, para ofrecer mejores condiciones a los negocios y a quienes compran por volumen."}
+  HU-009: {nombre: "Buscar productos por texto, categoría y ubicación", rf: RF-009, enunciado: "Como comprador o visitante, quiero buscar productos por nombre, categoría, departamento y municipio, para encontrar fácilmente la oferta disponible en mi zona."}
+  HU-010: {nombre: Ver detalle de producto y productor, rf: RF-010, enunciado: "Como comprador o visitante, quiero consultar la información, el precio, la disponibilidad y las condiciones de un producto, junto con el perfil y la calificación de quien lo vende, para decidir si me conviene comprarlo."}
+  HU-011: {nombre: Gestionar carrito, rf: RF-011, enunciado: "Como comprador, quiero agregar productos al carrito, cambiar sus cantidades y quitarlos, para revisar y preparar mi compra antes de confirmarla."}
+  HU-012: {nombre: Generar pedidos desde el carrito, rf: RF-012, enunciado: "Como comprador, quiero confirmar mi carrito y elegir la modalidad de entrega para cada productor, para generar un pedido independiente por productor, conservar los precios acordados y realizar un solo pago por la compra."}
+  HU-013: {nombre: Aceptar o rechazar pedido, rf: RF-013, enunciado: "Como productor, quiero aceptar o rechazar cada pedido que ya fue pagado, para confirmar que puedo atenderlo o evitar comprometerme con una venta que no puedo cumplir."}
+  HU-014: {nombre: Marcar pedido como enviado, rf: RF-014, enunciado: "Como productor, quiero marcar un pedido aceptado como despachado o listo para recoger, para que el comprador conozca que el pedido ya está en camino o disponible para su recogida."}
+  HU-015: {nombre: Confirmar recepción del pedido, rf: RF-015, enunciado: "Como comprador, quiero confirmar que recibí mi pedido, para cerrar la compra y permitir que se calcule y acredite el saldo correspondiente al productor."}
+  HU-016: {nombre: Consultar pedidos e historial, rf: RF-016, enunciado: "Como comprador o productor, quiero consultar mis pedidos, sus estados y sus fechas, para hacer seguimiento a mis compras o ventas desde un solo lugar."}
+  HU-017: {nombre: Actualizar pedidos automáticamente según sus plazos, rf: RF-017, enunciado: "Como comprador o productor, quiero que el sistema actualice automáticamente los pedidos que superen los plazos establecidos y me informe de esos cambios, para evitar que una compra o venta quede detenida sin resolución."}
+  HU-018: {nombre: Iniciar pago en línea, rf: RF-018, enunciado: "Como comprador, quiero pagar mi compra en línea mediante tarjeta, PSE o Nequi, para completar el pedido de forma sencilla sin utilizar efectivo."}
+  HU-019: {nombre: Actualizar el estado del pedido tras el pago, rf: RF-019, enunciado: "Como comprador, quiero ver actualizado el estado de mis pedidos cuando Wompi confirme o rechace el pago, para saber si la compra quedó pagada y el productor ya puede atenderla."}
+  HU-020: {nombre: Calcular comisión y acreditar saldo, rf: RF-020, enunciado: "Como productor, quiero que al entregarse un pedido se calcule automáticamente la comisión y se acredite en mi saldo el valor que me corresponde, incluido el costo de envío, para conocer cuánto he ganado por esa venta."}
+  HU-021: {nombre: Consultar saldo y movimientos, rf: RF-021, enunciado: "Como productor, quiero consultar mi saldo disponible y el detalle de sus movimientos, para saber cuánto dinero tengo y cuánto puedo solicitar en retiro."}
+  HU-022: {nombre: Solicitar liquidación de saldo, rf: RF-022, enunciado: "Como productor, quiero solicitar el retiro de una parte o de todo mi saldo disponible, respetando el mínimo configurado, para recibir el dinero de mis ventas."}
+  HU-023: {nombre: Procesar el reembolso total, rf: RF-023, enunciado: "Como comprador, quiero recibir el reembolso total de un pedido cuando el productor lo rechace o una disputa se resuelva a mi favor, para recuperar el dinero que pagué."}
+  HU-024: {nombre: Calificar productor, rf: RF-024, enunciado: "Como comprador, quiero calificar al productor después de recibir mi pedido, para compartir mi experiencia y ayudar a otros compradores a elegir."}
+  HU-025: {nombre: Abrir disputa, rf: RF-025, enunciado: "Como comprador, quiero reportar un problema de un pedido que aparece como enviado, adjuntando el motivo y la evidencia, para que el administrador lo revise antes de liberar el pago al productor."}
+  HU-026: {nombre: Resolver disputa, rf: RF-026, enunciado: "Como administrador, quiero revisar la información y las evidencias de una disputa y decidir si se resuelve a favor del comprador o del productor, para cerrar el pedido y aplicar el resultado correspondiente."}
+  HU-027: {nombre: Marcar liquidación como pagada, rf: RF-027, enunciado: "Como administrador, quiero registrar que una liquidación solicitada ya fue transferida al productor, para dejar constancia del pago y actualizar su estado."}
+  HU-028: {nombre: Configurar comisión y mínimo de retiro, rf: RF-028, enunciado: "Como administrador, quiero configurar el porcentaje de comisión y el monto mínimo que puede retirar un productor, para administrar las condiciones económicas de la plataforma."}
+  HU-029: {nombre: Consultar reportes de pedidos y comisiones, rf: RF-029, enunciado: "Como administrador, quiero consultar los pedidos agrupados por estado y las comisiones generadas por mes, para hacer seguimiento a la operación de AgroConecta."}
+  HU-030: {nombre: Enviar notificaciones en la app y por correo, rf: RF-030, enunciado: "Como comprador o productor, quiero recibir avisos dentro de la aplicación y por correo sobre los cambios de mis pedidos, la verificación de mi perfil y mis liquidaciones, para estar informado oportunamente."}
 
 reglas:
   RN-001: {nombre: Solo productores verificados venden, texto: Solo los productores con estado VERIFICADO pueden publicar o activar productos.}
@@ -142,6 +142,7 @@ reglas:
   RN-013: {nombre: Webhook idempotente y firmado, texto: El webhook es idempotente (se registra el id de cada evento procesado) y se verifica su firma antes de procesarlo.}
   RN-014: {nombre: Calificación única tras la entrega, texto: "Solo se puede calificar un pedido ENTREGADO, una vez, y solo lo puede hacer su comprador (1 a 5 estrellas y comentario opcional)."}
   RN-015: {nombre: Disputa solo sobre pedidos enviados, texto: "Solo se puede abrir disputa sobre un pedido en estado ENVIADO, y solo lo puede hacer su comprador."}
+  RN-016: {nombre: Plazos automáticos del pedido, texto: "Un pedido PENDIENTE_PAGO se cancela tras 30 minutos sin pago; un pedido PAGADO se reembolsa si el productor no responde en 48 horas; y un pedido ENVIADO pasa a ENTREGADO tras 7 días sin confirmación ni disputa. El planificador revisa estos plazos cada 5 minutos y aplica los cambios de forma idempotente."}
 
 rnf:
   RNF-001: {categoria: Seguridad, requisito: Las contraseñas se almacenan con bcrypt.}
