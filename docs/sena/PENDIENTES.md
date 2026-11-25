@@ -8,20 +8,16 @@ en los YAML de `docs/sena/contenido/` y regenerar antes del 2026-12-04.
 - [PENDIENTE: valor del mínimo de retiro]
 
 ## formulacion.yaml
-- [PENDIENTE: confirmar con EVI-01 y EVI-03]
 - [PENDIENTE: dato y fuente]
-- [PENDIENTE: productores entrevistados]
-- [PENDIENTE: fecha]
-- [PENDIENTE: hallazgo]
 - [PENDIENTE: fecha de consulta]
+- [PENDIENTE: hallazgo]
 - [PENDIENTE: canales revisados]
+- [PENDIENTE: fecha]
 - [PENDIENTE: dato y fuente sobre la participación de intermediarios en el precio final]
 - [PENDIENTE: indicador posterior al MVP]
 - [PENDIENTE: enlace consultado]
 
 ## gestion.yaml
-- [PENDIENTE: resultado del contacto con productores]
-- [PENDIENTE: asociación o cooperativa]
 - [PENDIENTE: actividades]
 - [PENDIENTE: commits]
 

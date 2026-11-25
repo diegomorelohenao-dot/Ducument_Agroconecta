@@ -158,7 +158,7 @@ tablas:
       - ["RSK-02", "Gestión", "Crecimiento del alcance más allá del MVP", "Ideas nuevas durante el desarrollo", "Incumplimiento de la fecha de entrega", "3", "4", "12", "Evitar: control de cambios; el MVP es RF-001 a RF-030", "EQ-01", "Historia fuera del catálogo propuesta en un sprint", "Abierto"]
       - ["RSK-03", "Técnico", "Curva de aprendizaje de NestJS y Clean Architecture", "Tecnologías nuevas para el equipo", "Sprints iniciales más lentos", "4", "3", "12", "Mitigar: módulo de referencia en S01 y revisión en cada PR", "EQ-02", "Velocidad de S01 menor al 50 % de lo planeado", "Abierto"]
       - ["RSK-04", "Gestión", "Baja disponibilidad de integrantes en algunos periodos", "Otras actividades académicas o personales", "Menor capacidad por sprint", "3", "3", "9", "Mitigar: acordar disponibilidad en cada planificación", "EQ-01", "Integrante sin avance en una semana", "Abierto"]
-      - ["RSK-05", "Usuario", "No contar con productores reales para validar el problema", "Distancia con productores de la zona", "Evidencias débiles y supuestos sin validar", "3", "3", "9", "Mitigar: contactar productores mediante el centro o asociaciones", "EQ-04", "Sin entrevistas al 2026-11-27", "Abierto"]
+      - ["RSK-05", "Usuario", "No contar con productores reales para validar el problema", "Distancia con productores de la zona", "Evidencias débiles y supuestos sin validar", "3", "3", "9", "Mitigar: contactar productores mediante el centro o asociaciones", "EQ-04", "Sin entrevistas al 2026-11-27", "Contingencia aplicada"]
       - ["RSK-06", "Técnico", "Límites de los planes gratuitos de hosting", "Cuotas de uso", "Caídas del ambiente de pruebas", "2", "3", "6", "Aceptar: datos de prueba ligeros", "EQ-02", "Ambiente caído más de un día", "Abierto"]
 
   - indice: 34
@@ -168,13 +168,13 @@ tablas:
       - ["RSK-02", "2026-12-04", "Alcance del MVP cerrado en RF-001 a RF-030", "Catálogo maestro de requisitos", "Alcance controlado", "12", "2027-01-22"]
       - ["RSK-03", "2026-12-04", "Sin cambios", "Riesgo registrado", "—", "12", "2027-01-22"]
       - ["RSK-04", "2026-12-04", "Sin cambios", "Riesgo registrado", "—", "9", "2027-01-11"]
-      - ["RSK-05", "2026-12-04", "[PENDIENTE: resultado del contacto con productores]", "Búsqueda de productores para entrevistas", "—", "9", "2027-01-11"]
+      - ["RSK-05", "2026-11-25", "No se consiguieron productores para entrevistar antes del cierre de la documentación", "Contingencia: EVI-01 con fuentes secundarias (encuesta publicada a 86 productores de Sonsón) y contacto con una asociación (OP-01)", "Problema validado con fuentes secundarias; faltan entrevistas propias", "9", "2027-01-11"]
       - ["RSK-06", "2026-12-04", "Sin cambios", "Riesgo registrado", "—", "6", "2027-05-28"]
 
   - indice: 35
     encabezado: ["ID", "Oportunidad"]
     filas:
-      - ["OP-01", "Validar el producto con una asociación de productores local", "Evidencia real del problema y usuarios de prueba", "Contactar a [PENDIENTE: asociación o cooperativa] mediante el centro de formación", "EQ-04", "Abierta"]
+      - ["OP-01", "Validar el producto con una asociación de productores local", "Evidencia real del problema y usuarios de prueba", "Contactar, mediante el centro de formación, a una de las 9 asociaciones de productores de Sonsón identificadas en EVI-01 o a la Secretaría de Agricultura de Antioquia, y aplicar la guía de entrevista de EVI-01", "EQ-04", "Abierta"]
 
   - indice: 38
     encabezado: ["ID", "Entregable"]
@@ -195,7 +195,7 @@ tablas:
       "Calidad": ["Verde", "Validador de documentación sin errores", "—", "Mantener el validador en verde"]
       "Riesgos": ["Amarillo", "RSK-01 y RSK-03 con nivel 12", "Integración de pagos y curva de aprendizaje", "Módulo de referencia en S01"]
       "Equipo": ["Verde", "4 integrantes con roles asignados", "Disponibilidad por confirmar ({{comun.horas_semana}})", "Acordar horas por semana"]
-      "Validación del cliente": ["Amarillo", "Sin entrevistas a productores todavía", "RSK-05", "Realizar EVI-01"]
+      "Validación del cliente": ["Amarillo", "EVI-01 con fuentes secundarias; sin entrevistas propias todavía", "RSK-05 (contingencia aplicada)", "Entrevistar productores mediante OP-01 antes de S02"]
 
   - indice: 42
     encabezado: ["Integrante", "Periodo"]
