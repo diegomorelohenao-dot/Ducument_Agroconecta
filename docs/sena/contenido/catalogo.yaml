@@ -136,7 +136,7 @@ reglas:
   RN-007: {nombre: Porcentaje de comisión configurable, texto: El porcentaje de comisión lo configura el administrador (por defecto 8 %). Cada pedido guarda el porcentaje vigente cuando se creó.}
   RN-008: {nombre: Costo de envío, texto: "El costo de envío lo define el productor según su zona o modalidad, se cobra con el pedido y no paga comisión. La recogida tiene costo 0."}
   RN-009: {nombre: Saldo calculado por movimientos, texto: El saldo disponible del productor es la suma de sus movimientos de saldo; nunca se guarda como un valor editable.}
-  RN-010: {nombre: Solicitud de liquidación, texto: "El productor puede solicitar una liquidación por un monto menor o igual a su saldo disponible y mayor o igual al mínimo configurado. La solicitud crea un movimiento RETIRO; el administrador la marca PAGADA después de transferir por fuera."}
+  RN-010: {nombre: Solicitud de liquidación, texto: "El productor puede solicitar una liquidación por un monto menor o igual a su saldo disponible y mayor o igual al mínimo configurado por el administrador (por defecto $20.000 COP). La solicitud crea un movimiento RETIRO; el administrador la marca PAGADA después de transferir por fuera."}
   RN-011: {nombre: Reembolso total, texto: "El reembolso es siempre total (subtotal + envío) y se ejecuta mediante la pasarela (simulado en sandbox)."}
   RN-012: {nombre: Montos enteros en COP, texto: Los montos se manejan en pesos colombianos (COP) como enteros. Nunca se usan números flotantes para dinero.}
   RN-013: {nombre: Webhook idempotente y firmado, texto: El webhook es idempotente (se registra el id de cada evento procesado) y se verifica su firma antes de procesarlo.}
