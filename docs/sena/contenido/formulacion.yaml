@@ -74,7 +74,7 @@ tablas:
       "Organización, área o comunidad": "Pequeños productores agrícolas de Colombia y sus compradores: consumidores finales y negocios (restaurantes, tiendas, fruvers)."
       "Proceso relacionado": "Comercialización de productos agrícolas desde la finca hasta el comprador."
       "Usuarios o población involucrada": "Productores (STK-01), compradores consumidores (STK-02), compradores negocio (STK-03) y el administrador de la plataforma (STK-04)."
-      "Herramientas o métodos actuales": "Venta a intermediarios y acopiadores, plazas de mercado y contacto informal por redes sociales o WhatsApp. [PENDIENTE: confirmar con EVI-01 y EVI-03]"
+      "Herramientas o métodos actuales": "Venta principalmente a intermediarios, y en menor medida a gremios (Federación de Cafeteros), compradores directos y comercializadoras; plazas, centrales de abasto y mercados campesinos tienen poco peso. La mayoría depende de un solo comprador y casi ninguno está asociado (EVI-01). El contacto informal por redes sociales o WhatsApp se revisa en EVI-03."
       "Normas, políticas o condiciones releva": "Ley 1581 de 2012 (protección de datos personales). La operación con dinero real y la facturación electrónica DIAN quedan fuera del alcance (EXC-04, EXC-08)."
       "Antecedentes de soluciones previas": "Existen marketplaces genéricos y canales en redes sociales, sin pago protegido hasta la entrega ni búsqueda de productores por ubicación (ver ALT-02 y ALT-03)."
       "Fuente de la información": "Especificación de diseño del proyecto (REF-01). Cifras del sector: [PENDIENTE: dato y fuente]"
@@ -82,7 +82,7 @@ tablas:
   - indice: 9
     encabezado: ["ID", "Evidencia", "Tipo", "Fuente"]
     filas:
-      - ["EVI-01", "Entrevistas a pequeños productores sobre cómo venden hoy y qué margen pierden", "Entrevista", "[PENDIENTE: productores entrevistados]", "[PENDIENTE: fecha]", "[PENDIENTE: hallazgo]", "docs/sena/evidencias/"]
+      - ["EVI-01", "Cómo venden hoy los pequeños productores y qué margen pierden. Por la contingencia de RSK-05 se usan fuentes secundarias; las entrevistas propias quedan pendientes (OP-01)", "Revisión documental", "Encuesta a 86 productores de Sonsón, Antioquia (Quintero Galeano et al., 2024); reportaje de La Liga Contra el Silencio (2019); DANE TIC 2022", "2026-11-25 (consulta)", "El intermediario es el canal principal (32,9 %); el 61,2 % vende a un solo comprador y solo el 8,1 % está asociado; el 89,5 % prioriza el cumplimiento de los pagos al elegir comprador; según la Gobernación de Antioquia, el 80 % del precio final queda en los intermediarios", "docs/sena/evidencias/EVI-01_productores_fuentes_secundarias.md"]
       - ["EVI-02", "Comparación de precios mayoristas (SIPSA, DANE) con precios al consumidor", "Documento", "DANE – SIPSA", "[PENDIENTE: fecha de consulta]", "[PENDIENTE: hallazgo]", "docs/sena/evidencias/"]
       - ["EVI-03", "Revisión de los canales de venta que usan hoy productores y compradores", "Observación", "[PENDIENTE: canales revisados]", "[PENDIENTE: fecha]", "[PENDIENTE: hallazgo]", "docs/sena/evidencias/"]
 
@@ -114,7 +114,7 @@ tablas:
       "¿Describe una situación verificable": ["X", "", "La dependencia de intermediarios se verifica con EVI-01 y EVI-02."]
       "¿Identifica claramente a la población": ["X", "", "Pequeños productores, consumidores y negocios de Colombia."]
       "¿Distingue causas y consecuencias": ["X", "", "Ver árbol del problema (CAU-01 a CAU-03, EFE-01 a EFE-03)."]
-      "¿Cuenta con al menos una evidencia": ["", "X", "Evidencias EVI-01 a EVI-03 planificadas; se recolectan antes del 2026-12-04 (ver Anexo C)."]
+      "¿Cuenta con al menos una evidencia": ["X", "", "EVI-01 documentada con fuentes secundarias (encuesta a 86 productores de Sonsón); EVI-02 y EVI-03 se completan antes del 2026-12-04."]
       "¿Puede abordarse parcialmente mediante": ["X", "", "El software ataca CAU-01 a CAU-03 con catálogo, búsqueda por ubicación y pago retenido."]
       "¿La formulación evita prometer resulta": ["X", "", "Los objetivos se miden con indicadores del producto (IND-01 a IND-04), no con ingresos de los productores."]
 
@@ -317,7 +317,7 @@ tablas:
       - ["RSK-02", "Evitar", "Toda funcionalidad nueva pasa por control de cambios; el MVP es RF-001 a RF-030", "Mover lo nuevo a EXC (posterior al MVP)", "Historia fuera del catálogo propuesta en un sprint", "Abierto"]
       - ["RSK-03", "Mitigar", "Plantilla de módulo de referencia en S01 y revisión de código en cada PR", "Pareo entre integrantes", "Velocidad de S01 menor al 50 % de lo planeado", "Abierto"]
       - ["RSK-04", "Mitigar", "Acordar disponibilidad por sprint en la planificación", "Redistribuir historias entre integrantes", "Integrante sin avance en una semana", "Abierto"]
-      - ["RSK-05", "Mitigar", "Buscar productores a través del centro de formación o asociaciones locales", "Validar con compradores y fuentes secundarias (EVI-02)", "Sin entrevistas al 2026-11-27", "Abierto"]
+      - ["RSK-05", "Mitigar", "Buscar productores a través del centro de formación o asociaciones locales", "Validar con fuentes secundarias (EVI-01, EVI-02) y con compradores", "Sin entrevistas al 2026-11-27", "Contingencia aplicada"]
       - ["RSK-06", "Aceptar", "Usar datos de prueba ligeros", "Cambiar de proveedor gratuito", "Ambiente caído más de un día", "Abierto"]
 
   - indice: 51
